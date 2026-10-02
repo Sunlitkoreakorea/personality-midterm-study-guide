@@ -1,0 +1,2089 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>성격과 자기 이해 시험 대비</title>
+<meta name="description" content="성격과 자기 이해(최신 성격심리학) 3~6장 중심 시험 직전 정리: 요약·비교표·암기모드·서술형 모범답안·문제풀이">
+<style>
+:root{
+  --bg:#f6f5f0; --surface:#ffffff; --surface2:#faf9f5; --ink:#1c2230; --muted:#5a6376; --line:#e2dfd5;
+  --accent:#3947c4; --accent-ink:#ffffff; --accent-soft:#e9ecff;
+  --key:#fff1a8; --key-ink:#1c2230;
+  --ok:#1b7f55; --ok-soft:#e2f5ec; --warn:#b4400b; --warn-soft:#fdeee3; --tip:#0a6683; --tip-soft:#e0f2f8; --lec:#6b3fa0; --lec-soft:#f0e8fa;
+  --shadow:0 1px 2px rgba(20,25,40,.06),0 4px 14px rgba(20,25,40,.05);
+  --r:14px;
+}
+:root[data-theme="dark"]{
+  --bg:#12141a; --surface:#1a1d26; --surface2:#20242f; --ink:#e7eaf2; --muted:#9ba5ba; --line:#2d3243;
+  --accent:#8f9dff; --accent-ink:#10132b; --accent-soft:#252b55;
+  --key:#5c4e08; --key-ink:#fff4c2;
+  --ok:#5bd29c; --ok-soft:#14352a; --warn:#ff9d6b; --warn-soft:#3a2417; --tip:#6fd0ee; --tip-soft:#132f3a; --lec:#c6a3f5; --lec-soft:#2c2142;
+  --shadow:0 1px 2px rgba(0,0,0,.4);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#12141a; --surface:#1a1d26; --surface2:#20242f; --ink:#e7eaf2; --muted:#9ba5ba; --line:#2d3243;
+    --accent:#8f9dff; --accent-ink:#10132b; --accent-soft:#252b55;
+    --key:#5c4e08; --key-ink:#fff4c2;
+    --ok:#5bd29c; --ok-soft:#14352a; --warn:#ff9d6b; --warn-soft:#3a2417; --tip:#6fd0ee; --tip-soft:#132f3a; --lec:#c6a3f5; --lec-soft:#2c2142;
+    --shadow:0 1px 2px rgba(0,0,0,.4);
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--hh,64px) + 14px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 "Pretendard","Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;-webkit-text-size-adjust:100%}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+button{font:inherit;color:inherit;cursor:pointer}
+
+/* top bar */
+.top{position:sticky;top:0;z-index:30;display:flex;gap:10px;align-items:center;padding:10px 16px;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .brand{font-weight:800;letter-spacing:-.02em;white-space:nowrap}
+.top .brand small{font-weight:500;color:var(--muted);margin-left:6px}
+.menu-btn{display:none;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:6px 10px}
+.search{flex:1;min-width:120px;max-width:420px;position:relative}
+.search input{width:100%;padding:8px 12px 8px 34px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink);font:inherit;font-size:14px}
+.search:before{content:"⌕";position:absolute;left:12px;top:50%;transform:translateY(-52%);color:var(--muted);font-size:17px}
+.search .cnt{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:12px;color:var(--muted)}
+.tools{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 12px;font-size:13px;white-space:nowrap}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.chip:hover{border-color:var(--accent)}
+
+/* layout */
+.app{display:grid;grid-template-columns:276px minmax(0,1fr);gap:0;max-width:1320px;margin:0 auto}
+.side{position:sticky;top:var(--hh,64px);align-self:start;height:calc(100vh - var(--hh,64px));overflow:auto;padding:16px 10px 40px 16px;border-right:1px solid var(--line)}
+.side h4{margin:4px 8px 8px;font-size:12px;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.nv-ch{margin-bottom:2px}
+.nv-ch>a{display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:10px;color:var(--ink);font-weight:650;font-size:14.5px}
+.nv-ch>a:hover{background:var(--accent-soft);text-decoration:none}
+.nv-ch.on>a{background:var(--accent-soft);color:var(--accent)}
+.nv-ch .pr{margin-left:auto;font-size:11px;color:var(--muted);font-weight:500}
+.nv-sub{display:none;margin:2px 0 6px 18px;border-left:2px solid var(--line);padding-left:8px}
+.nv-ch.on .nv-sub{display:block}
+.nv-sub a{display:block;padding:3px 8px;font-size:13px;color:var(--muted);border-radius:6px}
+.nv-sub a:hover{color:var(--accent);text-decoration:none;background:var(--surface2)}
+.nv-sub a.done{text-decoration:line-through;opacity:.6}
+main{padding:22px clamp(14px,3vw,36px) 80px;min-width:0}
+
+/* hero */
+.hero{background:linear-gradient(135deg,var(--accent),#6a3fc9);color:#fff;border-radius:20px;padding:26px clamp(18px,3vw,34px);box-shadow:var(--shadow)}
+.hero h1{margin:0 0 6px;font-size:clamp(22px,3.4vw,32px);letter-spacing:-.03em;line-height:1.25}
+.hero p{margin:4px 0;opacity:.95}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.hero .meta span{background:rgba(255,255,255,.18);border-radius:999px;padding:4px 12px;font-size:13px}
+:root[data-theme="dark"] .hero{background:linear-gradient(135deg,#2c3584,#4a2c8a)}
+
+/* sections & cards */
+.sec{margin-top:34px}
+.sec>h2{font-size:clamp(20px,2.6vw,26px);letter-spacing:-.025em;margin:0 0 4px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sec>h2 .no{display:inline-grid;place-items:center;min-width:36px;height:36px;border-radius:10px;background:var(--accent);color:var(--accent-ink);font-size:15px;padding:0 8px}
+.sec>.lead{color:var(--muted);margin:2px 0 14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px clamp(14px,2.2vw,22px) 12px;margin:12px 0;box-shadow:var(--shadow)}
+.card>h3{margin:0 0 8px;font-size:18px;letter-spacing:-.02em;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.card>h3 .pg{margin-left:auto}
+.card h4{margin:14px 0 4px;font-size:15.5px;color:var(--accent)}
+.card p{margin:6px 0}
+.card ul,.card ol{margin:6px 0;padding-left:1.25em}
+.card li{margin:3px 0}
+.card li::marker{color:var(--accent)}
+.done-box{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:var(--muted);cursor:pointer;user-select:none;border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--surface2)}
+.done-box input{accent-color:var(--ok)}
+.card.done{opacity:.72}
+.card.done>h3{text-decoration:line-through;text-decoration-color:var(--ok)}
+.pg{font-size:12px;color:var(--muted);background:var(--surface2);border:1px solid var(--line);border-radius:6px;padding:0 6px;font-weight:500;white-space:nowrap}
+
+/* key term */
+.k{background:linear-gradient(transparent 58%,var(--key) 58%);font-weight:650;border-radius:2px;padding:0 1px}
+body.cloze .k{background:var(--key);color:transparent;border-radius:4px;cursor:pointer;text-shadow:none;position:relative}
+body.cloze .k.show{color:var(--key-ink)}
+body.cloze .k:not(.show)::selection{color:transparent}
+.en{color:var(--muted);font-weight:400;font-size:.92em}
+
+/* callouts */
+.note{border-radius:12px;padding:10px 14px;margin:10px 0;font-size:15px;border:1px solid transparent}
+.note>b:first-child{margin-right:6px}
+.note.tip{background:var(--tip-soft);border-color:color-mix(in srgb,var(--tip) 30%,transparent)}
+.note.tip>b:first-child{color:var(--tip)}
+.note.warn{background:var(--warn-soft);border-color:color-mix(in srgb,var(--warn) 30%,transparent)}
+.note.warn>b:first-child{color:var(--warn)}
+.note.lec{background:var(--lec-soft);border-color:color-mix(in srgb,var(--lec) 30%,transparent)}
+.note.lec>b:first-child{color:var(--lec)}
+.note.ok{background:var(--ok-soft);border-color:color-mix(in srgb,var(--ok) 30%,transparent)}
+.note.ok>b:first-child{color:var(--ok)}
+
+/* tables */
+.tw{overflow-x:auto;margin:10px 0;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:520px}
+th,td{padding:8px 11px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--surface2);font-weight:700;position:sticky;top:0;font-size:13.5px}
+tr:last-child td{border-bottom:0}
+td:first-child{font-weight:600}
+.tw.nofirst td:first-child{font-weight:400}
+
+/* grids */
+.g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.mini{border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:var(--surface2)}
+.mini b.t{display:block;margin-bottom:3px}
+.chain{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:8px 0}
+.chain span.s{background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 35%,transparent);border-radius:10px;padding:3px 10px;font-size:14px;font-weight:600}
+.chain span.ar{color:var(--muted)}
+.tag{display:inline-block;font-size:11.5px;border-radius:999px;padding:1px 8px;font-weight:700;vertical-align:1px}
+.tag.must{background:var(--warn-soft);color:var(--warn)}
+.tag.opt{background:var(--surface2);color:var(--muted);border:1px solid var(--line)}
+.tag.new{background:var(--ok-soft);color:var(--ok)}
+
+/* quiz */
+.qbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:10px 0 14px}
+.qbar select,.qbar button{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:7px 12px;font-size:14px;color:var(--ink)}
+.qbar .score{margin-left:auto;font-weight:700}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin:10px 0}
+.q .qh{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:6px;font-size:12.5px;color:var(--muted)}
+.q .qt{font-weight:650;margin:2px 0 8px}
+.q .opts{display:grid;gap:6px}
+.q .opt{text-align:left;border:1px solid var(--line);background:var(--surface2);border-radius:10px;padding:8px 12px}
+.q .opt:hover{border-color:var(--accent)}
+.q .opt.right{background:var(--ok-soft);border-color:var(--ok)}
+.q .opt.wrong{background:var(--warn-soft);border-color:var(--warn)}
+.q .ans{margin-top:8px;padding:8px 12px;border-radius:10px;background:var(--ok-soft);border:1px solid color-mix(in srgb,var(--ok) 35%,transparent);display:none}
+.q.shown .ans{display:block}
+.q .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.q .row button{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:6px 12px;font-size:13.5px}
+.q .row button.good{border-color:var(--ok);color:var(--ok)}
+.q .row button.bad{border-color:var(--warn);color:var(--warn)}
+.q.mark-ok{border-left:5px solid var(--ok)}
+.q.mark-bad{border-left:5px solid var(--warn)}
+details.ans-d{border:1px solid var(--line);border-radius:12px;background:var(--surface);margin:8px 0;padding:0 14px}
+details.ans-d summary{cursor:pointer;padding:10px 0;font-weight:650}
+details.ans-d[open]{padding-bottom:10px}
+details.ans-d .body{border-top:1px dashed var(--line);padding-top:8px}
+.hidden{display:none!important}
+mark.hit{background:var(--key);color:var(--key-ink);border-radius:3px}
+.foot{margin:40px 0 0;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:14px}
+
+/* mobile */
+@media (max-width:980px){
+  .app{grid-template-columns:1fr}
+  .menu-btn{display:inline-block}
+  .side{position:fixed;left:0;top:var(--hh,57px);bottom:0;width:min(86vw,320px);background:var(--surface);z-index:40;transform:translateX(-102%);transition:transform .22s;height:auto;box-shadow:var(--shadow);border-right:1px solid var(--line)}
+  body.nav-open .side{transform:none}
+  .g3{grid-template-columns:1fr}
+  .g2{grid-template-columns:1fr}
+  .top .brand small{display:none}
+  .tools .chip.lbl-long{display:none}
+}
+@media (max-width:640px){
+  .top{gap:6px;padding:8px 10px}
+  .top .brand{display:none}
+  .tools{flex-wrap:nowrap;gap:4px}
+  .chip .lbl-long{display:none}
+  .chip{padding:6px 10px;font-size:12.5px}
+  .search{min-width:0}
+  .search input{padding-left:30px}
+  .hero{border-radius:16px}
+  main{padding-top:14px}
+  .sec>h2 .no{min-width:30px;height:30px;font-size:13px}
+  table{font-size:13.5px;min-width:480px}
+  .tw.fit table{min-width:0}
+}
+@media print{
+  .top,.side,.qbar,.done-box,.menu-btn{display:none!important}
+  .app{display:block}
+  body{background:#fff}
+  .card,.tw,.note{box-shadow:none;break-inside:avoid}
+  #quiz{display:none}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <button class="menu-btn" id="menuBtn" aria-label="목차 열기">☰</button>
+  <div class="brand">성격과 자기 이해<small>시험 직전 정리</small></div>
+  <div class="search"><input id="q" type="search" placeholder="용어·인명 검색 (예: 기능적 자율성)" autocomplete="off"><span class="cnt" id="qcnt"></span></div>
+  <div class="tools">
+    <button class="chip" id="clozeBtn" aria-pressed="false" title="형광 표시된 핵심어를 가리고 눌러서 확인">암기<span class="lbl-long"> 모드</span></button>
+    <button class="chip lbl-long" id="openAll" title="모든 체크 해제/전체 보기">체크 초기화</button>
+    <button class="chip" id="themeBtn" aria-pressed="false">다크</button>
+  </div>
+</header>
+<div class="app">
+<aside class="side" id="side"><h4>목차 · 진행도</h4><nav id="nav"></nav></aside>
+<main id="main">
+<div class="hero">
+  <h1>성격과 자기 이해 · 시험 직전 정리</h1>
+  <p>교재 『최신 성격심리학』 사진 69장(p.79~219)과 수업 녹취 9개를 합쳐 시험에 나올 내용만 추렸습니다.</p>
+  <p>형광 표시 = 핵심어. <b>암기 모드</b>를 켜면 핵심어가 가려지고, 눌러서 확인할 수 있습니다.</p>
+  <div class="meta"><span>3장 초기 특질</span><span>4장 현대 특질</span><span>5장 생물사회적 관점</span><span>6장 정신분석</span><span>서술형 모범답안</span><span>문제풀이 100+</span></div>
+</div>
+
+<section class="sec" id="guide">
+  <h2><span class="no">0</span>시험 안내 · 범위 · 전략</h2>
+  <p class="lead">수업에서 선생님이 직접 한 말만 정리했습니다.</p>
+
+  <div class="card">
+    <h3>시험 형식</h3>
+    <ul>
+      <li><b>객관식</b>(1~5번 중 선택) + <b>단답형</b> + <b>서술형 3문제</b>(꼬리문제 1-1, 1-2 형태).</li>
+      <li>서술형은 <span class="k">지문을 잘 읽고 "무엇을 쓰시오"에 맞게</span> 쓰면 됩니다. 모르면 틀리는 것이고, 질문이 요구하는 것만 정확히 쓰는 연습이 중요합니다.</li>
+      <li>"교재에서 거의 다 나온다"고 했습니다. 범위가 줄어서 <b>지엽적인 디테일(용어·인명·연도·숫자)</b>로 낼 수밖에 없다는 뉘앙스였습니다.</li>
+      <li>시험지 스타일은 <b>긍정심리학 시험과 비슷</b>하다고 했습니다. 긍정심리학은 논문 읽기가 많아서 논문 문제가 많았지만, 이 시험은 거의 교재에서 냅니다.</li>
+      <li>영어 용어는 한글/영어 둘 다 인정(채점 가능). 영어 외 언어는 불가.</li>
+    </ul>
+    <div class="note tip"><b>시험 포인트</b>서술형 연습문제는 교재 각 장 끝(3장 6개, 4장 9개, 5장 9개, 6장 8개)에 있습니다. 이 페이지의 <a href="#essay">서술형 대비</a>에 모범답안을 만들어 두었습니다.</div>
+  </div>
+
+  <div class="card">
+    <h3>시험 범위 <span class="tag must">확인 필요</span></h3>
+    <div class="tw"><table>
+      <tr><th>구분</th><th>내용</th><th>이 페이지에서</th></tr>
+      <tr><td>1장 p.20~25</td><td>수업 녹취·사진에 없음(내용 미확인)</td><td><a href="#ch1">안내</a></td></tr>
+      <tr><td>2장 p.48~56</td><td>성격 평가: 자료 종류, 검사 분류, NEO-PI-R 소개</td><td><a href="#ch2">2장</a></td></tr>
+      <tr><td>3장~6장 p.79~</td><td>초기 특질 · 현대 특질 · 생물사회적 관점 · 정신분석 (자기심리학까지)</td><td><a href="#ch3">3장</a> <a href="#ch4">4장</a> <a href="#ch5">5장</a> <a href="#ch6">6장</a></td></tr>
+    </table></div>
+    <div class="note lec"><b>수업 언급</b>"시험 범위는 20~25쪽, 48~56쪽, 79쪽부터 6장까지"라고 했고, 학생들 사이엔 "1~2단원 빠지고 3~6단원"으로 전해졌습니다. MBTI(p.59~)는 빠졌다는 말이 있었습니다. 클래스룸 공지의 최종 범위를 한 번만 확인하세요.</div>
+    <div class="note warn"><b>주의</b>중년기·노년기는 "특정 용어가 안 나오니 읽어 보라"고만 했습니다. 중요도는 낮지만 요약은 넣어 두었습니다.</div>
+  </div>
+
+  <div class="card">
+    <h3>수업에서 짚은 암기 포인트</h3>
+    <ul>
+      <li>생물 파트(유전자·DNA·염색체)는 중학교 생물 수준이라 "암기로 해결". 행동유전학은 <span class="k">쌍생아 연구·입양 연구</span>, <span class="k">환경 동일성 가정</span>, <span class="k">유전성 추정치 공식</span>, <span class="k">수로화·반응 범위·사회유전체 모형</span>.</li>
+      <li>기질: <span class="k">Thomas &amp; Chess(9차원·3유형)</span> / <span class="k">Buss &amp; Plomin(EAS)</span> / <span class="k">Rothbart</span>를 이름과 함께 구분하라고 했습니다("처음 나온 사람 이름은 쉬우니까…").</li>
+      <li>3층 모형(McAdams &amp; Olson)과 부모 양육 행동 2차원(애정·통제), 낯선 상황 절차(7단계)와 애착 유형.</li>
+      <li>"상호작용 모형 vs 양방향 모형"은 그 정도까지 묻지는 않을 것 같다고 했지만, 차이(한 방향 조절 vs 서로 영향)는 알아 두세요.</li>
+      <li>MMPI·로르샤흐는 "객관적 자기보고형 vs 투사적 검사" 구분 정도만. MBTI 우선·보조 기능은 외울 필요 없음.</li>
+      <li>프로이트: 지형학 모형(의식·전의식·무의식), 구조 모형(원초아·자아·초자아), 방어기제 7종, 심리성적 발달 5단계, 대상관계의 융합→2자→3자 관계.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== 3장 ===================== -->
+<section class="sec" id="ch3">
+  <h2><span class="no">3</span>초기 특질 이론 <span class="pg">p.79~107</span></h2>
+  <p class="lead">Allport → Cattell → Eysenck. 세 사람의 접근·단위·방법·생물학적 기반 비교가 핵심입니다.</p>
+
+  <div class="card">
+    <h3>특질 이론의 배경과 특질의 개념 <span class="pg">p.79·82</span></h3>
+    <ul>
+      <li>과학으로서의 성격심리학은 <span class="k">특질 이론</span>에서 시작했습니다. 이전 정신역동 이론은 개념이 추상적·모호해서 <span class="k">측정 가능성</span>이라는 과학의 기본 조건을 못 갖췄고, 특질이 <b>성격 측정의 기본 단위</b>로 적절하다고 봤습니다.</li>
+      <li>특질 이론가들의 관심 4가지: ①특질을 포괄적으로 기술 ②성격 어휘를 통계분석해 차원 선별 ③생물학적 기반 추적 ④삶의 변인(수명·신체/심리 건강·직무 만족)과의 관계.</li>
+      <li><b>특질</b> = 인간 내부에 실재하는 고유한 신경학적 기반. 서로 다른 자극을 <span class="k">기능적으로 동등하게</span> 처리해 비슷한 행동을 유발하는 시스템. 직접 관찰은 불가능하고 행동으로 발현될 때 유추합니다.</li>
+      <li><span class="k">어휘 가설 lexical hypothesis</span>(Crowne, 2007): 집단 구성원이 중요하게 여기는 성격 특질은 그 집단 언어의 일부가 될 가능성이 높다. 최초 시도는 <span class="k">Francis Galton</span>(1822~1911, 영국): 사전에서 약 1,000개 성격 어휘.</li>
+    </ul>
+    <div class="note lec"><b>수업 언급</b>같은 말이라도 비꼬듯이 들리는지는 "내가 받아들이는 방식"에 달려 있습니다. 분노 경향성이 높은 학생은 학교·여자친구·온라인 게임처럼 상황이 달라도 기능적으로 동등하게 분노를 일으키고, 그 결과 행동이 특질을 드러냅니다. 문화·언어마다 어휘 세분화가 다른 점(파란색 이름이 많은 문화 등)이 어휘 가설 연구의 배경입니다.</div>
+  </div>
+
+  <div class="card">
+    <h3>Allport ① 어휘 연구와 4목록 <span class="pg">p.83</span></h3>
+    <p><span class="k">Allport &amp; Odbert(1936)</span>: Webster's New International Dictionary 약 <b>40만</b> 단어 중 <span class="k">17,953개</span>가 성격·행동 기술어.</p>
+    <div class="tw"><table>
+      <tr><th>목록</th><th>내용</th><th>단어 수</th><th>예</th></tr>
+      <tr><td>① 안정적 성향</td><td>비교적 안정적인 성향(stable disposition)</td><td>4,504</td><td>공격적인, 내향적인</td></tr>
+      <tr><td>② 일시적 상태</td><td>현재의 상태·태도·정서·기분</td><td>4,541</td><td>rejoicing(기뻐하는), frantic(정신없이 서두르는)</td></tr>
+      <tr><td>③ 사회적 평가</td><td>개인 특성에 대한 사회적 평가(특질 단어로 보기 어려움)</td><td>5,226</td><td>worthy(가치 있는), insignificant(하찮은)</td></tr>
+      <tr><td>④ 기타</td><td>위 세 가지에 해당하지 않는 것</td><td>3,682</td><td>pampered(제멋대로 하는), gifted(재능 있는)</td></tr>
+    </table></div>
+    <p class="en">합계 4,504 + 4,541 + 5,226 + 3,682 = 17,953. 수업: "네 번째 목록은 분류하다 만 것 같다"는 지적에 "연구를 다 못한 것일 수 있다"고 답함.</p>
+  </div>
+
+  <div class="card">
+    <h3>Allport ② 공통 특질 vs 개인 특질 → 개인 성향 <span class="pg">p.83~85</span></h3>
+    <div class="tw"><table>
+      <tr><th></th><th>공통 특질 common trait</th><th>개인 특질 individual trait</th></tr>
+      <tr><td>정의</td><td>여러 사람에게 공통으로 확인되는 특질. 진화·문화 경험을 공유해 형성</td><td>개인의 고유한 행동 방향을 결정·동기화하는 특질</td></tr>
+      <tr><td>비교</td><td>정도만 다를 뿐 모든 사람이 가짐 → 개인 간 비교 가능</td><td><span class="k">개인 간 비교 불가능</span></td></tr>
+      <tr><td>분석</td><td>Allport 이후 이론가들이 구조를 분석</td><td>일기·편지·전기 등 사적 기록으로 체계적 분석</td></tr>
+    </table></div>
+    <p>구분이 모호하다는 비판 → <b>1961년 개정판</b>에서 공통 특질 → <span class="k">특질</span>, 개인 특질 → <span class="k">개인 성향 personal disposition</span>(고유한 특질의 조합·패턴, 복잡한 구성 개념)으로 바꿈. 예: '공격적'이라도 A는 <i>망설이면서</i> 공격적, B는 <i>호전적으로</i> 공격적.</p>
+    <h4>개인 성향 3유형 (일반성·일관성 정도 기준)</h4>
+    <div class="tw"><table>
+      <tr><th>유형</th><th>특징</th><th>예시</th></tr>
+      <tr><td><span class="k">주 성향</span> cardinal</td><td>대부분의 생활 영역에 포괄적 영향. <b>소수의 사람에게만</b> 나타남</td><td>나르키소스=자기애, 마더 테레사=인간애</td></tr>
+      <tr><td><span class="k">중심 성향</span> central</td><td>주 성향보다 제한적이나 비교적 폭넓은 일관성. 성격을 몇 개의 <b>블록</b>으로 표현. 한 사람에게 <b>5~10개</b></td><td>친절함, 정직함, 성실함, 인내심, 말수 적은, 소심함</td></tr>
+      <tr><td><span class="k">이차 성향</span> secondary</td><td>상황·시간 일관성이 <b>가장 낮음</b>. 그래도 성격의 한 요소</td><td>특정 음식 기호, 유동적 태도, 특정 집단에 대한 태도</td></tr>
+    </table></div>
+    <div class="note tip"><b>시험 포인트</b>세 유형의 구분은 엄격하지 않고 "편의를 위한 것". 영향력·일관성에 따라 핵심을 선별하는 <span class="k">개별 사례 접근(idiographic)</span>을 중시했습니다. 수업에서 "누군가를 하나의 키워드로 설명할 수 있으면 주 성향, 여러 개로 설명하면 중심 성향"이라고 정리했습니다.</div>
+  </div>
+
+  <div class="card">
+    <h3>Allport ③ 발달과 동기: 기능적 자율성 <span class="pg">p.86~87</span></h3>
+    <ul>
+      <li>발달에 대한 정교한 이론은 제시하지 않음. 과거 경험의 기억은 불완전·부정확해 과거 추적이 부적절하다고 봄. (수업: 대부분 성인 연구 + "현재가 중요"한 관점)</li>
+      <li><span class="k">기능적 자율성 functional autonomy</span>: 과거 경험이 고유한 동기를 유발하지만, 시간이 지나면 동기는 <b>자체적 시스템</b>으로 작동하며 과거 경험과 동기는 <b>기능적으로 관련이 없어진다</b>.</li>
+      <li>예(그림 3.1): 과거 부모의 압박 → 바이올린 연주 동기 → 연주. 현재는 부모의 압박이 없어도 <b>연주 동기만으로</b> 연주.</li>
+      <li>현재의 성격은 과거 경험으로부터 연료를 얻지 않아도 작동하는 <b>완전한 시스템</b>. 시스템을 이해하는 데 개발 역사까지 알 필요는 없다.</li>
+    </ul>
+    <div class="note lec"><b>수업 언급</b>Freud(과거·유아기 경험이 평생 결정한다는 <span class="k">psychic determinism</span>)와 대비. 사람들에게 "왜 그걸 좋아하세요?"라고 물으면 3살 때 경험을 말하는 사람은 드물다는 설명.</div>
+    <h4>기여와 한계 <span class="pg">p.87</span></h4>
+    <div class="g2">
+      <div class="mini"><b class="t">기여 3</b>①특질을 성격 분석의 단위로 제안 ②특질 측정 방법으로 어휘 사용(사전 분석 → 특질 어휘 목록 → Cattell 등 후속 연구 촉진) ③<b>개별 사례 접근</b>의 중요성(법칙정립 nomothetic 접근 vs 개별 사례; 보편적 측면보다 개성적·고유한 측면이 더 많고 중요)</div>
+      <div class="mini"><b class="t">한계 2</b>①특질의 발달과정·기원 설명 부족(신경학적 기반이 있다고 하면서 구체적 이론·근거 없음 → Eysenck가 보완) ②특질 측정 도구 미개발(여러 방법을 권유만 하고 대표 도구는 개발하지 못함)</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Cattell ① 배경과 특질 <span class="pg">p.88~90</span></h3>
+    <ul>
+      <li>영국계. 킹스칼리지 런던에서 화학 전공 → 1차 세계대전의 참상을 보고 <b>인간 행동의 과학적 연구</b>를 결심해 심리학으로 전향. 통계학자 <span class="k">Charles Spearman</span>(요인분석으로 지능 연구)의 도움. 1937 미국 컬럼비아(Thorndike 초청) → 1941 하버드 → <b>1945 일리노이 대학</b> → 정년 후 하와이.</li>
+      <li>특질 = 자극·상황에 대한 일관된 반응 경향성(Allport와 유사). 그러나 Cattell은 <b>공통 특질</b>의 구조 규명에 관심: 모든 인간의 보편적 특질 차원에서 <b>정도 차이</b>로 개인차를 설명(예: 20개 보편 특질 → 각자 고유한 프로파일). 특질 선정 시 <b>포괄성</b>이 중요.</li>
+      <li>자료: Allport &amp; Odbert(1936) 어휘 목록 + <span class="k">요인 분석 factor analysis</span>.</li>
+    </ul>
+    <h4>요인 분석이란 <span class="pg">p.90~91</span></h4>
+    <ul>
+      <li><b>측정 변수</b>: 연구자가 특정 방법으로 측정한 변수. <b>잠재 변수 latent variable</b>: 직접 관찰할 수 없고 측정 변수에 영향을 미치는 추상적·이론적 변수 = <span class="k">요인</span>. 요인 수 &lt; 측정 변수 수.</li>
+      <li>Spearman이 개발·명명. 측정 변수–잠재 변수의 <b>위계적 구조</b>를 분석 → Cattell은 특질이 위계 구조라고 믿고 상위 잠재 특질을 추출해 포괄적이면서 실용적인 차원을 찾으려 했음.</li>
+    </ul>
+    <div class="note lec"><b>수업 언급</b>NEO-PI-R로 예시: '불안·적대감·우울…' 문항에 모두 높게 답하는 사람이 많다면 하나로 묶고, 다른 사람에서 갈라지는 문항은 따로 묶는다 → 수천 명 자료로 반복하면 묶음이 확실해진다.</div>
+  </div>
+
+  <div class="card">
+    <h3>Cattell ② 표면 특질 vs 근원 특질, 16PF <span class="pg">p.91~95</span></h3>
+    <div class="tw"><table>
+      <tr><th></th><th>표면 특질 surface trait</th><th>근원 특질 source trait</th></tr>
+      <tr><td>정의</td><td>직접 관찰 가능한 행동 요소를 담은 특질 어휘들 중 <b>관계가 강한 것들의 군집</b>(외연적으로 한데 묶임)</td><td>표면 특질 <b>이면의 잠재 변수(요인)</b>. 표면 특질의 결정 원인이 되는 근본적 특질</td></tr>
+      <tr><td>관계</td><td colspan="2">하나의 근원 특질이 여러 표면 특질에 영향 / 하나의 표면 특질이 여러 근원 특질의 영향을 받음(영향 강도는 다름)</td></tr>
+    </table></div>
+    <ul>
+      <li><span class="k">16PF</span>(Sixteen Personality Factor Questionnaire; <b>Cattell &amp; Mead, 1949</b>): 어휘 자료 + 실생활 자료 + 질문지 자료 + 객관적 검사 자료로 연구해 <b>16개 근원 특질</b> 구조를 도출.</li>
+      <li>16개는 종류가 섞여 있음: <b>지능(지적 역량) = 능력</b>, <b>정서성 = 기질</b>, <b>보수성 = 태도</b>를 반영하는 특질 등.</li>
+      <li>각 요인은 양극 구조(예: 차분한–걱정 많은, 솔직한–약삭빠른). 수업에서 "차분한–걱정 많은"은 한 축에 놓기엔 어색하다는 토론(차분하지 않아도 걱정 없는 사람이 있다).</li>
+    </ul>
+    <div class="note tip"><b>참고</b>16요인 목록 표(표 3.1, p.92~93)는 제공된 사진에 없습니다. 교재에서 직접 확인하세요. 일반적으로 알려진 16PF 요인: 온정성·추론·정서적 안정성·지배성·쾌활성·규칙 준수·대담성·예민성·경계심·추상성·사적 태도·걱정 많음·변화 개방성·자기 충족성·완벽성·긴장성(번역명은 교재와 다를 수 있음).</div>
+    <h4>16PF 상위 구조(박스, p.95)</h4>
+    <p>16요인을 다시 요인분석하면 5~6개 상위 요인(Hofer, Horn &amp; Eber 1997; Krug &amp; Johns 1986): <span class="k">외향성 · 불안 · 통제 · 독립성 · 민감한 자각 · 능력</span>. 이 중 유일하게 <b>개인의 역량</b>을 재는 '능력'을 제외하면 5개 → 16PF 외 다른 연구에서도 비슷한 5차원이 나옴 → 4장 Big Five.</p>
+    <h4>발달 관점 (수업)</h4>
+    <p>Allport와 달리 Cattell은 <b>성격 형성·발달</b>도 중요하게 다룸: 유아기·아동기·청소년기·성인기·중년기·노년기로 구분. 특히 <b>출생~6세 = 유아기</b>: 기본적 태도·안정감·방어기제가 발달하는 중요한 시기.</p>
+    <h4>기여와 한계 <span class="pg">p.94</span></h4>
+    <div class="g2">
+      <div class="mini"><b class="t">기여 3</b>①방대한 자료의 <b>통계 분석</b>(대표적 특질 연구법으로 자리 잡음) ②16PF로 성격을 <b>포괄적</b>으로 측정(이전 도구는 제한적 목적) ③다양한 원천 자료로 16요인을 <b>교차 검증 cross-validation</b>(특질은 눈에 안 보이므로 다양한 자료로 확인; 보편적 심리특성 연구의 기본 방법론)</div>
+      <div class="mini"><b class="t">한계 2</b>①요인 수가 꼭 16개여야 하나? 너무 많아 해석이 어려움(실용성) ②각 특질의 형성과정·기원을 체계적으로 연구하지 못함. 능력·기질·태도처럼 <b>질적으로 다른 특질</b>이 섞여 있는데 유형 간 관계·발달적 차이 연구가 불충분 → 혼란</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Eysenck ① 배경과 Cattell과의 차이 <span class="pg">p.96~97</span></h3>
+    <ul>
+      <li>독일 베를린 출생 → <b>1934년 나치 박해를 피해 영국</b>으로. 물리학을 원했으나 조건이 안 돼 심리학(유니버시티 칼리지 런던). 1940 박사, 임상심리학자, <b>1955 킹스칼리지 런던 정신과 교수</b>. 과학적 방법론 지향. 학술지 《Personality and Individual Differences》 창간.</li>
+      <li>정신분석 치료 효과를 검토해 <b>효과가 없거나 오히려 악화</b>된다고 주장(Eysenck, 1952). 이후 분석 방법의 통계 오류를 발견 → <b>메타분석</b> 발전 계기. 처음으로 <b>특질의 생물학적 기반</b>을 제시한 사람.</li>
+      <li>Cattell과 공통점: 법칙정립 접근 + 통계 활용.</li>
+    </ul>
+    <div class="tw"><table>
+      <tr><th>비교</th><th>Cattell</th><th>Eysenck</th></tr>
+      <tr><td>분석 방식</td><td><span class="k">자료 기반</span> data-driven: 이론적 가정 없이 자료에서 잠재 구조 탐색</td><td><span class="k">이론 기반</span> theory-driven: 이론적 가정 → 가설 → 자료와의 일치 확인</td></tr>
+      <tr><td>기본 차원</td><td>표면 특질·근원 특질. <b>16개 근원 특질</b>이 기본 차원</td><td>특질 위에 <b>유형(type)</b>이 기본 차원. 유형 = 연속적 차원인 <b>상위 특질</b></td></tr>
+      <tr><td>생물학적 기반</td><td>제시하지 못함</td><td>3개 유형의 생물학적 기반을 구체적으로 제시·체계적 연구</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <h3>Eysenck ② 성격의 4수준 위계 <span class="pg">p.98 (그림 3.4)</span></h3>
+    <div class="chain"><span class="s">구체적 반응</span><span class="ar">→</span><span class="s">습관적 반응</span><span class="ar">→</span><span class="s">특질</span><span class="ar">→</span><span class="s">유형(상위 특질)</span></div>
+    <div class="tw"><table>
+      <tr><th>수준</th><th>정의</th><th>예</th></tr>
+      <tr><td><span class="k">구체적 반응</span> specific response</td><td>단일한 행위나 반응</td><td>농담하기, 누군가에게 미소 짓기, 충동적으로 자동차 사기</td></tr>
+      <tr><td><span class="k">습관적 반응</span> habitual response</td><td>습관적으로 반복되는 행동·반응</td><td>다른 사람을 즐겁게 해 주려는 행동 습관, 너무 빠르게 의사결정 하는 습관</td></tr>
+      <tr><td><span class="k">특질</span> trait</td><td>습관적 행동·반응들 간의 <b>상관</b></td><td>사교성 = 다른 사람을 즐겁게 하려는 습관 + 웃으며 대화를 즐기는 습관</td></tr>
+      <tr><td><span class="k">유형/상위 특질</span> type, supertrait</td><td>특질들의 <b>상관</b></td><td>외향성 = 사교성·활동성·충동성·지배성 (그림: 사회성·충동성·활동성·활기·흥분성)</td></tr>
+    </table></div>
+    <div class="note warn"><b>주의</b>Eysenck의 '유형'은 일반적 의미(질적으로 구분되는 배타적 <b>범주</b>)와 다릅니다. 양쪽 극으로 이어지는 <b>연속적 차원</b>이며 "상대적으로 넓은 범위의 상위 특질"로 이해하세요. (연습문제 5번: Cattell의 근원 특질과 비슷한 위계 수준은? → 여러 표면 행동의 이면에 있는 잠재 요인이라는 점에서 Eysenck의 <b>유형(상위 특질)</b> 수준과 유사하고, 관찰 가능한 행동 군집인 표면 특질은 Eysenck의 <b>특질</b> 수준과 대응시킬 수 있습니다. 정확한 해설은 교재 기준으로 한 번 더 확인하세요.)</div>
+  </div>
+
+  <div class="card">
+    <h3>박스: 유형과 특질 — 범주 모형 vs 차원 모형 <span class="pg">p.99~100</span></h3>
+    <ul>
+      <li>유형(type) = <b>범주 category</b>(질적 구분), 특질(trait) = <b>차원 dimension</b>(양적 차이, 연속) (Meehl, 1992).</li>
+      <li>고대 그리스·로마 <b>Galen</b>: 히포크라테스 체액설 확장 → 4가지 성격 유형 (교재 표기 기준):</li>
+    </ul>
+    <div class="tw"><table>
+      <tr><th>과다한 체액</th><th>유형</th><th>교재의 설명</th></tr>
+      <tr><td>혈액</td><td><span class="k">다혈질</span> sanguine</td><td>쉽게 화를 내고 공격 행동을 보이는 성격</td></tr>
+      <tr><td>흑담즙</td><td><span class="k">우울질</span> melancholic</td><td>우울감을 빈번하게 경험</td></tr>
+      <tr><td>황담즙</td><td><span class="k">담즙질</span> choleric</td><td>진취적이고 낙관적</td></tr>
+      <tr><td>점액</td><td><span class="k">점액질</span> phlegmatic</td><td>냉정하고 끈기 있음</td></tr>
+    </table></div>
+    <div class="note warn"><b>함정</b>일반 상식(다혈질=활발·낙관, 담즙질=화·공격)과 <b>반대</b>로 서술돼 있습니다. 시험은 교재 표기를 따르세요. (교재 원문에 sanguine이 'anguine'으로 오타.)</div>
+    <ul>
+      <li><b>Jung</b>: 내향형/외향형, 감각형/직관형, 사고형/감정형. <b>Kretschmer</b>(1888~1964): 세장형(마르고 여윈)·비만형(뚱뚱)·운동형(근육질) + 각 유형의 정신병리적 취약성. 유형론자는 <b>질적으로 구분되며 연속적이지 않다</b>고 가정(내향형–외향형 사이에 연속성 없음).</li>
+      <li>특질론자(Allport, Cattell, Eysenck)는 <b>양적 차이만</b> 있고 질적 차이는 없다고 가정.</li>
+    </ul>
+    <div class="tw"><table>
+      <tr><th></th><th>범주 모형(전통적 유형론)</th><th>차원 모형(특질론)</th></tr>
+      <tr><td>측정</td><td>조건 충족 여부로 분류 → <b>명목 변수</b>(내향형=1, 아니면 0)</td><td>연속값 측정(문항 0~6점 합산) → <b>연속 변수</b></td></tr>
+      <tr><td>원인</td><td>범주마다 원인이 따로 있다고 가정 → 연구·개입도 개별적</td><td>같은 차원이면 <b>원인도 공유</b></td></tr>
+    </table></div>
+    <p>메타분석(Haslam et al., 2020): <b>차원 모형</b>으로 확인된 변인이 범주 모형 변인보다 약 <span class="k">5배</span> 많음. 범주로 확인된 것은 알코올사용장애·간헐적 폭발장애·도박장애·자폐증·자살 위험·성도착증 등 일부.</p>
+  </div>
+
+  <div class="card">
+    <h3>Eysenck ③ 성격의 세 차원 <span class="pg">p.100~101</span></h3>
+    <p>외향성·신경증을 먼저 제안, <b>나중에 정신증</b> 추가. 외향성·신경증은 다른 연구에서도 일관되게 확인되지만, 정신증은 학계 인정이 상대적으로 약함.</p>
+    <div class="tw"><table>
+      <tr><th>차원</th><th>구성 특질</th><th>높은 사람 / 반대극</th></tr>
+      <tr><td><span class="k">외향성</span> Extraversion</td><td>사교성·활동성·자기주장성·충동성·감각 추구·지배성</td><td>높으면 어울려 노는 것 좋아함, 친구 많음, 순간 기분 따라 행동. 반대극 <b>내향성</b>: 혼자 선호, 친구 적음, 익숙한 환경, 심사숙고·계획적</td></tr>
+      <tr><td><span class="k">신경증 성향</span> Neuroticism (신경과민성)</td><td>불안·우울·낮은 자기 존중감·변덕스러움·죄책감</td><td>정서적 <b>불안정</b>을 반영. 부정 정서를 빈번히 경험하고 자기 가치감이 낮음. 반대극 <b>정서적 안정</b>: 부정 정서 적고 침착</td></tr>
+      <tr><td><span class="k">정신증 성향</span> Psychoticism</td><td>공격성·냉담함·비인간성·반사회성·자기중심성·<b>창의성</b></td><td>별다른 죄책감 없이 타인에게 반복적으로 해를 끼치는 정신병질·반사회적 성격 + 일부 조현병적 경향. 높은 아동은 학습 문제·비행, <b>심리치료 효과 적음</b></td></tr>
+    </table></div>
+    <div class="note lec"><b>수업 언급</b>임상 세팅의 쉬운 구분: 통원 치료가 가능하고 일상에 지장은 있지만 극복 중이면 neuroticism, 자·타해 위험이 커 보호·격리가 필요하면 psychotic. 조현병의 환각·망상, 반사회성 성격장애가 psychoticism 쪽. 창의성은 "너무 창의적이라 소통이 어려운" 경우.</div>
+  </div>
+
+  <div class="card">
+    <h3>Eysenck ④ 세 차원의 생물학적 기반 <span class="pg">p.101~104</span></h3>
+    <ul>
+      <li>Allport도 특질의 실재를 제안했지만 <b>구체적 신경학적 기반을 제안·검증한 것은 Eysenck가 최초</b>.</li>
+      <li><b>외향–내향 = 뇌의 각성 체계</b>(Eysenck, 1967). <span class="k">각성 arousal</span> = 생리·심리적으로 깨어 있는 정도. 각성 수준을 조절하는 구조: <b>뇌간(brain stem)</b>의 <span class="k">망상체 reticular formation</span>(척수에서 오는 자극 정보를 받아 전반적 각성 수준 조절, 너무 낮지도 높지도 않게 <b>최적 각성 수준</b> 유지).</li>
+      <li><b>내향적</b>: 자극에 쉽게 각성 → 많은 자극에 과각성 → 자극을 피함(대인관계는 처리할 자극이 많아 꺼림). <b>외향적</b>: 각성이 쉽게 안 올라가 → 최적 범위를 위해 <b>적극적으로 자극을 찾아다님</b>(대인 상호작용·흥분 추구). 여러 연구가 지지(Bullock &amp; Gilliland 1993; Gale 1983).</li>
+      <li><b>신경증–정서적 안정 = 변연계 limbic system(내장뇌 visceral brain)</b>의 <span class="k">자율신경계</span> 조절 특성(Eysenck, 1967). 변연계: <b>편도체 amygdala · 해마 hippocampus · 시상하부 hypothalamus</b> 등.
+        <ul><li><b>교감신경계</b>: 외부 스트레스 자극에 빠르게 반응(심박수↑, 소화 억제). <b>부교감신경계</b>: 심박수 늦추고 소화 활성화, 회복.</li>
+        <li>정서적으로 불안정한 사람 = 스트레스에 빠르게 반응하고 쉽게 못 빠져나옴 → 교감신경계가 쉽게 활성화·오래 유지, 부교감은 상대적 억제.</li>
+        <li>각성 가설만큼 지지를 얻진 못했지만, 편도체 등이 정서 경험에 관여한다는 점은 여러 연구로 확인(Eysenck 1990; LeDoux 2000).</li></ul></li>
+      <li><b>정신증 성향</b>: 신경학적 기반을 <u>구체적으로 제시하지 못함</u>. 후보: 세로토닌·도파민(신경전달물질), 성호르몬, <b>인간백혈구항원(HLA) 체계</b>. 연구 부족(Eysenck 1983).</li>
+    </ul>
+    <h4>기여와 한계 <span class="pg">p.104~105</span></h4>
+    <div class="g2">
+      <div class="mini"><b class="t">기여</b>외향성·신경증은 현대 성격심리학이 인정하는 <b>핵심 차원</b>. 특히 외향성의 각성 가설이 후속 연구로 지지 → <b>특질의 안정적 신경학적 기반을 밝힌 첫 사례</b>, 성격의 생물학적 이론으로 간주.</div>
+      <div class="mini"><b class="t">한계 3</b>①정신증 성향은 개념적 명확성·타당성 부족, 신경학적 기반 불분명(정신증과 반사회성을 한 차원으로 본 것이 이상심리학 이론과 안 맞음) ②신경학적 기반이 불분명해 후속 연구 부족 ③<b>차원 수가 너무 적음</b>(포괄적 이해 한계, 임상·교육 현장에서 정보량 부족) → 5요인 등으로 보완</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>3장 한눈 비교: Allport · Cattell · Eysenck</h3>
+    <div class="tw"><table>
+      <tr><th></th><th>Allport</th><th>Cattell</th><th>Eysenck</th></tr>
+      <tr><td>핵심 접근</td><td>개별 사례(idiographic)</td><td>법칙정립 + 요인분석(자료 기반)</td><td>법칙정립 + 통계(이론 기반)</td></tr>
+      <tr><td>핵심 개념</td><td>공통·개인 특질 → 개인 성향(주·중심·이차), 기능적 자율성</td><td>표면 특질 / 근원 특질, 16PF</td><td>4수준(구체적 반응→습관→특질→유형), 3유형</td></tr>
+      <tr><td>특질/차원 수</td><td>(고정 수 없음) 중심 성향 5~10개/사람</td><td>16개 근원 특질 (상위 5~6개)</td><td>3개(외향성·신경증·정신증)</td></tr>
+      <tr><td>측정 도구</td><td>개발 못 함(사적 기록 분석 권유)</td><td><b>16PF</b></td><td>(교재에 도구 언급 없음)</td></tr>
+      <tr><td>생물학적 기반</td><td>있다고 주장만, 구체성 없음</td><td>제시 못함</td><td><b>제시</b>(망상체·변연계·자율신경)</td></tr>
+      <tr><td>발달</td><td>정교한 이론 없음, 기능적 자율성</td><td>시기 구분, 유아기(~6세) 중시</td><td>기원=생물학적 기반</td></tr>
+      <tr><td>한계</td><td>기원·측정 도구 부족</td><td>요인 너무 많음, 기원 불명, 이질적 특질 혼재</td><td>정신증 불명확, 차원 너무 적음</td></tr>
+    </table></div>
+  </div>
+</section>
+<!-- ===================== 4장 ===================== -->
+<section class="sec" id="ch4">
+  <h2><span class="no">4</span>현대 특질 이론 <span class="pg">p.109~139</span></h2>
+  <p class="lead">성격 5요인(Big Five)과 HEXACO. 5요인 각각의 정의·하위요소·연령 변화·임상 적용, 그리고 HEXACO와의 차이가 핵심입니다.</p>
+
+  <div class="card">
+    <h3>배경: 5요인 모형이 나오기까지 <span class="pg">p.110~113</span></h3>
+    <ul>
+      <li>문제의식: 특질의 <b>구조</b>. Allport는 구조에 관심이 적었고, Cattell은 16개·Eysenck는 3개 → 후대는 "너무 많거나 너무 적다" → 중간 정도 구조를 탐색 → <b>공교롭게도 5개</b> 차원이 여러 연구에서 확인.</li>
+      <li><b>위협</b>: "특질이 행동을 결정한다"는 가정에 사회학습·인지 이론가들이 의문을 제기(<span class="k">Mischel, 1968</span>) → 특질 연구의 <b>암흑기 약 10년</b>(개인–상황 논쟁). 이후 일부 연구가 <b>장기간 누적된 행동의 효과</b>를 반영하는 변인(심리장애·삶의 질·행복·직무 만족 등)과 특질의 관계로 중요성을 입증해 재부각.</li>
+    </ul>
+    <div class="tw"><table>
+      <tr><th>연도</th><th>사람</th><th>내용</th></tr>
+      <tr><td>1949</td><td><span class="k">Fiske</span> (시카고대)</td><td>22개 척도 분석 → 5요인: 사회적 적응성·정서적 통제·동조성·지적 호기심·자신감 있는 자기 표현</td></tr>
+      <tr><td>1958</td><td><span class="k">Tupes &amp; Christal</span> (미 공군)</td><td>긍정정서지향성 surgency·우호성 agreeableness·신뢰성 dependability·정서적 안정성 emotional stability·교양 culture (Fiske의 지적 호기심과 유사)</td></tr>
+      <tr><td>1963</td><td><span class="k">Norman</span> (미시건대)</td><td>surgency → 외향성/surgency, dependability → <b>성실성</b>. 현대 5요인 기본틀 거의 완성</td></tr>
+      <tr><td>1968</td><td><span class="k">Walter Mischel</span></td><td>『Personality and Assessment』: 특질–행동 상관이 <b>.3</b>을 넘기 어렵다. 상황 영향력 &gt; 개인 영향력 → 개인–상황 논쟁</td></tr>
+      <tr><td>1978</td><td><span class="k">Costa &amp; McCrae</span> (NIH)</td><td><b>NEO</b>(Neuroticism–Extroversion–Openness) 모형 → 1985 <b>NEO-PI</b></td></tr>
+      <tr><td>1981</td><td>Digman &amp; Takemoto-Chok (하와이대)</td><td>Cattell·Tupes·Norman 자료 재분석 → 5요인 확인</td></tr>
+      <tr><td>1981</td><td><span class="k">Goldberg</span> (오리건대)</td><td>일관되게 확인되는 5요인을 <b>'Big Five'로 명명</b>. 1990 재확인</td></tr>
+      <tr><td>1992</td><td>Costa &amp; McCrae</td><td>NEO에 우호성·성실성 추가 → <span class="k">NEO-PI-R</span></td></tr>
+    </table></div>
+    <ul>
+      <li>상관계수 해석(Cohen, 1988): 0~1, 사회과학에서 .1 이상 작은, <b>.3 이상 중등도</b>, .5 이상 강한 상관. Mischel은 특질–행동, 여러 상황 간 행동 상관이 .3을 넘기 드물다고 지적.</li>
+      <li>한국 포함 여러 문화권에서 5요인 구조 확인(안창규·채준호 1997; McCrae et al. 1998) → <b>횡문화적 일치성</b> = 보편적 특성을 반영한다는 주장(McCrae &amp; Costa 1997) 지지.</li>
+      <li>박스: Paul Costa(시카고대 인간발달 박사) · Robert McCrae(보스턴대 성격심리학 박사). 둘 다 1978년 <b>국립노화연구소(NIH)</b>. 노화 연구 중 성격에 주목: 긴 시간 반복되는 행동 패턴·결과(건강·수명·삶의 질)와 특질의 관계.</li>
+    </ul>
+    <div class="note lec"><b>수업 언급</b>NEO-PI-R의 'R'은 보통 Revised. NEO는 Neuroticism·Extroversion·Openness 3개를 먼저 재는 인벤토리로 시작해 이름이 남음(I = Inventory).</div>
+  </div>
+
+  <div class="card">
+    <h3>5요인 총정리표 <span class="pg">표 4.1 · p.123</span> <span class="tag must">필수</span></h3>
+    <div class="tw"><table>
+      <tr><th>요인</th><th>하위 6요소 (NEO-PI-R)</th><th>높은 사람</th><th>낮은 사람</th></tr>
+      <tr><td><span class="k">신경과민성 N</span><br><span class="en">Neuroticism</span></td><td>불안 · 적대감(분노) · 우울 · 자의식 · 충동성 · 스트레스 취약성</td><td>걱정하는, 긴장하는, 감정적인, 불안정한, 부족하다고 느끼는, 건강을 염려하는</td><td>침착한, 이완된, 정서적으로 안정된, 강건한, 스스로 만족하는</td></tr>
+      <tr><td><span class="k">외향성 E</span><br><span class="en">Extroversion</span></td><td>따뜻함 · 사교성 · 주장성 · 활동성 · 흥분 추구 · 긍정 정서</td><td>사교적, 활동적, 낙관적, 다정한, 재미 추구, 말수 많음, 사람 지향적</td><td>내성적, 활기 없는, 냉철한, 조용한, 말수 적은, 과제 지향적</td></tr>
+      <tr><td><span class="k">개방성 O</span><br><span class="en">Openness to experience</span></td><td>상상력 · 심미안 · 감정 표현 · 색다른 행동 · 색다른 생각 · 비관습적 가치</td><td>관습에 얽매이지 않는, 호기심 많은, 상상력 풍부, 흥미 범위 넓은, 창의적, 독창적</td><td>관습적인, 현실적인, 흥미 범위 좁은, 예술적이지 않은, 분석적이지 않은</td></tr>
+      <tr><td><span class="k">우호성 A</span><br><span class="en">Agreeableness</span></td><td>신뢰 · 솔직함 · 이타성 · 순응성 · 겸손함 · 온유함</td><td>마음이 약한, 온화한, 사람을 잘 믿는, 잘 도와주는, 너그러운, 잘 속는, 솔직한</td><td>냉소적, 무례한, 의심 많은, 비협조적, 앙심 품는, 무자비한, 짜증 잘 내는, 타인을 조종하는</td></tr>
+      <tr><td><span class="k">성실성 C</span><br><span class="en">Conscientiousness</span></td><td>유능성 · 질서 정연함 · 책임감 · 성취 추구 · 자기절제 · 신중함</td><td>체계적, 신뢰할 수 있는, 열심히 일하는, 꼼꼼한, 정돈된, 시간을 잘 지키는, 야망 있는, 끈기 있는</td><td>목표 없는, 신뢰할 수 없는, 게으른, 부주의한, 해이한, 태만한, 의지 약한, 향락적인</td></tr>
+    </table></div>
+    <p><b>평가 대상 요약</b>: N=정서적 불안정성/적응성 · E=대인관계 상호작용의 정도·강도, 활동 수준, 자극 욕구, 즐거움 느끼는 역량 · O=경험을 주도적으로 추구·감상하는 정도, 익숙하지 않은 것에 대한 감내력 · A=동정심↔적대감 연속선 · C=목표 지향 행동의 조직화·동기·끈기.</p>
+    <div class="note tip"><b>암기 팁</b>N-E-O-A-C = OCEAN. 5요인 하위요소 중 <b>분노(적대감)는 N에 속함</b>(→ HEXACO에서는 우호성으로 이동). <b>겸손함·솔직함은 A에 속함</b>(→ HEXACO에서는 정직-겸손으로 이동).</div>
+  </div>
+
+  <div class="card">
+    <h3>신경과민성(N) 상세 <span class="pg">p.114~115</span></h3>
+    <ul>
+      <li>불안·우울·분노 등 <b>부정 정서</b>를 빈번하게/강하게 경험하는 경향. 본래 '신경증 환자'의 특성을 포착하는 개념.</li>
+      <li><span class="k">신경증 neurosis</span> = 현실 검증력에 심각한 문제는 없는 심리장애. 현대 이상심리학에선 거의 안 쓰고 대신 <span class="k">부정 정서성 negative emotionality</span>(부정 정서를 빈번히 경험) / <span class="k">정서적 불안정성 emotional instability</span>(강렬한 부정 정서가 쉽게 유발)이라는 용어를 씀.</li>
+      <li>높으면 스트레스에 취약, 수치심·죄책감, 충동적·회피적 행동, 대인관계에서 적대·분노 → 갈등. 신체질병·심리장애와 밀접, 삶의 질 저하(Lahey 2009). Barlow 등(2014): 다양한 정서장애의 <b>공통 원인</b>.</li>
+      <li><b>적응적 측면</b>: 부정 정서는 위협으로부터 유기체를 보호(불안 = 미래 부정 사건을 예측해 미리 피함; Watson &amp; Casillas 2003). Tamir(2005): 노력이 필요한 과제에서 불안·걱정이 많아 과제 성취↑. Graham et al.(2020) <span class="k">건강한 신경과민성 healthy neuroticism</span> = <b>신경과민성 + 성실성이 함께 높을 때</b> 흡연·음주 적고 운동 많은 건강 행동.</li>
+      <li><b>연령</b>: 90여 개 종단연구 분석(Roberts, Walton &amp; Viechtbauer 2006) → <b>20~40세 점진적 감소</b>, 40세 이후 큰 변화 없음.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>외향성(E) 상세 <span class="pg">p.115~117</span></h3>
+    <ul>
+      <li>대인관계 자극 선호, 즐거움·흥분 추구, 긍정 정서를 많이 경험 → <span class="k">긍정 정서성 positive emotionality</span>. 사교적이고 먼저 다가가 말을 걸며 긍정 정서를 잘 표현(다정). 새롭고 재미있고 흥분되는 일 선호.</li>
+      <li><b>오해 ①</b>: 외향성 ≠ 신경과민성의 반대 삶. 외향성은 우울 증상과 <b>약한~중간 부적 상관</b>, 불안과는 대체로 무관(Jylhä &amp; Isometsä 2006; 신경과민성은 우울·불안과 강한 정적 상관). 하위요소 중 <b>흥분 추구</b>는 양극성장애와 정적 관계(Watson et al. 2015). 외향적이라고 심리장애가 예방되진 않음.</li>
+      <li><b>오해 ②</b>: 직무 성과 — 활발한 사회적 상호작용이 필수인 <b>관리직·판매직</b>을 제외하면 외향성은 직무 성과와 별 관계 없음(Barrick &amp; Mount 1991).</li>
+      <li><b>연령</b>: 하위요소별로 다름. <span class="k">사회적 지배성(주장성)</span>은 연령↑ 증가, <span class="k">사회적 활력(활동성)</span>은 50세 이후 점차 감소(Roberts et al. 2006).</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>개방성(O) 상세 <span class="pg">p.117~119</span></h3>
+    <ul>
+      <li>호기심이 많고 다양한 경험·가치에 개방적. 초기 명칭: 지적 호기심 inquiring intellect · 지성 intellect · 교양 culture.</li>
+      <li>높은 사람: 다양한 경험·창작물의 아름다움·독창성을 즐김, 기존 관습·인식 틀에 안 얽매임, 포용적이나 집단 지침을 맹목적으로 따르지 않음(주관에 따라 행동), 감정을 잘 자각하고 눈치 안 보고 표현.</li>
+      <li><b>개방성 vs 외향성</b>: 둘 다 새로운 경험 추구를 포함해 비슷하지만 <b>다른 사람을 대하는 태도·상호작용 양상</b>에서 구분(Aluja et al. 2003: 흥분 추구↔상상력·감정 표현 중간 정도 상관, 개방성 '감정 표현'↔외향성 '사교성·주장성' 중간 정도; 총점끼리 중간 정도 상관; 나머지 하위요소는 별 관련 없음).</li>
+      <li>낮은 사람의 핵심 = <span class="k">관습성</span>: 기존 시스템을 보호·유지, 기존 권위·전통에 수용적, 질서·안정 추구, 감정 억제(개인 자유보다 집단 안정 우선).</li>
+      <li><b>연령(비선형)</b>: <b>20세까지 급격히 증가</b> → 이후 증가율 감소 → <b>50세 이후 하락</b>.</li>
+    </ul>
+    <div class="note tip"><b>박스: 개방성과 정치적 성향</b><b>보수주의</b>(현재 시스템 유지) vs <b>진보주의</b>(시스템 개선). 일관된 관련: <b>개방성 ↔ 진보/자유주의(정적 상관)</b>, <b>성실성 ↔ 보수주의(정적 상관)</b>(Gerber et al. 2010; Jonason 2014). 단 인과는 단정 불가: 종단연구가 매우 적음(Ekstrom &amp; Federico 2019: 개방성 낮을수록 추후 보수 증가 vs Osborne &amp; Sibley 2020: 개방성이 보수적 태도를 유의하게 예측 못함).</div>
+  </div>
+
+  <div class="card">
+    <h3>우호성(A) 상세 <span class="pg">p.118~120</span></h3>
+    <ul>
+      <li>타인에게 우호적·협력적인 태도·행동 경향. 초기 명칭: <b>동조성 conformity</b>.</li>
+      <li>높은 사람: 다른 사람의 말을 잘 믿고(악의·다른 의도를 가정하지 않음), 솔직 표현을 감추거나 낮춤, 자신과 타인의 유익이 충돌하면 타인 우선(이타적 행동), 동조·순응, 타인의 정서적 고통에 민감.</li>
+      <li>Wilmot &amp; Ones(2022): 우호성은 <b>대인관계 욕구·자기초월·자비심·타인과의 긍정적 관계</b>와 강한 정적, <b>권력·오만함</b>과 강한 부적, 삶 만족·행복과 약~중 정적, 심리 문제와 약한 부적, 신체 건강 지표와는 무관.</li>
+      <li><b>과도하면 부적응</b>: 순진하게 믿다 사기, 자기 욕구·안위를 무시한 과도한 희생, 지나친 의존 → <span class="k">의존성 성격</span> dependent personality(Samuel &amp; Gore 2012).</li>
+      <li><b>연령</b>: 증가(Roberts 2006). 나이가 많을수록 이타성↑(Sparrow 2021), 타인 신뢰↑(Li &amp; Fung 2013). 청소년기엔 사회성·사회 기술(타인 입장 사고·공감·표현)이 발달하며 우호성이 향상(5장 연결).</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>성실성(C) 상세 <span class="pg">p.119~122</span></h3>
+    <ul>
+      <li>책임감이 강하고 성취 지향적이며 자기 조절을 잘하는 경향. 초기 명칭: <b>신뢰성 dependability</b>(믿고 일을 맡길 수 있음 — 성취 지향·자기관리를 다 포괄하기엔 제한적이라 '성실성' 채택).</li>
+      <li>높은 사람: 뚜렷한 목표·기준을 설정하고 달성, 계획적 실행, 욕구·감정을 통제해 흐트러지지 않고 지속, 철저한 분석·조직화, 꼼꼼 → 신뢰.</li>
+      <li><span class="k">직무 성과와 가장 포괄적이면서 안정적인 정적 상관</span>을 보이는 요인 = 성실성(Barrick &amp; Mount 1991). 경제적 수입·삶 만족도·긍정 정서와 정적 상관(Duckworth et al. 2012), 건강 도움 행동↑(Bogg &amp; Roberts 2004), <b>수명이 더 김</b>(Martin &amp; Friedman 2000).</li>
+      <li><b>극단 → 부적응</b>: 높은 기준을 지키려는 경향이 지나치면 <span class="k">강박적 성격</span>(obsessive-compulsive personality; 성실성의 부적응적 측면 측정 도구일수록 강박성 성격장애 증상과 강한 정적 상관, Samuel &amp; Widiger 2011). 하위요소 '유능성'의 극단 = <b>완벽주의</b>.</li>
+      <li><b>연령</b>: 꾸준히 상승. 세부: 근면성·충동 통제·신뢰성은 초기 성인기&lt;중년기, <b>질서 정연함(orderliness)은 차이 없음</b>(Jackson et al. 2009).</li>
+    </ul>
+    <div class="note tip"><b>그림 4.1 연령별 변화(Roberts 2006) 요약</b>사회적 활력=하락 · 사회적 지배성=급상승 후 완만 · 우호성=점진 상승 · 성실성=꾸준히 상승 · 정서적 안정성=상승 후 완만 · 개방성=20대 급상승 후 완만 → 50대 이후 하락.</div>
+  </div>
+
+  <div class="card">
+    <h3>5요인 이론 성격 체계 (Five Factor Theory) <span class="pg">p.124~126</span> <span class="tag must">필수</span></h3>
+    <p>5요인 모형은 특질 구조만 제시하고 특질이 다른 변인에 어떻게 영향을 주는지는 설명하지 못함 → 이를 보완한 통합 이론(<span class="k">Costa &amp; McCrae, 1994</span>; McCrae &amp; Costa 1996).</p>
+    <div class="g2">
+      <div class="mini"><b class="t">핵심 요소 core components (사각형)</b>
+        <ul><li><span class="k">기본적 성향 basic tendencies</span>: 생물학적 기반을 갖는 기본 성격 특질(N·E·O·A·C). 관찰 가능한 행동 패턴이 아니라 다양한 행동·경험으로 추측하는 추상적 심리적 잠재력.</li>
+        <li><span class="k">특징적 적응 characteristic adaptation</span>: 기본적 성향이 구체적으로 발현된 것(문화적 영향이 반영된 개인적 성향의 발현; 개인 목표·추구·태도). 관찰 가능한 특징적 적응으로 기본적 성향을 추론.</li>
+        <li><span class="k">자기개념 self-concept</span>: 자기와 관련된 인지적·정서적 내용을 담은 기억/인식 체계. 자기 관련 정보 처리·저장, 자기에 대한 태도·느낌·행동 동기화.</li></ul></div>
+      <div class="mini"><b class="t">주변 요소 peripheral components (원형)</b>
+        <ul><li><span class="k">생물학적 기반</span>: 성격 특질을 결정하는 유전적·신경생물학적 요인.</li>
+        <li><span class="k">인생 경험 objective biography</span>: 개인의 특징적 적응이 <b>생애사적 사건</b>으로 드러난 것(예: 성취가 자기개념의 중요한 부분인 사람은 관련 목표 설정·추구 행동을 전 생애에 걸쳐).</li>
+        <li><span class="k">외부적 영향 external influences</span>: 문화적 규범·생활 사건 등 개인 삶에 영향을 미치는 외부 요인. 인생 경험·특징적 적응에 영향을 주고 동시에 인생 경험의 영향도 받음.</li></ul></div>
+    </div>
+    <div class="chain"><span class="s">생물학적 기반</span><span class="ar">→</span><span class="s">기본적 성향</span><span class="ar">→</span><span class="s">특징적 적응</span><span class="ar">→</span><span class="s">자기개념</span><span class="ar">/</span><span class="s">인생 경험</span></div>
+    <ul>
+      <li><b>기본적 성향 → 특징적 적응은 일방향</b>(특징적 적응이 기본적 성향에 직접 영향 못 미침). 생물학적 기반 → 특질도 일방향. 외부적 영향·인생 경험도 특징적 적응에 영향.</li>
+      <li>5요인 이론 성격 체계 = 생물학적 기반을 가진 특질이 외부 요인과 상호작용해 특징적 경험·행동으로 드러나는 과정을 통합적으로 묘사.</li>
+    </ul>
+    <div class="note warn"><b>연결</b>5장의 McAdams &amp; Olson 3층 모형: 1층 기질/특질 = 기본적 성향, 2층 특징적 적응(5요인 이론의 특징적 적응과 유사), 3층 서사 정체성.</div>
+  </div>
+
+  <div class="card">
+    <h3>5요인의 임상적 적용 <span class="pg">p.126~130</span></h3>
+    <ul>
+      <li>5요인은 임상 활용을 염두에 두고 개발되지 않음(어휘 가설 기반, 사전 어휘 분석 → 경험적 도출 = 어떤 의미에서 <b>탈이론적</b>). 활용 영역엔 제한 없음.</li>
+      <li><span class="k">성격장애 personality disorder</span> = 성격적 특성이 심각한 부적응이나 정서적 고통을 초래. 두 입장: ①정상 성격과 <b>질적으로 다른</b> 독특한 비정상 성격 → 5요인은 별 도움 안 됨 ②특정 성격 특성이 <b>양적으로 과도하거나 지나치게 약한</b> 경우(<b>차원적 관점</b>) → 5요인을 임상에 쓰는 연구자들의 입장.</li>
+      <li>5요인의 극단적 형태가 특정 성격 문제와 연결(Costa &amp; Widiger 2002; Samuel &amp; Widiger 2008): 성실성 하위 유능성의 극단 = <b>완벽주의</b> → 강박성 성격장애 주요 증상(Samuel et al. 2012); 과도한 의존·회피·정서적 불안정 등.</li>
+      <li><span class="k">Five Factor Form(FFF)</span>(Rojas &amp; Widiger 2014): 30개 NEO-PI-R 하위요인 × 양극(총 60개 극단) 각각에 <b>부적응적 형태 + 적응적 형태</b> 기술. 5점 척도: 5=부적응적으로 높음, 4=높음(정상 범위), 3=중간, 2=낮음(정상 범위), 1=부적응적으로 낮음.</li>
+      <li>예(우호성-겸손함): 5점 자기를 지우는·자기를 폄하하는 / 4점 겸허한·겸손한 / 3점 중립 / 2점 자신감 있는 / 1점 허풍 떠는·허영심 많은·허세 부리는·오만한. (불안: 5 두려워하는·불안한 … 1 위험 조짐을 의식 못함)</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>5요인 모형 비판 4가지 <span class="pg">p.131</span></h3>
+    <ol>
+      <li><b>개인의 성격 구성요소가 아님</b>: 요인분석은 다수의 사람을 대상으로 개인차를 반영하는 차원을 찾는 방법 → '사람들 간 차이를 가져오는 성격 차원'일 뿐 '개인의 성격을 구성하는 요소'는 아님(특정 개인의 성격이 그 구조를 따른다고 주장 불가).</li>
+      <li><b>5개가 아니다</b>: 영어권 이외 국가에서 5요인 아닌 <b>6요인 구조</b>가 반복 확인 → 1개 추가(Ashton &amp; Lee 2007).</li>
+      <li><b>이론적 기반 취약</b>: 특별한 이론 가정 없이 자료 기반 분석(탈이론적). 결함 자체는 아니나 "왜 꼭 5개인지, 각 차원의 기원이 무엇인지" 답할 수 없음.</li>
+      <li><b>역동성·모순·불일치를 설명 못함</b>: Costa &amp; McCrae(1994)가 5요인 이론 성격 체계로 보완하려 했으나 많은 부분 정교화되지 않았고 후속 연구가 적음.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h3>HEXACO ① 배경: 왜 6요인인가 <span class="pg">p.132~133</span></h3>
+    <ul>
+      <li>5요인은 포괄적이지만 일부 연구자는 "충분히 포괄적이지 않다" → <b>비영어권 연구에서 6요인 구조 반복 확인</b>(Ashton et al. 2004). 새 요인: 정직함 honesty · 겸손함 humility · 탐욕스러움 greedy · 교활함 sly 등.</li>
+      <li>새 요인과 기존 <b>우호성</b>(NEO-PI-R 우호성 하위에 솔직함·겸손함 포함)을 구분하는 기준 = <span class="k">타인을 착취하거나 이용하는 것과 관련된 반응</span>(Ashton &amp; Lee 2007).</li>
+    </ul>
+    <div class="tw"><table>
+      <tr><th>차원</th><th>핵심 질문</th><th>높은 사람</th><th>낮은 사람</th></tr>
+      <tr><td><span class="k">정직(-겸손)</span></td><td>타인을 <b>착취·이용할 기회</b>가 주어졌을 때 어떻게 반응하나?</td><td>자신에게 처벌·피해가 없다는 걸 알아도 착취하지 않음(예: 보는 사람·CCTV가 없어도 길에 떨어진 돈뭉치를 경찰서에 전달)</td><td>처벌 위협이 없으면 기회를 봐서 타인을 착취·이용</td></tr>
+      <tr><td><span class="k">우호성</span>(HEXACO)</td><td>내가 <b>착취당하고 있음을 자각</b>했을 때 어떻게 반응하나?</td><td>이용당함을 자각해도 관계를 유지하며 협력, 타인·공동체를 위해 피해 감수</td><td>복수심·적대적 행동, 손해 보기 싫어함, 필요하면 관계 정리도 주저 X</td></tr>
+    </table></div>
+    <ul>
+      <li><b>Lee &amp; Ashton(2004; Ashton &amp; Lee 2007)</b>이 기존 5요인에 정직-겸손을 추가해 6요인 <span class="k">HEXACO</span> 명명, 다양한 버전 도구 개발·타당도 확인. 최근 정직-겸손은 마키아벨리아니즘·나르시시즘·정신병질성과의 관련성(Lee &amp; Ashton 2005)으로 주목.</li>
+    </ul>
+    <div class="note lec"><b>수업 언급</b>HEXACO를 가장 많이 연구한 Ashton과 Lee 중 <b>Lee는 한국 분</b>으로, 미국과 한국을 오가며 연구. 비교적 최근 이론이라 아직 Big5만큼 연구가 되지 않았고 <b>횡문화 연구가 부족</b>.</div>
+  </div>
+
+  <div class="card">
+    <h3>HEXACO ② 구성과 하위요소 <span class="pg">p.133~135 · 표 4.3</span> <span class="tag must">필수</span></h3>
+    <p><b>6차원</b>: 정직-겸손 H · 정서성 E · 외향성 X(eXtraversion) · 우호성 A · 성실성 C · 개방성 O. 각 차원에 <b>4개 하위요소</b>(Lee &amp; Ashton 2004).</p>
+    <div class="tw"><table>
+      <tr><th>차원</th><th>하위요소 4개</th></tr>
+      <tr><td>정직-겸손</td><td>진실성 sincerity · 도덕성/공정성 fairness · 청렴성 greed avoidance · 겸손함 modesty</td></tr>
+      <tr><td>정서성</td><td>두려움 fearfulness · 불안 anxiety · <b>의존성 dependence</b> · 감수성 sentimentality</td></tr>
+      <tr><td>외향성</td><td>표현성 expressiveness · 사회적 대담성 social boldness · 사교성 sociability · 활력 liveliness</td></tr>
+      <tr><td>우호성</td><td>관용성 forgiveness · 온유성 gentleness · 융통성 flexibility · 인내심 patience</td></tr>
+      <tr><td>성실성</td><td>치밀함 organization · 근면성 diligence · 완벽주의 perfectionism · 신중성 prudence</td></tr>
+      <tr><td>개방성</td><td>심미성 aesthetic appreciation · 지적 호기심 inquisitiveness · 창의성 creativity · 비관습성 unconventionality</td></tr>
+    </table></div>
+    <ul>
+      <li><b>외향성·성실성·개방성은 NEO-PI-R과 거의 유사</b>(하위요소 개수·명칭만 조금 다름). <b>정직-겸손·정서성·우호성은 기존 5요인과 구조·내용이 다름</b>.</li>
+      <li><span class="k">정직-겸손</span>: 정직함·도덕적이고 공정함·청렴함·겸손함. 높은=진실하고 믿음직스럽고 잘난 체 안 함 / 낮은=교활·탐욕·가식·거만, 자신의 욕구를 위해 타인을 이용·착취 → <span class="k">다크 트라이어드</span>와 밀접:
+        <ul><li><b>마키아벨리아니즘</b> Machiavellianism: 자신의 이익을 위해 다른 사람을 속이거나 조종하는 경향.</li>
+        <li><b>나르시시즘</b> Narcissism: 자신의 가치를 과장되게 지각.</li>
+        <li><b>정신병질성</b> Psychopathy: 정서적으로 냉담하고 죄책감이 결여, 다른 사람에게 심각한 피해를 줄 수 있는 반사회적 행동을 반복(Hare &amp; Neumann 2008).</li></ul>
+        → 기존 5요인이 포착 못한 특성을 포착하므로 HEXACO가 더 발전된 모형이라는 주장(Lee &amp; Ashton 2005, 2014).</li>
+      <li><span class="k">정서성</span>: 신경과민성과 유사하지만 중요한 차이 = <b>분노·적대감 제외</b>(HEXACO에선 분노·적대감을 우호성의 반대극으로 개념화). 남는 것 = 분노를 뺀 부정 정서(불안·두려움·슬픔). 흥미롭게도 <b>'대인관계에 대한 의존성'이 정서성의 하위요소</b>(5요인에서는 우호성이 과하면 의존적이 된다고 봄).</li>
+      <li><span class="k">우호성(HEXACO)</span>: 타인의 착취 행동·조종에 대한 <b>관용적 태도</b> 중심으로 재구성. 관용성·온유함·융통성·인내심은 남고, <b>솔직함·겸손함은 정직-겸손으로 재배치</b> → 분노·적대감·복수심 결여 상태를 더 분명히 반영.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>HEXACO ③ 이론적 설명: 이론생물학 <span class="pg">p.135~137 · 표 4.4</span></h3>
+    <p>Ashton &amp; Lee(2007): 6차원은 <span class="k">이론생물학 theoretical biology</span>의 주요 개념으로 설명된다.</p>
+    <div class="tw"><table>
+      <tr><th>이론</th><th>정의</th><th>대응 차원</th></tr>
+      <tr><td><span class="k">호혜성 이타주의</span> reciprocal altruism (Trivers 1971)</td><td>자신에게 보답할 것으로 예상되는 다른 유기체를 돕는 행동. 두 측면: <b>공정함</b>, <b>관용</b></td><td>공정함 → <b>정직-겸손</b> / 관용 → <b>우호성</b></td></tr>
+      <tr><td><span class="k">친족 이타주의</span> kin altruism (Hamilton 1964)</td><td>혈연관계 친족을 돕는 행동. 친족·친족이 될 가능성이 있는 친밀한 관계에 대한 정서적 애착·공감적 염려, 위험 회피, 도움 추구 경향</td><td><b>정서성</b> (높을수록 친족 생존 가능성↑이지만 당사자는 손해 위험↑)</td></tr>
+      <tr><td><span class="k">삶의 특정 영역에 대한 투자·참여</span></td><td>사회적 활동 / 과제 관련 활동 / 아이디어 관련 활동</td><td><b>외향성</b>=사회적 활동(관계적 보상) · <b>성실성</b>=과제 관련 활동(승진·경제적 보상) · <b>개방성</b>=아이디어 관련 활동(새로운 발견·사회적·경제적 보상)</td></tr>
+    </table></div>
+    <ul>
+      <li>정직-겸손이 높으면 착취 기회가 있어도 착취하지 않고 공정·진실하게 대해 <b>당장은 이득을 못 보지만 장기적으로 상대가 도움을 거부할 위험↓</b>. 우호성이 높으면 착취에 즉각 보복하지 않고 감내해 당장은 피해지만 <b>장기적으로 도움 받을 가능성↑</b>.</li>
+    </ul>
+    <h4>평가 <span class="pg">p.137</span></h4>
+    <div class="g2">
+      <div class="mini"><b class="t">장점</b>정직-겸손 추가로 5요인이 포착 못한 부적응적 성격 유형을 효과적으로 포착. 신경과민성에 있던 분노와 우호성의 관계를 정리해 각 차원 특성을 명료화.</div>
+      <div class="mini"><b class="t">한계</b>제안된 지 오래되지 않아 횡문화 일관성·각 차원/하위요소 타당도 연구 부족. 특히 정직-겸손·정서성·우호성의 생물학적 기반 연구 필요.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>5요인 vs HEXACO 한눈 비교 <span class="tag must">필수</span></h3>
+    <div class="tw"><table>
+      <tr><th>5요인(NEO-PI-R)</th><th>HEXACO</th><th>차이</th></tr>
+      <tr><td>5차원 × 6하위 = 30</td><td>6차원 × 4하위 = 24</td><td>차원 수·하위요소 수</td></tr>
+      <tr><td>외향성·성실성·개방성</td><td>외향성·성실성·개방성</td><td><b>거의 동일</b></td></tr>
+      <tr><td>신경과민성: 불안·<b>적대감(분노)</b>·우울·자의식·충동성·스트레스 취약성</td><td>정서성: 두려움·불안·<b>의존성</b>·감수성 (분노 제외)</td><td>분노·적대감은 우호성 쪽으로, 의존성이 정서성으로</td></tr>
+      <tr><td>우호성: 신뢰·<b>솔직함</b>·이타성·순응성·<b>겸손함</b>·온유함</td><td>우호성: 관용성·온유성·융통성·인내심</td><td>솔직함·겸손함이 정직-겸손으로 이동. 우호성=착취당할 때의 관용</td></tr>
+      <tr><td>(없음)</td><td><b>정직-겸손</b></td><td>착취할 기회에서의 공정함. 다크 트라이어드와 관련</td></tr>
+      <tr><td>배경: 어휘 가설, 영어권, 탈이론적</td><td>비영어권 6요인 반복 발견, 이론생물학(호혜성·친족 이타주의, 투자)으로 설명</td><td>HEXACO가 이론적 설명 시도</td></tr>
+    </table></div>
+  </div>
+</section>
+<!-- ===================== 5장 ===================== -->
+<section class="sec" id="ch5">
+  <h2><span class="no">5</span>성격에 대한 생물사회적 관점 <span class="pg">p.141~177</span></h2>
+  <p class="lead">유전·환경(행동유전학) → 기질 → 부모 양육과 애착 → 발달 시기별(영아기~노년기) 특징. 인명·연도·분류가 가장 많이 나오는 장입니다.</p>
+
+  <div class="card">
+    <h3>천성 대 양육 논쟁 <span class="pg">p.141~142</span></h3>
+    <ul>
+      <li>특질 연구가 못 푼 문제 = 각 성격 차원의 <b>기원</b>. 논제 = 타고난 것과 생후 경험이 성격 형성에 어떻게 관여하는가 = <span class="k">천성(nature) 대 양육(nurture)</span>, 유전(gene) 대 환경(environment). 현대는 둘 다 중요하다고 보고 <b>상호 영향</b> 파악에 주력(생물사회적 관점).</li>
+      <li><b>Francis Galton</b>(19세기 영국; 어휘 가설도 주장, 통계·측정학, <span class="k">행동유전학 behavior genetics</span> 발전에 기여): 사촌 <b>Charles Darwin</b>(1809~1882) 진화론의 영향 → 유전 강조. 대표 방법 = <b>쌍생아 연구법</b>.</li>
+      <li>유전 강조 흐름은 세계대전(2차대전을 주도한 나치즘이 인간 본성·천성 견해를 흔듦) + <span class="k">행동주의</span>(John Watson 1878~1958 중심; 관찰 가능한 행동만 연구, 행동은 자극에 의해 유발, 환경이 달라지면 행동도 달라짐; 대략 1960년대까지 영향)로 약해지고 <b>환경론</b>으로 기울었다가, 행동주의 쇠퇴·유전학 발달로 천성론이 다시 힘을 얻음.</li>
+      <li>그러나 유전 이해가 깊어지며 "무엇이 더 중요한가"는 생물학적으로 부적절하다고 보고(Balaban 2006; Robinson 2004) → <b>둘이 어떻게 상호작용하는가</b>로 관점 전환.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>유전자 → 행동유전학의 연구 방법 <span class="pg">p.143~146</span></h3>
+    <ul>
+      <li>세포 → 염색체 → <span class="k">DNA</span>(Deoxyribo Nucleic Acid, 유전 정보를 담는 고분자 화합물, 이중나선). DNA의 모든 부분이 유전 정보를 담는 것은 아니고 유전 정보를 담은 부분만 <span class="k">유전자 gene</span>. 유전자는 <b>단백질을 특정 방향으로 합성하도록 지시</b>해 유기체 발달에 영향.</li>
+      <li>유전자가 행동에 미치는 과정은 <b>매우 복잡하고 간접적</b>: 행동을 직접 지배하지 않고, 합성된 단백질이 여러 단계를 거쳐 행동으로 발현. 수많은 유전자가 복잡하게 상호작용해 특정 심리 특성과 특정 유전자를 연결하는 시도는 대부분 실패. 그래도 구체적 과정을 몰라도 <b>유전의 영향력</b>은 파악 가능 → 행동유전학.</li>
+      <li><span class="k">쌍생아 연구 twin studies</span>: 유전적 유사성이 알려진 일란성·이란성 쌍생아 비교.
+        <ul><li><b>일란성 monozygotic</b>: 하나의 수정란이 둘로 분열 → 유전적으로 동일(100%). <b>이란성 dizygotic</b>: 두 난자가 각각 수정 → 다른 형제처럼 약 50% 공유.</li>
+        <li>일란성 간 상관이 이란성 간 상관보다 강하면 그 차이는 공유 유전자 비율 차이로 해석.</li>
+        <li><span class="k">환경 동일성 가정 equal environment assumption</span>: 한집에 사는 쌍생아는 <b>동일한 환경을 공유한다고 가정</b>해 환경 효과를 통제. → <b>결함</b>: 한집에 살아도 방·교류하는 가족·친구·공간이 다를 수 있어 상관 차이가 유전 때문인지 환경 때문인지 변별 어려움.</li></ul></li>
+      <li><span class="k">입양 연구 adoption studies</span>(보완): 생물학적 부모와 분리되어 양부모에게 입양된 사람을 비교. 입양아가 양부모보다 <b>친부모와 더 유사하면 유전 영향 &gt; 환경 영향</b>. 양부모에게 친자가 있으면 입양아와 친자를 비교, 없으면 유전자를 일부 공유하는 사촌과 비교.</li>
+    </ul>
+    <div class="note lec"><b>수업 언급</b>"쌍둥이가 없으면 못 쓰는 방법"이고, 환경이 동일하지 않은 경우를 위해 입양 연구가 있다는 흐름으로 설명했습니다.</div>
+  </div>
+
+  <div class="card">
+    <h3>유전성 추정치와 공식 <span class="pg">p.147 · 표 5.1</span> <span class="tag must">필수</span></h3>
+    <ul>
+      <li><span class="k">유전성 추정치 heritability estimate (h²)</span> = 관찰된 <b>변량(variance)</b> 중 <b>유전 요인에 의한 변량의 비율</b>. 0~1, 클수록 유전 영향력↑. (수업: 100명 키 차이의 50%가 유전으로 설명되고 나머지 50%는 환경 등 → 변량 개념)</li>
+      <li>쌍생아 연구 공식: <span class="k">h² = 2 ( r<sub>M</sub> − r<sub>D</sub> )</span> (r<sub>M</sub> = 일란성 쌍생아 간 상관, r<sub>D</sub> = 이란성 쌍생아 간 상관). 예: r<sub>M</sub>=.88, r<sub>D</sub>=.40 → h² = 2(.88−.40) = <b>.96</b> → 관찰된 변량 중 약 96%가 유전에 귀인.</li>
+    </ul>
+    <div class="tw"><table>
+      <tr><th>5요인</th><th>신경과민성</th><th>외향성</th><th>개방성</th><th>우호성</th><th>성실성</th></tr>
+      <tr><td>h² (Vukasović &amp; Bratko 2015)</td><td>.37</td><td>.36</td><td><b>.41 (최고)</b></td><td>.35</td><td><b>.31 (최저)</b></td></tr>
+    </table></div>
+    <p>→ 성격 특질의 약 <b>30~40%</b>가 유전 요인으로 결정, 나머지 60~70%는 환경 + 오차. 개방성은 유전으로 가장 많이, 성실성은 가장 적게 설명됨.</p>
+  </div>
+
+  <div class="card">
+    <h3>환경 요소: 공유 환경 vs 비공유 환경 <span class="pg">p.148~149 · 표 5.2·5.3</span> <span class="tag must">필수</span></h3>
+    <div class="tw"><table>
+      <tr><th></th><th>정의</th><th>예</th></tr>
+      <tr><td><span class="k">공유 환경</span> shared environment</td><td>동일 가정에서 자라는 형제가 <b>공유하는</b> 환경 (Plomin &amp; Daniels 1987)</td><td>가정의 기본 가치·규율, 사회경제적 수준, 기본적 양육 방식</td></tr>
+      <tr><td><span class="k">비공유 환경</span> nonshared environment</td><td>같은 가정에서 자라도 <b>공유하지 않는</b> 환경</td><td>출생 순위·성별·성격에 따른 부모의 차별 대우, 또래 관계, 사제 관계 등 가정 외 환경</td></tr>
+    </table></div>
+    <div class="tw"><table>
+      <tr><th>비공유 환경 하위</th><th>정의</th><th>요인</th></tr>
+      <tr><td><span class="k">체계적</span></td><td>체계적으로 발생·유지되는 요인(예측 가능)</td><td>①가족 구성(출생 순위, 성별) ②형제 간 상호작용(차별 대우 또는 지각) ③부모–자녀 관계 ④가족 외 요인(또래·친구·교사, 스포츠·취미, 교육, 직업, 배우자)</td></tr>
+      <tr><td><span class="k">비체계적</span></td><td>무작위로 발생</td><td>사고, 출생 전 환경 차이, 질병, 외상 경험</td></tr>
+    </table></div>
+    <ul>
+      <li><b>표 5.2</b> (행=환경 공유 여부, 열=생물학적 형제 여부): A = 형제 O·환경 공유 O(같이 자란 친형제/쌍생아) / B = 형제 X·환경 공유 O(같이 자란 입양 형제) / C = 형제 O·환경 공유 X(따로 자란 친형제). A vs C, B vs C 비교로 환경 영향 분석: 공유 환경 영향이 크면 A가 C보다 유사성이 훨씬 높고, 비공유 환경 영향이 크면 A와 C 유사성의 차이가 크지 않음 → 결과: <b>공유 환경보다 비공유 환경 영향이 훨씬 크다</b>.</li>
+      <li><span class="k">Dunn &amp; Plomin(1990)</span>: 성격 변량 <b>40% 유전 · 35% 비공유 환경 · 5% 공유 환경 · 20% 측정 오차</b>.</li>
+      <li>Plomin(2011): 비공유 환경은 성격·정신병리·인지뿐 아니라 당뇨·천식·궤양 등 신체 질환·수명에도 중요. 부모 양육 방식 차이의 영향은 유전을 통제하면 매우 작아짐(Plomin, Asbury &amp; Dunn 2001) → <b>또래·친구 관계 같은 가정 밖 경험</b>이 상대적으로 더 중요할 수 있음.</li>
+    </ul>
+    <div class="note lec"><b>수업 언급</b>같은 부모라도 자신이 첫째냐 둘째냐, 성별, 성격, 형제 나이 차이에 따라 양육이 달라지고, 나이 차이가 크면 시대·학교·지역이 달라 환경이 달라짐. 체계적 비체계적의 예: 출생 순위는 변동 없이 예측 가능(체계적), 사고·외상·질병은 무작위(비체계적). "장녀·장남 성격으로 태어나는 사람은 없고, 부모의 행동 방식이 만든다"는 이야기도 했습니다.</div>
+  </div>
+
+  <div class="card">
+    <h3>유전–환경 상호작용 모형 3가지 <span class="pg">p.150~152</span> <span class="tag must">필수</span></h3>
+    <div class="tw"><table>
+      <tr><th>모형</th><th>제안</th><th>핵심 주장</th><th>예·수업 설명</th></tr>
+      <tr><td><span class="k">수로화 모형</span><br><span class="en">canalization</span></td><td>Waddington (1966)</td><td>유전자가 유기체의 <b>발달 양상을 제한</b>해 소수의 발달 결과를 가져옴. 강하게 수로화된 특성은 환경 영향을 거의 안 받음. 덜 수로화된 특성은 경험·환경에 따라 여러 방향으로 갈라짐</td><td>강하게 수로화: 아기의 옹알이(생후 8~10개월에 거의 동일). 덜 수로화: <b>기질·성격</b>. 비유: 물길(수로). 언어는 강하게 수로화되어도 자극이 부족하면 발달이 어려움(신경 가지치기)</td></tr>
+      <tr><td><span class="k">반응 범위 모형</span><br><span class="en">range of reaction</span></td><td>Gottesman (1963)</td><td>유전자가 특성이 발달할 수 있는 <b>가능성의 범위</b>를 결정하고, <b>환경의 질</b>이 그 범위 안에서 실제 수준을 결정. 잠재력이 우수할수록 환경 질에 대한 반응이 강함(범위 넓음)</td><td>지능: 풍요로워도 범위를 넘어 무한정 높아지지 않고, 환경이 제한적이어도 무한정 낮아지지 않음(그림 5.3: 잠재력 A&gt;B&gt;C × 환경 제한/평균/풍부 → IQ)</td></tr>
+      <tr><td><span class="k">사회유전체 모형</span><br><span class="en">sociogenomic</span></td><td>Roberts &amp; Jackson (2008); Roberts (2018)</td><td><b>환경에 의해 유전적 특성(생물학적 시스템)이 변할 수 있다</b>. DNA 발현 양상이 환경에 따라 달라지고 환경이 변하면 생물학적 시스템도 조정</td><td>그림 5.4: 생물학적 요인·환경·특질·<b>상태(state)</b>의 상호작용. 환경이 상태에 영향 → 지속되면 생물학적 요인·특질도 변화. 적절한 환경 자극이 꾸준하면 성격 특질은 물론 유전적 특성도 바뀔 수 있다 → 혁신적(연구는 아직 부족; 심리치료 후 성격·신경학적 변화 보고가 간접 지지)</td></tr>
+    </table></div>
+    <ul>
+      <li><b>사회유전체 모형의 구성(그림 5.4)</b>: <b>생물학적 요인</b>(유전자 포함) · <b>환경</b> · <b>특질</b>(비교적 긴 시간 유지되는 행동 경향성) · <b>상태 state</b>(짧은 시간 유지되는 일시적 사고·감정·행동). 타원=잠재 변수, 사각형=관측 변인. 일부는 일방향(생물학적 요인 → 특질)이고 간접 경로로 양방향.</li>
+      <li>기존 두 모형과의 <b>기본 가정 차이</b>(연습문제 3번): 수로화·반응 범위는 유전이 발달의 틀/범위를 정하고 환경이 그 안에서 작용한다고 보는 반면, 사회유전체는 <b>환경이 유전적 특성 자체를 바꿀 수 있다</b>고 가정. 시사점: 성격과 유전적 특성이 고정되지 않으며, 환경 개입(심리치료 등)으로 생물학적 수준의 변화도 가능. (수업: 후생유전학 연상 — 한두 세대에도 큰 변화가 전달될 수 있다)</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>기질의 정의와 초기 기질 차원: Thomas &amp; Chess <span class="pg">p.153~155 · 표 5.4</span> <span class="tag must">필수</span></h3>
+    <ul>
+      <li><span class="k">기질 temperament</span> = <b>유전적이고 체질적인 기반을 가진 반응 경향성</b>. 환경 영향이 최소화된 <b>생애 초기 영유아</b>를 대상으로 연구. (수업: 기질 + 환경 영향을 받으며 성장 → 성격. 그래서 임상에서 기질과 성격을 같이 검사해 연결고리를 추론하고, 청소년용도 있음.)</li>
+      <li><span class="k">Thomas &amp; Chess(1977)</span> 뉴욕 종단 연구 → <b>9개 기질 차원</b> → <b>3개 유형</b>.</li>
+    </ul>
+    <div class="tw"><table>
+      <tr><th>#</th><th>9개 기질 차원</th><th>의미</th></tr>
+      <tr><td>1</td><td><span class="k">활동 수준</span> activity level</td><td>가만히 있는 시간과 활동하는 시간의 비율</td></tr>
+      <tr><td>2</td><td><span class="k">규칙성</span> rhythmicity</td><td>먹기·자기·배변 등 생리적 기능의 규칙성</td></tr>
+      <tr><td>3</td><td><span class="k">산만성</span> distractibility</td><td>외부 자극에 쉽게 방해받는 정도</td></tr>
+      <tr><td>4</td><td><span class="k">접근/위축</span> approach/withdrawal</td><td>새로운 대상·사람·음식 등에 대한 반응</td></tr>
+      <tr><td>5</td><td><span class="k">적응성</span> adaptability</td><td>새로운 변화에 쉽게 적응하는 정도</td></tr>
+      <tr><td>6</td><td><span class="k">주의폭</span> attention span</td><td>어떤 활동에 투자하는 시간의 양</td></tr>
+      <tr><td>7</td><td><span class="k">반응 강도</span> reaction intensity</td><td>반응의 에너지 수준(강렬함)</td></tr>
+      <tr><td>8</td><td><span class="k">반응 역치</span> responsiveness threshold</td><td>반응을 유발하는 데 필요한 자극의 강도</td></tr>
+      <tr><td>9</td><td><span class="k">기분의 질</span> quality of mood</td><td>불쾌함 수반 행동/반응 대비 유쾌함 수반 행동/반응의 양</td></tr>
+    </table></div>
+    <div class="tw"><table>
+      <tr><th>유형</th><th>특징</th></tr>
+      <tr><td><span class="k">순한 기질</span> easy child</td><td>생리적 활동이 매우 <b>규칙적</b>, 반응·기분 표현 강도 <b>중간</b>, 새 환경·사람에 거부감 없이 <b>접근</b>, 적응 빠름, 기분 대체로 긍정</td></tr>
+      <tr><td><span class="k">까다로운 기질</span> difficult child</td><td>생리 기능·활동 주기 <b>불규칙</b>, 반응·기분 표현 <b>강렬</b>, 새 환경·낯선 사람 <b>거부</b>, 적응 느림, 전반적 기분 <b>부정적</b>, 활동 수준 <b>높음</b></td></tr>
+      <tr><td><span class="k">더딘 기질</span> slow to warm up child</td><td>규칙성은 특별한 특징 없음, 반응·기분 표현 강도 <b>약함</b>, 활동 수준 <b>낮음</b>, 새 자극에 초기 반응은 다소 부정적이나 까다로운 아동만큼은 아님, 적응은 느리지만 <b>압박 없이 반복 노출</b>하면 점진적으로 적응</td></tr>
+    </table></div>
+    <div class="note lec"><b>수업 언급</b>"이런 유형은 학문적 편의로 나눈 것일 뿐"이고, 아이의 컨디션에 따라 어떤 날은 순한 기질, 어떤 날은 더딘 기질처럼 보일 수 있습니다. (MBTI·애착 유형도 마찬가지 맥락)</div>
+  </div>
+
+  <div class="card">
+    <h3>EAS 모형 / Rothbart 모형 / 기타 차원 <span class="pg">p.155~158</span> <span class="tag must">필수</span></h3>
+    <h4>Buss &amp; Plomin(1984) EAS 모형</h4>
+    <p>기질 = 생애 초기부터 나타나는 <b>유전된</b> 성격 특질. 핵심 차원: <span class="k">정서성 Emotionality · 활동성 Activity · 사회성 Sociability</span>.</p>
+    <div class="tw"><table>
+      <tr><th>차원</th><th>정의</th><th>낮은 점수 / 높은 점수</th></tr>
+      <tr><td>정서성</td><td>자극에 대한 <b>부정적 정서 반응</b> 특성</td><td>낮음: 거의 정서 반응 X / 높음: 강렬한 부정 정서(울음·성질), <b>교감신경계가 쉽게 활성화·더디게 비활성화</b>, 반응 역치 매우 낮고 달래지지 않음</td></tr>
+      <tr><td>활동성</td><td>활동 수준. 핵심 요소 2개 = <span class="k">속도 tempo</span>와 <span class="k">활력 vigor</span></td><td>낮음: 무기력·활동 거의 없음 / 높음: 압박받는 듯 끊임없이 활동. 측정: 발화·활동 속도, 몸동작 크기, 에너지 필요 활동의 지속 시간</td></tr>
+      <tr><td>사회성</td><td>혼자보다 다른 사람과 함께 있기를 선호</td><td>낮음: 홀로 선호 / 높음: 활동 공유·주목받기·자극 주고받는 상호작용 선호. 측정: 상호작용 시도 빈도, 함께 보내는 시간, 홀로 남는 상황 반응</td></tr>
+    </table></div>
+    <h4>Rothbart(1989; Rothbart &amp; Bates 2007)</h4>
+    <ul>
+      <li>핵심 요소 2개: <span class="k">반응성 reactivity</span>(자극에 의해 정서·운동·자율신경·내분비 반응이 활성화/각성되는 정도 arousability; 반응 역치·잠재기·강도·정점까지 시간·회복 시간으로 평가) + <span class="k">자기조절 self-regulation</span>(반응성을 촉진/억제하는 과정; 주의 기울이기·접근·후퇴·행동 억제·자기위안).</li>
+    </ul>
+    <div class="tw"><table>
+      <tr><th>3차원</th><th>내용</th><th>대응(Rothbart &amp; Bates 2007)</th></tr>
+      <tr><td><span class="k">외향성/긍정 정서성</span> surgency</td><td>높은 접근 성향·활동 수준·쾌락 자극 민감성(자극 추구), 긍정 정서와 밀접. 긍정적 자극에 대한 반응성</td><td>Big5 외향성 (r=.59). EAS의 활동성·사회성과 관련</td></tr>
+      <tr><td><span class="k">부정 정서성</span> negative affectivity</td><td>불편감·두려움·분노·슬픔을 쉽게 경험. 부정적 자극에 대한 반응성</td><td>Big5 신경과민성 (r=.49). EAS의 <b>정서성</b>과 매우 밀접</td></tr>
+      <tr><td><span class="k">의도적 통제</span> effortful control</td><td>억제 통제·주의 통제 능력·지각적 민감성·쾌락 자극에 대한 둔감성. Rothbart의 <b>자기조절</b>과 밀접</td><td>Big5 성실성 (r=.43)</td></tr>
+    </table></div>
+    <h4>기타 기질 차원 · 5요인 대응(표 5.5, Hampson 2012)</h4>
+    <ul>
+      <li><span class="k">친화성 affiliativeness</span>: 정서적 공감·공감적 죄책감·사회적 친밀함 → <b>우호성</b>과 밀접. <span class="k">지향 민감성 orienting sensitivity</span>: 정서 지각 민감성·연상 민감성·전반적 지각 민감성(약한 자극을 쉽게 알아차림, 독특한 인지 내용) → <b>개방성</b>과 밀접.</li>
+    </ul>
+    <div class="tw"><table>
+      <tr><th>신경과민성</th><th>외향성</th><th>개방성</th><th>우호성</th><th>성실성</th></tr>
+      <tr><td>부정 정서성</td><td>긍정 정서성(외향성/surgency)</td><td>지향 민감성</td><td>친화성</td><td>의도적 통제</td></tr>
+    </table></div>
+    <div class="note lec"><b>수업 언급</b>세 이론가는 같은 현상을 다른 묶음으로 본 것(활동 수준·접근/후퇴·주의 등이 겹침). Rothbart의 기질→Big5 매칭은 <b>Hampson</b>이 한 것(다른 연구자가 브리징). 정서성 vs 산만성 혼동 질문: 반응 역치는 "얼마나 작은 자극에 반응하나", 산만성은 "얼마나 쉽게 주의를 뺏기나"로 다름.</div>
+  </div>
+
+  <div class="card">
+    <h3>McAdams &amp; Olson의 성격 3층 모형 <span class="pg">p.158~159</span> <span class="tag must">필수</span></h3>
+    <p>신체적 기반의 기질로 태어난 영아가 환경과 상호작용하며 고유한 성격을 만들어 감. 질적으로 다른 여러 단계라기보다 점진적·연속적 (McAdams &amp; Olson, 2010).</p>
+    <div class="tw"><table>
+      <tr><th>층</th><th>이름</th><th>설명</th></tr>
+      <tr><td>1층</td><td><span class="k">기질 / 특질</span> temperament, trait</td><td>생애 초기부터 출현, 전 생애에 걸쳐 발달. <b>자기에 대한 인식·자의식이 불필요</b>(자극에 반응·행동만 하면 됨)</td></tr>
+      <tr><td>2층</td><td><span class="k">특징적 적응</span> characteristic adaptation</td><td>개인의 고유한 <b>목표·동기</b>. <b>동기 부여된 주체로서의 자기(self)</b>가 필요 → 자기 인식이 수립되는 <b>만 2세 이후</b> 본격 발달. (5요인 이론 성격 체계의 특징적 적응과 유사)</td></tr>
+      <tr><td>3층</td><td><span class="k">서사 정체성</span> narrative identity</td><td>이야기 형태로 구성되는 정체성(McAdams &amp; Pals 2006). 삶을 <b>일관되고 통합적인 이야기</b>로 구성하려는 경향. 자기에 대한 기억을 구성할 수 있는 시기부터 만들어지기 시작해 전 생애 동안 발달</td></tr>
+    </table></div>
+    <div class="note lec"><b>수업 언급</b>만 2세가 되면 자기가 뭘 원하는지 알고 누구에게 가야 얻는지까지 아는 모습(떼쓰기, 이모에게 가서 요구하기)이 2층의 시작. 갓난아기가 배고파서 우는 것은 "내가 배고프니까 울면 엄마가 오겠지"라는 인식이라기보다 본능적 반응이고, 반복 경험으로 알게 됨.</div>
+  </div>
+
+  <div class="card">
+    <h3>영아기: 부모의 양육 행동 <span class="pg">p.159~161</span> <span class="tag must">필수</span></h3>
+    <p>영아기 = 출생~만 2세. 영아는 고유한 반응 경향성·반응 조절 특성을 가지고 태어나고 부모는 이 기질에 저마다 다르게 반응.</p>
+    <div class="tw"><table>
+      <tr><th>양육 행동 차원</th><th>정의</th><th>적정</th><th>지나침</th><th>결여</th></tr>
+      <tr><td><span class="k">애정 affect</span></td><td>자녀에게 정서적 관심을 갖고 관여. 욕구에 민감하게 반응, 불편감 제거 노력</td><td>정서적 안정감, 타인·세상에 대한 긍정적 인식</td><td>욕구를 과도하게 만족시켜, 일정 불편감을 견뎌야 습득하는 <b>능력·기술 발달 지연</b></td><td>사랑받는 소중한 존재라는 감각이 안 생겨 <b>신뢰감·가치감</b> 미형성</td></tr>
+      <tr><td><span class="k">통제 control</span></td><td>자녀가 바람직한 행동을 하도록 제재. 부적절한 행동에 민감하게 반응해 행동 수정 노력</td><td>행동 조절 능력 발달, 규율·규범 준수 태도</td><td>기본 욕구를 외면·억제 → 욕구 결핍으로 <b>부적응적 행동</b></td><td>부적절한 행동을 조절 못하고 <b>제멋대로</b></td></tr>
+    </table></div>
+    <ul>
+      <li>전통적 2차원(Frick 1994; Maccoby 2000)에 더해 최근엔 <span class="k">자녀의 정서에 대한 반응 행동</span>(Gottman 1997): 자녀 정서를 인식·공감, 정서 표현 수용, 적절한 표현 방법 가르치기 → 정서를 자각·이름 붙이고 적절히 표현·조절하는 능력 발달. 둔감하거나 왜곡하면 정서 자각·표현·조절 어려움.</li>
+    </ul>
+    <h4>기질–양육 관계 모형 (그림 5.5)</h4>
+    <div class="tw"><table>
+      <tr><th>모형</th><th>핵심</th><th>예</th></tr>
+      <tr><td><span class="k">상호작용 모형</span> interaction model<br><span class="en">Rothbart &amp; Bates 2007</span></td><td>자녀의 기질이 행동에 영향을 미칠 때 <b>부모의 양육 행동 특성에 따라 그 영향의 정도가 달라짐</b>(양육이 기질→행동 경로를 조절)</td><td>의도적 통제가 낮은 자녀: 부모의 통제 양육 수준에 따라 성실성 수준이 달라짐</td></tr>
+      <tr><td><span class="k">양방향 모형</span> bidirectional model<br><span class="en">Hinshaw 2008</span></td><td>자녀 기질 → 부모 양육 행동, 부모 양육 행동 → 자녀 기질 <b>서로 영향</b></td><td>의도적 통제가 낮으면 부모의 통제가 증가하고, 부모의 통제 증가에 따라 자녀의 의도적 통제가 변화</td></tr>
+    </table></div>
+    <p>어느 모형이 더 적절한지는 연구 중: 기질 종류에 따라 다름(Kiff, Lengua &amp; Zalewski 2011: 자극 과민성 irritability = 양방향 지지↑, 두려움 fear = 둘 다, 성별에 따라서도 다름).</p>
+    <div class="note lec"><b>수업 언급</b>상호작용 모형은 사실상 "기질→행동 한 방향, 그 정도를 양육이 조절", 양방향은 "왔다 갔다". 한국어 '상호작용'이라는 번역 때문에 헷갈릴 뿐이라고 설명. "시험에서 이 정도 수준까지 묻진 않을 것 같다"고 했지만 그림 5.5의 차이는 알아 두세요. 연습문제 5번(D 사례)은 <b>양방향 모형</b>이 정답입니다.</div>
+    <div class="note tip"><b>박스: 부모의 양육 행동에 영향을 미치는 요인(p.163)</b>① 자녀 요인(기질·건강·발달 특성) ② 부모의 개인적 요인(성격·건강·양육 지식·기술·스트레스 대처 기술) ③ 부부 관계 요인(만족스러울수록 긍정적, 협력 동맹) ④ 기타 대인관계 요인(사회적 지지의 양·질) ⑤ 환경적 요인(실직 등 스트레스 사건, 주거 환경, 문화). 하나의 요인으로 단정하는 것은 위험(예: 과도한 통제 양육을 부모의 통제 욕구 성격으로만 단정 X).</div>
+  </div>
+
+  <div class="card">
+    <h3>애착과 낯선 상황 절차 <span class="pg">p.162~164</span> <span class="tag must">필수</span></h3>
+    <ul>
+      <li><span class="k">애착 attachment</span> = 한 개인이 다른 대상과 맺는 <b>정서적 유대 affectional bond</b>. 영국 정신의학자 <span class="k">Bowlby(1969)</span>: 가정이 없는 아동들의 문제를 연구하며 생애 초기에 주양육자와 분리되는 것이 아동 심리에 큰 영향을 준다는 사실을 파악해 애착 개념 제안.</li>
+      <li><span class="k">Ainsworth</span>(Ainsworth, Blehar, Waters &amp; Wall 1978): <span class="k">낯선 상황 절차 strange situation procedure</span> 개발.</li>
+    </ul>
+    <ol>
+      <li>주양육자와 아이가 함께 실험실에 입장(아이가 공간을 탐색할 시간)</li>
+      <li>낯선 사람이 들어와 주양육자와 대화한 뒤 아이와 놀려고 시도</li>
+      <li>주양육자가 방을 나감 = <b>첫 번째 분리</b> (아이와 낯선 사람만 남음)</li>
+      <li>몇 분 후 주양육자가 돌아와 아이와 <b>재회</b></li>
+      <li>낯선 사람과 주양육자 모두 나가 <b>아이만 혼자</b> 남음 = 두 번째 분리</li>
+      <li>일정 시간 후 <b>낯선 사람이 먼저</b> 들어가 아이와 놀려고 시도</li>
+      <li>조금 후 주양육자가 돌아와 아이를 안아 줌</li>
+    </ol>
+    <p>평가: 낯선 환경 탐색 행동, 주양육자 부재 반응, 낯선 사람에 대한 불안, 재회 과정 반응.</p>
+    <div class="tw"><table>
+      <tr><th>유형</th><th>행동</th></tr>
+      <tr><td><span class="k">안정 애착</span> secure</td><td>주양육자와 있을 때 편안하게 잘 놀고 적극적으로 탐색. 부재 시 <b>일시적 불안</b>을 보이지만 재회하면 빠르게 회복</td></tr>
+      <tr><td><span class="k">불안 애착</span> anxious</td><td>주양육자가 곁에 있는지 <b>반복 확인</b>, 부재 시 극심한 불안, 재회해도 쉽게 달래지지 않고 <b>밀쳐내거나 저항</b> (같이 있을 때도 불안)</td></tr>
+      <tr><td><span class="k">회피 애착</span> avoidant</td><td>주양육자의 부재에 <b>무심한 듯</b> 반응, 돌아온 뒤에도 주양육자에게 안기는 것을 <b>회피</b></td></tr>
+      <tr><td><span class="k">혼란 애착</span> disorganized</td><td>후속 연구(Main &amp; Solomon 1986)로 추가. <b>일관성 없는</b> 행동 패턴</td></tr>
+    </table></div>
+    <ul>
+      <li>불안·회피·혼란은 모두 <span class="k">불안정 애착 insecure attachment</span>으로 분류. 애착 유형은 이후 대인관계에도 영향 → 중요한 성격 요인(Fraley 2019).</li>
+      <li>유형에 기여하는 요인: <b>아동의 기질 + 부모의 양육 행동</b>. Ainsworth 등은 양육자가 자녀의 요구·감정에 얼마나 <b>민감하게 반응</b>하는지를 중요시. 반면 기질 중심 관점(Goldsmith &amp; Alansky 1987; Kagan 1982): 새 상황·자극에 부정 정서를 강렬히 경험하는 기질의 아동은 안정 애착 형성이 어려움. 최근에는 기질·양육 둘 다 중요하다고 봄.</li>
+    </ul>
+    <div class="note lec"><b>수업 언급</b>Erikson의 첫 위기(신뢰 vs 불신)와 연결: 현실에서 신뢰만 100% 경험할 수는 없고, 비율상 신뢰 경험이 더 많으면 긍정 발달. 안정 애착의 일시적 불안은 "엄마·아빠가 돌아올 것이라는 믿음이 있기 때문".</div>
+  </div>
+
+  <div class="card">
+    <h3>유아기(2~5세)와 아동기(6~11세) <span class="pg">p.165~168</span></h3>
+    <h4>주요 발달적 변화</h4>
+    <ul>
+      <li>대략 2세에 짧은 문장(phrase)으로 욕구·감정을 표현 → 타인과 소통, 가족 외 사람(친구·교사)과의 교류 활발.</li>
+      <li>인지적 변화: 자기 자신을 <span class="k">객체 object</span>로 인식(주체로서의 나 I와 객체로서의 나 Me 구분; 자기를 대상으로 평가). 자기중심성에서 벗어나 내가 보는 나와 남이 보는 나가 다름을 인식.</li>
+      <li><span class="k">자서전적 기억 autobiographical memory</span> 구성 시작(Fivush 2011; 수업: 가장 이른 기억은 만 3~4세), 자기를 의식·평가하며 <b>자부심(pride)·수치심(shame)</b> 경험(Tangney et al. 2007). 부모와 자신에 대한 작은 이야기를 반복하며 정서적 색깔이 묻은 자신만의 삶의 이야기를 만들기 시작(McAdams &amp; Olson 2010).</li>
+      <li><span class="k">목표 지향적 행동</span>이 두드러짐: 목표를 분명히 드러내고 달성하려는 강한 의지. 능력은 미발달이라 실패가 잦지만 끊임없이 도전·반복 → <b>자율성·주도성의 토대</b>. 자기 인식이 깊어지며 <b>성격의 두 번째 층(특징적 적응)</b>이 구체화되기 시작. 아동은 구체적 목표를 설정하고 달성 여부에 따라 자기 평가 → 자기 가치감의 개인차.</li>
+    </ul>
+    <h4>형제자매 관계 <span class="pg">p.166~167</span></h4>
+    <ul>
+      <li>초기에는 부모·주양육자가 중요하지만 대인관계 폭이 넓어지며 다른 관계의 영향↑. 형제자매는 부모·집 안 물건·가족과의 경험을 <b>많이 공유하지만 동일한 정도로 공유하지는 않음</b>(누군가는 더 많이 갖거나 그렇다고 지각) → 복잡한 감정: 친밀감·애정 / 질투·경쟁심.</li>
+      <li><span class="k">Furman &amp; Buhrmester(1985)</span> 아동 인터뷰 → 형제자매 관계 평가 <b>4차원</b>:</li>
+    </ul>
+    <div class="tw"><table>
+      <tr><th>차원</th><th>의미</th></tr>
+      <tr><td><span class="k">애정/친밀함</span> warmth/closeness</td><td>서로 유사한 측면을 인식하고 친밀하게 느끼며 친화적 행동을 하는 정도</td></tr>
+      <tr><td><span class="k">상대적 지위/권력</span> relative status/power</td><td>나이 차이로 인한 지위·권력의 불균형. 형이 있어 지배하거나(지배당하거나) 돌보는(돌봄 받는) 행동이 나타나는 정도</td></tr>
+      <tr><td><span class="k">갈등</span> conflict</td><td>서로 적대하거나 다투는 정도</td></tr>
+      <tr><td><span class="k">경쟁</span> rivalry</td><td><b>부모의 편애(parental partiality)</b>로 인한 경쟁</td></tr>
+    </table></div>
+    <ul>
+      <li>형제 경험이 성격에 영향을 줄 수 있지만 기존 연구는 주로 <b>성격이 형제자매 관계에 영향</b>을 준다고 봄(Furman &amp; Lanthier 1996; Lanthier 2007): 5요인 대부분이 형제 간 애정·갈등·경쟁에 영향, 특히 <b>우호성이 높을수록 관계의 질이 좋음</b>.</li>
+      <li>드물지만 형제 관계 → 성격: 종단연구(Padilla-Walker, Harper &amp; Jensen 2010)에서 <b>형제 간 애정이 강할수록 자기조절 능력이 양호하고 친사회적 행동이 많으며 문제 행동이 적음</b>.</li>
+    </ul>
+    <h4>또래 관계 <span class="pg">p.167~168</span></h4>
+    <ul>
+      <li>아동기 초기: 대화·<span class="k">가상 놀이 pretend play</span>로 협력·도움 행동과 갈등 해결 방법 학습(Hay, Payne &amp; Chadwick 2004). 점차 3명 이상 <b>집단 상호작용</b>(예: 성별 집단)과 <b>집단 내 위계</b>(Bakeman &amp; Brownlee 1982) → 또래 <b>수용 acceptance</b> 또는 <b>거절 rejection</b>이 아동 심리에 영향.</li>
+      <li>수용 경험 = 정서적 안정·사회성 발달에 중요. <span class="k">친사회적 행동</span>(나누기·돕기) 많을수록 수용↑(Denham et al. 1990), <span class="k">공격성</span> → 거절↑(Crick, Casas &amp; Mosher 1997), <span class="k">수줍음</span> → 불안·위축 → 거절↑(Hay et al. 2004).</li>
+      <li><span class="k">Asendorpf &amp; Van Aken(2003)</span>: <b>12세 아동 230명을 17세까지</b> 추적. 12세의 5요인 성격이 17세의 또래 지지를 <b>예측</b>했으나, 12세 또래 지지는 17세 5요인 성격을 예측하지 못함 → 성격 특질이 또래 상호작용의 원인. 반면 12세 또래 지지는 17세의 <b>전반적 자기가치감(global self-worth)</b> 같은 표면적 성격 특성·특징적 적응을 예측. 즉 성격의 핵심(특질)은 시간적 안정성이 있어 또래 관계에 영향을 주고, 또래 관계는 성격의 표면(특징적 적응)에 영향.</li>
+    </ul>
+    <div class="note lec"><b>수업 언급</b>0~2세 영아는 같이 노는 것처럼 보여도 사실 따로 노는 것(병행 놀이 느낌). 유아기·아동기로 가며 협상("난 이거 하고 싶은데…")을 배움.</div>
+  </div>
+
+  <div class="card">
+    <h3>청소년기·청년기 <span class="pg">p.168~172</span> <span class="tag must">필수</span></h3>
+    <h4>생물사회적 변화</h4>
+    <ul>
+      <li>범위에 합의된 의견은 없으나 <b>성호르몬 분비에 따른 신체 변화가 두드러지는 시기가 청소년기의 시작</b>(대략 10대). 성적 발육 왕성, 성적 특성이 자기 인식·대인 상호작용에 영향, 타인에 대한 성적 호기심↑, 연인 등 친밀한 관계 활발(Collins, Welsh &amp; Furman 2009).</li>
+      <li>신경학적 발달이 안정기로: 초기에는 <span class="k">가소성 plasticity</span>이 높지만 연령 증가에 따라 <span class="k">안정성 stability</span>↑(Spear 2013). 성격 특질 구조도 더 안정(Roberts et al. 2008). 인지 발달: <b>추론 능력·추상적 사고력·메타인지</b> 향상(Sanders 2013) → 자기·타인·세계에 대한 정교한 모형.</li>
+      <li>사회적 요구·압박↑: 학업 몰두 → 부모·교사·친구의 차별적 피드백 → 자기평가에 영향. 욕구·감정을 조절하며 오래 공부 → <b>근면성 증가</b>. 큰 문제 없이 집단(가정·또래·공동체·사회)에 소속되기 위해 <b>사회성·사회 기술</b>(타인 입장 사고, 타인 감정 이해·공감, 자기 욕구·감정 효과적 표현)을 발달 → <b>우호성 향상</b>.</li>
+    </ul>
+    <h4>자기에 대한 지식과 정체성의 발달</h4>
+    <ul>
+      <li><span class="k">개인적 신화 personal fable</span>(<b>Elkind, 1981</b>): 초기 청소년이 자신의 잠재력·미래 성취 수준에 대해 <b>과도하게 긍정적인 환상</b>을 갖는 경향. McAdams &amp; Olson(2010): 이것은 <b>서사 정체성의 초안(first draft)</b>(비현실적·일관성 부족, 현실의 벽에 부딪혀 깨지기 쉬움).</li>
+      <li>환상 속 자기와 실제 자기의 괴리를 외면할 수 없게 되면 "나는 누구인가"에 대한 진지한 고민과 혼란. 가족/또래/혼자일 때의 자신이 서로 불일치하고, 빠른 신체적 성숙(외모 변화·감정 기복)이 더해짐. <span class="k">Erikson(1968) 정체성 위기 identity crisis</span> = 자신이 어떤 존재인지 고민하며 혼란을 겪는 상태(다소 불연속적이고 갑작스러운 변화와 자각으로 나타나는 자연스러운 현상).</li>
+      <li>Erikson: 청소년은 <b>세 가지 영역</b>에 헌신하며 정체성 위기를 극복:</li>
+    </ul>
+    <div class="g3">
+      <div class="mini"><b class="t">직업 occupation</b>생계를 위해 어떤 일을 하며 살지 결정</div>
+      <div class="mini"><b class="t">이념 ideology</b>정치적 선호 파악, 종교적 관점 택하기, 세계관 정립</div>
+      <div class="mini"><b class="t">성적 지향 sexual orientation</b>자신의 성적 지향 파악, 나이에 걸맞는 성 역할 수행</div>
+    </div>
+    <h4>Marcia(1980) 정체성 지위 모형 <span class="pg">p.170~172 · 표 5.6</span> <span class="tag must">필수</span></h4>
+    <p>두 차원: <span class="k">위기 crisis</span>(정체성 관련 의사결정 기간이 존재했는지) × <span class="k">헌신 commitment</span>(세 영역 과제에 헌신하는 정도; Marcia는 직업·이념에서의 헌신을 중요 기준으로 봄).</p>
+    <div class="tw"><table>
+      <tr><th>지위</th><th>위기</th><th>헌신</th><th>설명</th></tr>
+      <tr><td><span class="k">정체성 성취</span> identity achievement</td><td>있음(있었음)</td><td>있음</td><td>고민하고 충분한 의사결정 기간을 가졌으며 <b>스스로 선택</b>한 직업·이념에 헌신. 안정적 자기가치감, 대인관계 문제 적고 스트레스 저항력 높음</td></tr>
+      <tr><td><span class="k">유실</span> foreclosure</td><td>없음</td><td>있음</td><td>특정 직업·이념에 헌신하지만 정체성 위기를 겪지 않음. 부모·중요 타인이 정해 준 것을 <b>그대로 수용</b>. 청소년기엔 문제없어 보이나 <b>성인기에 뒤늦게 정체성 위기</b>를 겪을 수 있음</td></tr>
+      <tr><td><span class="k">정체성 혼미</span> identity diffusion</td><td>있거나 없음</td><td>없음</td><td>고민·의사결정 기간 유무와 상관없이 현재 특정 직업·이념에 헌신하지 않음. 대체로 애착 관계가 불안정, 사회적 요구·역할 수행에 대한 관심이 적음</td></tr>
+      <tr><td><span class="k">유예</span> moratorium</td><td><b>현재</b> 위기 상태</td><td>있지만 아직 불분명</td><td>현재 정체성 위기를 겪으며 직업·이념 주제와 씨름 중. 정체성 성취로 넘어가는 <b>과도기</b>. 불안정한 상태에서 신중히 탐색·다양한 시도</td></tr>
+    </table></div>
+    <ul>
+      <li>청소년기에 자기 정체성을 찾는 작업은 개인 목표 수립·현실적 삶의 이야기 구성과 동시에 진행. <span class="k">McAdams(2001)</span>: 개인의 정체성 = 결국 <b>하나의 이야기 형태</b>(과거 경험·현재 삶·앞으로의 목표와 가치). 청소년기는 현실적이면서 통합적인 <b>서사 정체성이 처음으로 구성</b>되는 중요한 시기.</li>
+    </ul>
+    <div class="note warn"><b>연습문제 9번 힌트</b>현실을 부정한 채 정체성 확인을 위한 탐색 활동을 하지 않으면서 사회로부터 단절된 생활을 하는 청소년 → <b>정체성 혼미</b>(위기·탐색 없음 + 헌신 없음).</div>
+  </div>
+
+  <div class="card">
+    <h3>중년기와 노년기 <span class="tag opt">낮은 중요도</span> <span class="pg">p.172~174</span></h3>
+    <ul>
+      <li><b>중년기</b>: 정체성 탐색·구성이 20·30대에 걸쳐 지속. 뇌 기능을 포함한 신체 기능이 전반적으로 저하되기 시작하지만 업무엔 큰 해가 되지 않고, 오래 일한 영역의 숙련된 지식·기술을 발휘. 성격: <b>성실성·우호성이 거의 정점, 신경과민성도 감소</b>해 안정 → 목표를 이루기 좋은 조건이 고르게 갖춰진 시기. 요구도 많음(배우자·부모·자녀·친척·직장 상사 등 다양한 역할) → 혼란·스트레스 vs 숙달감·절정감. McAdams &amp; Olson: 역할을 적절히 이행하며 사회에 기여하는 사람은 <b>주도성·친밀한 관계·교감·통합·성장</b> 주제의 이야기, 그렇지 못한 사람은 <b>실패·좌절</b> 내용이 반복되고 긍정 사건도 쉽게 퇴색(McAdams 2013).</li>
+      <li><b>노년기</b>: 대부분 기능이 눈에 띄게 저하(신체뿐 아니라 인지 기능). 목표가 <b>확장·활성화</b>에서 <b>축소와 보호</b>, 자신을 바꿔 적응 수준을 높이는 것, 삶의 질을 높이는 것, 때로는 '목표 포기'로 이동(Wrosch, Heckhausen &amp; Lachman 2006). 삶의 반경을 줄이며 <b>이야기의 통합 작업</b>에 몰두(과거를 회상하며 삶을 하나의 일관되고 의미 있는 이야기로 구성: 만족하며 죽음을 기다리거나 구성에 실패해 절망). 70대 이후 신체·심리 기능 더 퇴화, 안정화되던 부정 감정 다시 증가(Smith &amp; Baltes 1999), 작은 스트레스에도 부정 반응(Mroczek &amp; Almeida 2004), 기억력 포함 인지 저하 → 이야기 구성 능력도 감소, 삶의 이야기가 점점 단순해짐.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>5장 요약 체크리스트</h3>
+    <ul>
+      <li>행동유전학: 쌍생아·입양 연구 / 환경 동일성 가정 / h²=2(rM−rD) / 성격 30~40% 유전.</li>
+      <li>환경: 공유(가정 공통) vs 비공유(체계적·비체계적) / 비공유 영향이 훨씬 큼.</li>
+      <li>모형: 수로화(발달을 제한) · 반응 범위(가능성의 범위) · 사회유전체(환경이 유전적 특성도 변화).</li>
+      <li>기질: Thomas&amp;Chess(9차원·3유형) · EAS(정서·활동·사회) · Rothbart(반응성+자기조절 → 외향성/긍정 정서성·부정 정서성·의도적 통제).</li>
+      <li>성격 3층: 기질/특질 → 특징적 적응(만 2세~) → 서사 정체성.</li>
+      <li>양육: 애정·통제(+정서 반응). 모형: 상호작용 vs 양방향. 애착: 안정·불안·회피·혼란(낯선 상황 7단계).</li>
+      <li>발달: 자서전적 기억·목표 지향 / 형제 4차원 / 또래 수용·거절 / 개인적 신화·정체성 위기 / Marcia 4지위.</li>
+    </ul>
+  </div>
+</section>
+<!-- ===================== 6장 ===================== -->
+<section class="sec" id="ch6">
+  <h2><span class="no">6</span>정신분석 이론 <span class="pg">p.179~219</span></h2>
+  <p class="lead">Freud(지형학·구조·방어기제·심리성적 발달·치료) → 자아심리학 → 대상관계 이론 → 자기심리학. 후반부는 수업에서 "조금 생소할 수 있다"고 한 부분입니다.</p>
+
+  <div class="card">
+    <h3>Freud의 배경 <span class="pg">p.179~182</span></h3>
+    <ul>
+      <li>오스트리아의 신경과 의사 <b>Sigmund Freud</b>. 성격의 불일치·모순을 <span class="k">무의식</span>으로 설명, 의식을 강조한 기존 철학·의학에서 벗어나 무의식에 초점. 본업이 의사라 환자를 성공적으로 치료하는 것이 가장 중요.</li>
+      <li><b>1856</b> 모라비아(오늘날 체코 동부) 출생 → 1860 오스트리아 빈 이주. <b>1873</b> 빈 대학 입학 → <b>1881</b> 의학박사, 신경과 의사.</li>
+      <li>1885 <span class="k">Jean Charcot</span>(1825~1893; 최면술 치료)의 강의·실습 참여 → 최면술. 1886 개인 진료소, 신경학적 문제 없이 마비 등 증상을 보이는 <span class="k">히스테리</span> 환자 치료.</li>
+      <li><span class="k">Josef Breuer</span>(1842~1925, 신경과 의사)가 <b>Anna O.</b> 치료 중 <span class="k">담화 치료 talking cure</span>(대화를 이용한 치료)가 효과적임을 알게 됨 → Freud도 적용. <b>1895</b> Breuer &amp; Freud 『히스테리 연구』.</li>
+      <li>무의식 탐색 방법 <span class="k">자유 연상 free association</span>과 <span class="k">꿈 분석 dream analysis</span> 개발. <b>1900</b> 『<span class="k">꿈의 해석</span>』(최고 걸작이나 초판 8년간 약 600부). 무의식의 주된 내용이 성적 추동이라는 주장, 유아도 성욕을 가진다는 주장은 비난·조롱.</li>
+      <li>관심을 보인 학자들: Alfred Adler, Carl Jung, Otto Rank(1884~1939), Sándor Ferenczi(1873~1933) 등 → <b>국제정신분석학회</b>, 수련 체계, <b>1909</b> 미국 초청 강연으로 신대륙에 전파.</li>
+      <li>이후 반복적 상실: 가장 먼저 <b>Adler</b>가 초기에 이론에 반대하며 독립(독자 이론·학파), Jung·Rank 등도 떠남. 두 번의 세계대전, 말년 암 투병, <b>1939</b> 타국(영국)에서 사망.</li>
+    </ul>
+    <div class="note tip"><b>박스: Freud의 비밀 위원회 (p.198~199)</b>Jung이 떠난 뒤 이론 보호를 위해 <b>Ernest Jones(1897~1958)</b>가 비밀 위원회를 제안, <b>1913</b>년 6명으로 구성: Ernest Jones · Karl Abraham(1877~1925) · Max Eitingon(1881~1943) · Sándor Ferenczi · Otto Rank · Hanns Sachs(1881~1947). Jones=Freud 저작을 영어로 번역한 영국계. Abraham=독일, <b>Melanie Klein</b>의 분석가(대상관계 이론 창시에 연결). Ferenczi=헝가리, 중립적 방법보다 적극적 개입이 효과적이라 보고 Rank와 <b>지금–여기(here and now)</b>의 관계 경험을 중시(→ Carl Rogers에게 영향). Rank=남근기 이전의 불안을 중요시해 1924 결별. Sachs=《American Imago》 공동 창간. 위원회는 Ferenczi가 사망한 <b>1933</b>까지 지속.</div>
+    <div class="note lec"><b>수업 언급</b>Anna O. 치료로 "대화로 치료할 수 있겠다"고 생각한 것이 상담의 시초. 자유 연상·꿈 분석 연구는 지금의 방법론 기준으로는 부족해 "무의식·성적 추동에 대한 근거가 있느냐"는 비판을 받았지만, Jung·Adler·Anna Freud 등 많은 학자에게 영향을 줌.</div>
+  </div>
+
+  <div class="card">
+    <h3>주요 가정과 인간관: 에너지 체계 <span class="pg">p.182~184</span></h3>
+    <ul>
+      <li>인간의 마음·성격은 <b>생물학적 기반</b>을 가짐. 에너지 보존 법칙에 관심 → 인간 정신 = 일종의 <span class="k">에너지 체계 energy system</span>(열에너지→증기 압력→기계를 움직이는 <b>증기기관</b>에 비유).</li>
+      <li><b>세 가지 원리</b>(Pervin &amp; Cervone 2010): ①에너지는 <b>한정</b>되어 있다(많이 쓰이면 다른 목적에 쓸 에너지 부족) ②에너지 흐름이 막힐 수 있으나 <b>사라지지 않고</b> 다른 길을 찾아 흐른다 ③정신은 고요한 내적 상태(state of quiescence)를 달성하는 방향으로 작동 = <span class="k">항상성 homeostasis</span>(개체·세포 상태를 일정하게 유지하려는 경향).</li>
+      <li>중추신경계의 흥분 상태가 정신 에너지의 근원. 원하는 상태를 얻기 위한 무언가를 인식하면 신경생리적으로 흥분 = <span class="k">추동 drive</span>(기본적으로 표현·긴장 감소 추구, 일정량의 에너지 수반). 초기에 특히 주목한 것 = <b>성적 추동</b>(생의 초기부터 존재), 거기에 수반되는 에너지 = <span class="k">리비도 libido</span>.</li>
+      <li><b>히스테리</b>: 리비도가 적절히 해소되지 못한 채 남아 있다가 압력을 이기지 못하고 <b>신체 증상으로 표출</b>된 것. (근친에 대한 성적 추동처럼 상호작용이 불가능한 대상 → 정신 속에 남아 내적 압력 증가.) Breuer의 제안에 따라 <b>언어적 표출</b>(증상·문제와 관련된 과거 경험·외상을 이야기)로 에너지를 방출하는 것을 치료에 적용.</li>
+    </ul>
+    <div class="note lec"><b>수업 언급</b>호메오스타시스(항상성): 호르몬을 통한 체온·식욕·수면 조절처럼 몸의 상태를 일정하게 유지하려는 반응. 추동(drive)은 AP 동기 단원의 <b>drive reduction theory</b>와 같은 개념(욕구 → 추동 → 추동 감소 행동).</div>
+  </div>
+
+  <div class="card">
+    <h3>지형학적 모형 topographical model <span class="pg">p.184~186</span> <span class="tag must">필수</span></h3>
+    <p>담화 치료만으로 충분한 결과를 못 얻은 이유: 환자들이 증상과 관련된 외상 경험을 보고하지 못함 → 중요한 외상 경험은 <b>'의식 너머에'</b> 있음 → 무의식에 주목, <b>자유 연상</b>(자극을 제시했을 때 떠오르는 생각·이미지·감정을 <b>검열 없이</b> 자유롭게 표현)으로 탐색, 자기 꿈을 분석(<b>자기분석</b>)하며 꿈이 무의식을 풍부히 담고 있음을 깨닫고 마음의 모형을 개발. 그림 5.1 = <b>빙산</b>(수면 위=의식, 수면 근처=전의식, 수면 아래 큰 부분=무의식).</p>
+    <div class="tw"><table>
+      <tr><th>수준</th><th>정의</th><th>예·비고</th></tr>
+      <tr><td><span class="k">의식</span> conscious</td><td>특정 순간에 <b>자각되는</b> 모든 감각과 경험</td><td>정신세계의 <b>극히 일부</b>. 선택·검열을 거친 결과물</td></tr>
+      <tr><td><span class="k">전의식</span> preconscious</td><td>특정 순간엔 의식되지 않지만 <b>일정한 노력을 기울이면 의식될 수 있는</b> 경험</td><td>지난 학기 수업 내용, 지난주에 본 드라마. 의식과 무의식 사이의 교량이지만 Freud 이론에서 중요하게 다뤄지진 않음</td></tr>
+      <tr><td><span class="k">무의식</span> unconscious</td><td>자각하려는 노력에도 <b>쉽게 의식되지 않는</b> 경험</td><td>정신세계 중 <b>가장 넓은 범위</b>. 성적 추동 등 다양한 심리 내용이 행동을 결정. 증상·꿈·놀이·실수 등 <b>간접적·상징적</b>으로 드러남 → 정신분석의 중요 활동 = 이를 분석해 <b>의식화</b></td></tr>
+    </table></div>
+    <div class="note warn"><b>주의</b>무의식 개념 자체는 Freud 이전에도 있었음. Freud의 새로움은 "무의식이 행동·증상에 미치는 과정과 원리를 체계적으로 제안"한 것.</div>
+  </div>
+
+  <div class="card">
+    <h3>구조 모형(삼원 구조): 원초아·자아·초자아 <span class="pg">p.186~188</span> <span class="tag must">필수</span></h3>
+    <p>지형학 모형의 한계(무의식 내용이 이질적, 질환별 작용 양상 다름) → 무엇을 의식/무의식에 둘지, 무의식을 어떻게 관리할지 담당하는 <b>자아</b> 중심 새 모형(1923).</p>
+    <div class="tw"><table>
+      <tr><th></th><th><span class="k">원초아</span> id (Es, "그것")</th><th><span class="k">자아</span> ego (Ich, "나")</th><th><span class="k">초자아</span> superego (Über-ich, "내 위의 것")</th></tr>
+      <tr><td>정의</td><td>가장 기본적·원시적. <b>태어날 때부터</b> 존재. 인격이라 하기엔 동물적 요소. <b>리비도의 저장고</b>, 신체 과정의 본능적 욕구를 정신적 표상으로 넘기는 매개체</td><td><b>환경에 대한 현실 적응</b>을 담당하는 심리적 기능. 원초아에서 분화되어 원초아의 에너지를 빌려 기능. 현실 제약을 고려해 원초아의 욕구를 적절히 충족/표현</td><td><b>사회 규범이 내면화</b>된 것. 가치 체계·도덕 체계·양심. 내 머리 위에서 행동을 평가·훈계</td></tr>
+      <tr><td>원리</td><td><span class="k">쾌락 원리</span> pleasure principle(무조건 충족, 먹고 싶으면 먹고 자고 싶으면 잠)</td><td><span class="k">현실 원리</span> reality principle(욕구 충족의 지연, 합리적·현실 지향적 선택)</td><td><span class="k">도덕 원리</span> moral principle(행동의 선악·옳고 그름)</td></tr>
+      <tr><td>사고 과정</td><td><span class="k">일차 과정</span> primary process: 과거에 욕구 충족과 연합된 대상의 <b>심상</b>을 만들어 일시적으로 긴장 감소(예: 배고픈 유아가 엄마의 유방을 심상으로 떠올림)</td><td><span class="k">이차 과정</span> secondary process: 자신·타인을 위험에 빠뜨리지 않고 욕구를 충족시킬 <b>행동 경로를 수립</b>(예: '엄마가 돌아오기를 기다렸다가 다가가서 엄마 배고파라고 말해야지')</td><td>(하위 체계 2: <span class="k">양심</span> ↔ 죄책감, <span class="k">자아이상</span> ↔ 수치심)</td></tr>
+      <tr><td>발달 시기</td><td>출생 시 존재</td><td><b>6~8개월 즈음 분화 시작 → 2~3세 정도면 어느 정도 확립</b></td><td><b>5~6세경 분화 시작 → 10~11세경 확립</b> (가장 나중)</td></tr>
+    </table></div>
+    <ul>
+      <li>자아 출현의 징조: 이즈음 아기는 원시적 물리적·신체적 자기를 형성, 통제할 수 있는 것과 없는 것을 인식, 욕구 만족의 지연을 배움.</li>
+      <li>원초아+자아만 있을 때는 자신의 안전만 고려하면 되었지만, 초자아가 발달하면 <b>사회적 관점에서 바람직한/바람직하지 않은 행동</b>을 구분하고 지향성까지 고려.</li>
+      <li>초자아의 두 하위 체계(A. Freud 1946): <span class="k">양심 conscience</span> = <b>잘못된 행동에 대한 처벌</b>로 형성, <b>죄책감</b>과 관련 / <span class="k">자아이상 ego-ideal</span> = <b>잘한 행동에 대한 칭찬·수용</b>으로 형성, <b>수치심</b>과 관련.</li>
+    </ul>
+    <div class="note lec"><b>수업 언급</b>2~3세는 언어 때문에 발달적으로 중요한 시기(phrase로 소통, 요구 조율). 양심은 "행동을 하고 나서"가 아니라 "그 행동을 하면 죄책감이 들 것 같다"고 <b>미래 감정을 예측</b>해 미리 행동을 안 하게 하는 기능.</div>
+  </div>
+
+  <div class="card">
+    <h3>마음의 역동과 불안 <span class="pg">p.188~189</span> <span class="tag must">필수</span></h3>
+    <ul>
+      <li>세 구조는 <b>정적(static)이 아니라 동적(dynamic)</b>: 서로 원하는 것이 있고 달성하려고 다른 요소를 압박하거나 전략을 사용. 원초아('난 지금 당장 갖고 싶어') / 자아('그걸 가지려면 계획을 좀 세워야 해': 타협점) / 초자아('넌 그걸 가질 수 없어. 옳지 않거든'). Freud는 <b>자아의 중요성</b>을 특별히 강조(자아가 충분히 튼튼해야 균형을 유지하며 환경에 적응).</li>
+      <li>자아는 일을 효과적으로 해내기 위해 '경고 장치'(→ <b>불안</b>)와 '방어 전략'(→ <b>방어기제</b>)을 개발.</li>
+    </ul>
+    <div class="tw"><table>
+      <tr><th>불안</th><th>정의</th><th>예</th></tr>
+      <tr><td><span class="k">현실 불안</span> reality anxiety</td><td><b>외부 현실의 위협</b>으로 인한 불안</td><td>"다음 주에 깜짝 퀴즈를 보겠다"는 교수의 말을 들었을 때</td></tr>
+      <tr><td><span class="k">신경증적 불안</span> neurotic anxiety</td><td>원초아의 추동을 <b>자아가 통제할 수 없을 것이라는 두려움</b>. Freud가 특히 중요하게 고려 → 자아의 방어기제 발동</td><td>—</td></tr>
+      <tr><td><span class="k">도덕적 불안</span> moral anxiety</td><td><b>초자아</b>가 정한 도덕적 규율·규범을 어기는 것과 관련</td><td>—</td></tr>
+    </table></div>
+    <div class="note ok"><b>정리</b>세 구조가 균형을 못 이루고 자아가 통제를 상실할 위험이 생기면 불안이 발생 → 자아가 <b>자아 방어기제 ego defense mechanism</b>를 사용.</div>
+  </div>
+
+  <div class="card">
+    <h3>자아 방어기제 7종 <span class="pg">p.189~190</span> <span class="tag must">필수</span></h3>
+    <div class="tw"><table>
+      <tr><th>방어기제</th><th>정의</th><th>예</th></tr>
+      <tr><td><span class="k">억압</span> repression</td><td>용납할 수 없는 추동·기억을 의식에서 배제해 <b>무의식으로 밀어 넣음</b>. Freud가 가장 기본적이면서 중요하다고 본 방어기제. 단점: 억압을 유지하려면 에너지가 지속 소모되어 현실 적응에 쓸 에너지 부족</td><td>불안을 일으키는 충동·기억을 더 이상 의식하지 못함</td></tr>
+      <tr><td><span class="k">합리화</span> rationalization</td><td><b>현실 왜곡</b>으로 행동을 자신과 타인에게 합리적·정당한 것처럼 보이게 함</td><td>지원했다가 떨어진 회사가 "사실 별로 좋은 회사가 아니었다"고 위로. 이솝 우화 '여우와 신 포도'</td></tr>
+      <tr><td><span class="k">반동 형성</span> reaction formation</td><td>용납할 수 없는 추동에서 자신을 보호하려고 <b>반대의 생각·행동</b>을 표출</td><td>호감을 느끼면서도 억압하고 오히려 그 사람을 놀리거나 밀어냄</td></tr>
+      <tr><td><span class="k">투사</span> projection</td><td>용납할 수 없는 <b>자신의 사고·감정</b>을 다른 대상(상대방의 행동 등)에 귀속</td><td>상대 때문에 화가 났는데 인정 못하고 <b>상대가 자신에게 화를 낸다</b>고 여김</td></tr>
+      <tr><td><span class="k">퇴행</span> regression</td><td>위험에 직면했을 때 좀 더 안전했던 <b>생애 초기 발달 단계의 행동 패턴</b>으로 돌아감</td><td>불안할 때 어린아이 같은 말·행동. (동생이 태어나자 혼자 잘하던 것도 엄마에게 해달라고 함)</td></tr>
+      <tr><td><span class="k">전치</span> displacement</td><td>원치 않는 추동이 일어났을 때 <b>상대적으로 덜 위험한 대상</b>에게 그 추동을 표현</td><td>직장 상사에게 야단맞고 가족·후배에게 화냄</td></tr>
+      <tr><td><span class="k">승화</span> sublimation</td><td>용납할 수 없는 추동을 <b>사회적으로 허용되는 사고·행위</b>로 전환. <b>건강하고 적응적인 방어기제의 전형</b></td><td>공격적 추동을 그림·음악 등 예술 활동이나 경찰관 같은 직업 활동으로 표현</td></tr>
+    </table></div>
+    <div class="note lec"><b>수업 언급</b>"승화 말고는 여기 나온 것들이 <b>미숙한 방어기제</b>로 분류"된다고 했습니다. 투사 질문(방어기제인데 왜 위협?): 내가 누군가에게 화났다는 사실을 인정하기 싫을 때 "네가 나한테 화내잖아" 식으로 돌리는 것. 승화 예: 프리다 칼로가 관계의 고통을 예술 작품으로.</div>
+  </div>
+
+  <div class="card">
+    <h3>심리성적 발달 이론 <span class="pg">p.190~192</span> <span class="tag must">필수</span></h3>
+    <ul>
+      <li><b>1905년</b> 리비도 개념을 활용해 제안(구조 모형 1923보다 이전이라 삼원 구조 발달이 정교하게 담기진 않음). 생애 초기부터 존재하는 리비도 = <span class="k">유아 성욕 infantile sexuality</span>. 리비도는 성장에 따라 신체 특정 부위에 집중되고 아이는 그 부위를 통해 감각적 쾌락을 추구: <b>입 → 항문 → 성기</b>, 일정 기간 <b>잠복</b> 후 다시 성기.</li>
+      <li>각 단계에서 심리성적 욕구가 심하게 <b>좌절되거나 과잉 충족</b>되면 그 시기의 행동이 부분적으로 남아 특정 성격을 구성 = <span class="k">고착 fixation</span>. 항상 그 시기 행동만 드러내진 않고 평소엔 간헐적이다가 <b>스트레스가 심해지면 급격히 퇴행</b>하며 고착된 시기 행동이 현저해지기도 함.</li>
+    </ul>
+    <div class="tw"><table>
+      <tr><th>단계</th><th>시기</th><th>리비도 집중·쾌감</th><th>과도한 좌절/충족 시 성격</th></tr>
+      <tr><td><span class="k">구강기</span> oral</td><td>생후 ~18개월</td><td>입을 이용한 활동</td><td><span class="k">구강기 성격</span>: 과도한 <b>충족</b> → <b>구강기 수용 성격</b>(남에게 잘 속고 의존적, oral receptive) / 과도한 <b>좌절</b> → <b>구강기 공격 성격</b>(의심 많고 공격적, 논쟁 좋아함, oral aggressive). 전반부/후반부 고착으로 하위 유형 구분(McWilliams 1994)</td></tr>
+      <tr><td><span class="k">항문기</span> anal</td><td>2~3세</td><td>배변을 통한 쾌감</td><td>원하는 때 배변하려는 욕구가 좌절/과잉 충족 → 과도한 좌절=<b>항문기 보유 성격</b>(완강함·인색함·질서에 대한 과도한 집착, anal retentive) / 과도한 충족=<b>항문기 배출 성격</b>(무질서·충동적, anal expulsive)</td></tr>
+      <tr><td><span class="k">남근기</span> phallic</td><td>3~5세</td><td>성기</td><td><b>오이디푸스 콤플렉스/갈등</b>의 적응적 해결이 중요. 남아: 어머니를 성적 대상으로 삼고 싶지만 강한 아버지에 대한 두려움으로 그럴 수 없는 내적 갈등 → <b>아버지와의 동일시</b>로 해결. 실패하면 유혹·질투·경쟁·권력 추구·남성성 과시에 집착하는 성격. 여아: 아버지를 성적 대상으로, 어머니를 경쟁자로 인식하는 <b>엘렉트라 콤플렉스</b>; 고착되면 유혹적이고 바람기 있는 성격</td></tr>
+      <tr><td><span class="k">잠복기</span> latency</td><td>5~13세</td><td>(성적 욕구 표현이 뚜렷하지 않음)</td><td>고착과 관련된 특별한 성격 유형 없음. 학업에 집중. Freud는 중요하게 다루지 않았지만 자기 조절·과제 수행·대인관계 능력이 왕성히 발달</td></tr>
+      <tr><td><span class="k">성기기</span> genital</td><td>사춘기 이후</td><td>다시 성기, 이성 등 성적 대상</td><td>연인 관계를 통해 욕구 충족. 타인과 친밀한 관계를 맺고 적절히 성적 활동을 하는 법을 배우며 <b>성격 형성 완료</b></td></tr>
+    </table></div>
+    <div class="note lec"><b>수업 언급</b>"엄마랑 결혼할 거야" 하는 어린아이가 Freud가 본 사례. 오이디푸스 갈등이 해소되지 않은 사람은 직장에서 아버지 같은 상사에게 과도하게 위축되거나 과도하게 반발할 수 있음. 구강기 의존성 → 흡연 같은 입 관련 행위, 항문기 → 강박 성격과 연결된다고 설명.</div>
+    <div class="note warn"><b>연령 표기</b>자아 분화 6~8개월(→2~3세 확립), 초자아 5~6세(→10~11세 확립), 구강기 ~18개월, 항문기 2~3세, 남근기 3~5세, 잠복기 5~13세. 사진에서 확인한 교재 표기입니다.</div>
+  </div>
+
+  <div class="card">
+    <h3>성격의 문제와 정신분석 치료 <span class="pg">p.192~197</span> <span class="tag must">필수</span></h3>
+    <h4>성격 문제를 이해하는 두 모형</h4>
+    <ul>
+      <li><b>심리성적 발달 모형</b>: 시기별로 리비도가 집중되는 부위를 통한 욕구 충족이 과도하게 좌절/충족 → 독특한 병리적 성격(구강기·항문기·남근기 성격). Freud는 특히 <b>남근기의 갈등과 그로 인한 고착·퇴행이 신경증과 밀접</b>하다고 보고 정교히 분석(구강·항문기는 상대적으로 관심 적고 자료 부족). 후대 학자들은 반대로 <b>남근기 이전</b>에 주목: 더 이른 시기의 발달 단계에 고착될수록 성격 문제가 더 심각.</li>
+      <li><b>삼원 구조 모형</b>: 자아가 원초아·초자아·현실의 요구를 적절히 만족시키며 균형을 유지하는 데 실패하면 문제 → 핵심은 <b>자아의 능력이 약화되거나 충분히 발달하지 못하는 것</b>. 원인: 원초아 추동이 너무 강함 / 초자아의 경직된 압박 / 현실 사건을 처리하느라 에너지 소모 / 동시 발생. 자아가 약하면 정서(불안)·인지·대인관계 측면의 문제가 나타남(후자 둘은 방어기제 사용 특성과 관련).</li>
+      <li>방어기제는 일정 수준의 <b>현실 왜곡</b>을 담음(Vaillant 1992). <b>현실 왜곡이 심한 방어기제를 경직된 방식으로 사용</b>하면 주관적 세계와 현실 세계의 괴리가 커져 대인관계 갈등(예: 엉뚱한 사람에게 반복 화풀이, 모두가 자신에게 악의를 품는다고 의심).</li>
+      <li><b>자아가 강한 사람</b>은 현실 왜곡이 적은 성숙한 방어기제를 포함해 <b>다양한 방어기제를 상황에 맞게 유연하게</b> 사용. <b>자아가 약한 사람</b>은 소수의 방어기제를 <b>경직된</b> 방식으로 사용(예: <b>편집성 성격 paranoid personality</b> = 투사 방어를 반복).</li>
+    </ul>
+    <h4>정신분석 치료의 원리</h4>
+    <ul>
+      <li>초기 치료는 성격 문제보다 <b>신경증</b>에 관심. 구조 모형 발표가 Freud 사망 10여 년 전이라 자아 강화를 목적으로 한 치료 체계화 시간이 부족. 초기 치료는 지형학 모형 기반, <b>핵심 목표 = 무의식을 의식화</b>(신경증은 용납 안 되는 경험을 무의식에 과도하게 담아 둔 탓 → 의식화하면 무의식의 압박이 줄어 증상 개선).</li>
+    </ul>
+    <div class="tw"><table>
+      <tr><th>기법</th><th>설명</th></tr>
+      <tr><td><span class="k">자유 연상</span></td><td>마음에 떠오르는 생각을 있는 그대로 이야기하게 함. 핵심 = <b>마음의 자동적 검열의 영향 최소화</b>. 치료자와 내담자의 <b>시선이 마주치지 않도록</b> 배치(카우치, 치료자는 머리맡), 내담자 말에 대한 치료자 반응 최소화, 가치관·지향을 드러내지 않는 <b>중립적 자세</b>로 모든 말에 고르게 주의. 가능하면 개입하지 않고 필요할 때만 질문. 순서·흐름, 톤·말의 중단·빠르기에 주목</td></tr>
+      <tr><td><span class="k">꿈 분석</span></td><td>꿈 내용을 분석. 의식에서 수용되기 어려운 욕구·감정이 꿈의 <b>상징적 내용</b>으로 표현(잠을 잘 때는 검열이 약해짐). 꿈 내용을 떠올릴 때 연상되는 것을 자유롭게 말하게 하는 <b>자유 연상과 연계</b>. 일상 주제 자유 연상보다 꿈을 이용한 자유 연상이 무의식을 더 풍부히 담음</td></tr>
+      <tr><td><span class="k">전이</span> transference</td><td><b>과거의 중요한 타인에게 느꼈던 감정을 무의식적으로 치료자에게서 느끼는 것</b>. Freud가 발견(내담자가 강렬한 사랑·미움이 실린 말투로 반응 → 아동기 중요 타인의 특성을 Freud에게서 발견)</td></tr>
+      <tr><td><span class="k">전이 분석</span> transference analysis</td><td>내담자의 전이 현상을 분석하는 과정. 전이 개념의 3특성: ①과거 특정 개인에게 느꼈던 감정을 현재의 타인에게 비슷한 정도로 다시 경험(마음속에 타인을 대표하는 구조가 있고 비슷한 특징의 타인에게 유사 반응) ②타인에 대한 감정·행동은 그 사람 자체와 과거의 다른 사람에 대한 것이 <b>섞여</b> 있을 수 있음 ③중요한 타인에 대한 기억·감정이 타인에게 직접 영향을 미치고 그 영향이 다시 개인에게 돌아옴(예: 아버지와 닮은 남성에게 사랑을 느낀 여성의 행동 → 남성의 정서 반응 → 다시 여성에게 영향)</td></tr>
+      <tr><td><span class="k">저항</span> resistance / <span class="k">저항 분석</span></td><td>내담자가 치료 과정에서 <b>비협조적·저항적 행동</b>을 나타내는 현상(스스로 찾아왔는데도 반복 지각, 특정 주제 말하기 거부, 합의한 과제 수행 안 함). 무의식적 갈등 때문이라고 보고 체계적으로 분석(저항 분석)</td></tr>
+      <tr><td><span class="k">해석</span> interpretation</td><td>밝혀진 무의식 내용을 통합해 <b>이론에 기반한 의미 있는 설명</b>을 함</td></tr>
+      <tr><td><span class="k">통찰</span> insight</td><td>해석을 통해서든 스스로든, 자신의 <b>무의식적 갈등을 알아차리고</b> 행동과 동기의 구체적 관계를 새롭게 깨달아 아는 것. 깊어질수록 현실에서의 적응적 행동 가능성↑</td></tr>
+      <tr><td><span class="k">훈습</span> working through</td><td>통찰은 한 번에 일어나지 않고 <b>반복적·점진적</b>으로 일어남. 이 과정</td></tr>
+    </table></div>
+    <div class="chain"><span class="s">자유 연상</span><span class="ar">·</span><span class="s">꿈 분석</span><span class="ar">·</span><span class="s">전이 분석</span><span class="ar">·</span><span class="s">저항 분석</span><span class="ar">→</span><span class="s">해석</span><span class="ar">→</span><span class="s">통찰</span><span class="ar">→</span><span class="s">훈습</span></div>
+    <div class="note lec"><b>수업 언급</b>전이 예: 오이디푸스 콤플렉스가 해소되지 않은 남성이 아버지와 비슷한 남성 치료자에게서 권위적으로 억압당한다고 느낌. 이 내용은 아래 대상관계의 <b>역전이</b>와 짝으로 외우세요.</div>
+  </div>
+
+  <div class="card">
+    <h3>정신분석의 한계와 후속 이론 <span class="pg">p.197~198</span></h3>
+    <p><b>비판 4가지</b></p>
+    <ol>
+      <li><b>비과학적</b>: 과학철학자 <span class="k">Karl Popper(1902~1994)</span>가 지적했듯 주요 개념이 대부분 추상적이고 측정이 어려워, 측정할 수 없는 개념으로 구성된 가설은 자료로 채택·기각하는 검증이 불가능 → 과학적 이론이 되기 어려움.</li>
+      <li>Freud를 포함한 정신분석가들의 내담자는 <b>사회경제적 지위·교육 수준·연령 면에서 매우 특수</b>(높은 성인 중심) → 다른 인구학적 특성에 일반화 가능한지 불분명.</li>
+      <li>Freud는 <b>남근기</b>에 특별히 주목, 남근기 이전 시기의 분석·체계화는 상대적으로 미흡(후대 학자들이 보완).</li>
+      <li>치료: <b>지나치게 긴 시간</b>(전통적 정신분석은 수년) → 시간·비용 부담, 치료 기간의 개인차·측정의 어려움·치료 효과(타당성) 확인의 어려움.</li>
+    </ol>
+    <p><b>후속 이론</b>: <span class="k">자아심리학</span>(Anna Freud; 전통 정신분석 가정을 거의 받아들이며 자아 기능과 성격 문제에 초점) / <span class="k">대상관계 이론</span>(타인과 자신에 대한 표상·관계에 초점, 정신분석 기본 가정 상당 부분 반대) / <b>개인심리학</b>(Adler) / <b>분석심리학</b>(Jung). 모두 20세기 초반 <b>정신역동 이론의 전성기</b>를 이룸.</p>
+  </div>
+
+  <div class="card">
+    <h3>자아심리학 ① 배경: Anna Freud · Hartmann · Rapaport <span class="pg">p.200~202</span></h3>
+    <ul>
+      <li><span class="k">Anna Freud</span>: Sigmund Freud의 <b>막내딸</b>, 오스트리아 빈 출생. 독일어·프랑스어·영어·이탈리아어 구사, 1914년부터 약 6년간 교사. 아버지의 영향으로 정신분석 활동. 특히 <b>아동의 심리</b>에 관심: 아동 정신분석, 양육자·교사 대상 강연. 심각한 문제를 가진 아동뿐 아니라 <b>비교적 정상적인 아동</b>도 분석 → 아동은 <b>무의식적 소망을 밝히는 것보다 자아의 방어 노력이 성공하는지, 어떤 방어기제를 어떤 방식으로 쓰는지</b>가 심리 문제를 이해·해결하는 데 더 중요함을 알게 됨.</li>
+      <li><b>1936</b> 『<span class="k">자아와 방어 기제</span> The Ego and the Mechanisms of Defense』 출간 → 다양한 방어기제 발견·연구 촉진. <b>1938</b> 나치 박해를 피해 아버지와 영국 이주, <b>1941</b> 런던 햄스테드에 전쟁고아 대상 치료·관리 기관(<b>War Nursery</b>) 개설. 방어기제 활용 특성 분석 → 많은 분석가가 자아의 기능에 주목.</li>
+      <li><span class="k">Heinz Hartmann</span>(1894~1970): 빈에서 활동하다 <b>1941 미국</b>으로 이주(뉴욕 정신분석학회). 자아의 <b>현실 적응 기능</b>에 관심: 추동 관리·방어 기능에서 벗어나 현실의 과업을 해결하며 환경에 적응하는 기능으로 초점 이동. 자극을 적절히 차단하는 능력, <b>주의 통제 능력</b>, 감각 경험이 현실인지 확인하는 능력, 사고를 적절히 구성하는 능력을 자아의 핵심 기능으로 제안 → 정신분석과 심리학 사이에 다리.</li>
+      <li><span class="k">David Rapaport</span>(1911~1960): 헝가리 출신 임상심리학자·정신분석가. 1938 미국 이주, <b>1948 오스틴 릭스 센터</b>. 개인의 <b>사고 과정이나 기능</b>이 성격·심리장애의 핵심 요소라고 보고 다양한 심리검사를 동시에 쓰는 <b>배터리 검사(a battery of tests)</b> 시스템과 통합 해석 틀을 고안. 자아심리학 = 인간의 기본 심리 기능(기억·지각·동기 등)과 행동을 설명하는 <b>포괄적 대이론</b>이라고 봄(1960).</li>
+      <li>박스: 오스틴 릭스 센터(1923 설립, 매사추세츠 스톡브리지, 창립자 Austen Riggs 1876~1940) — 정신분석가들이 활동하며 자아심리학과 심리학 분야 간 가교 역할. <b>Erik Erikson</b>(1902~1994)이 약 10년 근무, Aaron Beck(인지치료 창시자)도 2~3년 근무한 경험 → 자아심리학과 인지치료의 연결.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>자아심리학 ② 자아 기능: 방어기제 연구 <span class="pg">p.203~205</span> <span class="tag must">필수</span></h3>
+    <ul>
+      <li><span class="k">자아 기능 ego function</span>이 자아심리학의 핵심 주제. S. Freud는 연구 기간 대부분을 원초아·무의식 추동 연구에 쓰고 말년에야 자아 기능을 정립하려 했지만 시간이 부족. A. Freud와 자아심리학자들은 자아의 핵심 목적이 <b>유기체의 적응</b>임을 감안해 <b>내적 갈등 관리만큼 외부 과업 해결</b>도 중요하다고 보고 두 가지로 구분:
+        <ul>
+          <li><span class="k">갈등 관련 자아 기능</span>(conflict-related): 자아 방어기제를 구체적으로 연구.</li>
+          <li><span class="k">갈등으로부터 자유로운 자아 기능</span>(conflict-free): 지각·주의·기억·운동 조절·인지적·정서적 통합·언어 등 <b>사고 기능과 인지 기능</b>.</li></ul></li>
+      <li>A. Freud가 아동을 분석하며 비교적 건강한 아동도 방어기제를 쓴다는 것을 알게 됨. 방어기제 개념이 처음 제시되었을 땐 사용 자체가 문제인 것처럼 다뤄졌지만(경험을 자연스럽게 수용할 수 있으면 방어기제가 필요 없으므로), 특별한 문제 없는 사람도 사용한다는 걸 확인하며 <b>사용 특성이나 패턴</b>으로 관심이 이동.</li>
+    </ul>
+    <h4>자아심리학자들이 특히 중요하게 고려한 3가지</h4>
+    <div class="g3">
+      <div class="mini"><b class="t">① 효과성</b>방어기제가 <b>성공하는지</b>. 효과적이면 무의식적 갈등·추동이 적절히 관리돼 불안 등이 드러나지 않고 현실 과업에 집중. 효과적이지 않으면 갈등이 관리되지 않아 불안·불쾌 감정과 <b>부적응</b>(Haan 1969)</div>
+      <div class="mini"><b class="t">② 유형</b>방어기제는 <b>현실 왜곡</b> 정도에서 차이. <b>현실 왜곡이 심할수록 원시적 방어기제</b>, 이를 많이 쓸수록 부적응 심해짐(Vaillant 1992)</div>
+      <div class="mini"><b class="t">③ 사용 방식·패턴</b>모든 사람이 모든 방어기제를 같은 빈도로 쓰지 않음. 사용 패턴이 곧 개인차(성격). <b>건강한 사람일수록 다양한 방어기제를 유연하게</b> 사용(Shapiro 1965)</div>
+    </div>
+    <h4>방어기제 개념의 수정(확장) 2가지</h4>
+    <ul>
+      <li>①<b>사용 목적 확장</b>: 초기에는 <b>원치 않는 추동</b> 관리 → 원치 않는 추동을 포함한 다양한 <b>불쾌한 욕구·감정</b> 관리.</li>
+      <li>②<b>작동 범위 확장</b>: 초기에는 <b>무의식적</b>으로만 작동한다고 가정 → <b>의식 수준</b>에서 작동하는 것도 있어 무의식·의식 모두 포괄. 그 결과 <b>스트레스 대처 전략(coping)</b>·<b>정서 조절 전략(emotion regulation)</b>과 내용이 겹침(예: 원치 않는 생각·감정을 의식 영역 안에서 <b>억제 suppression</b>하는 것 = 정서 조절 전략; Gross &amp; Levenson 1993; Wenzlaff &amp; Wegner 2000).</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>자아심리학 ③ 방어 이외의 자아 기능과 치료 <span class="pg">p.205~207</span></h3>
+    <ul>
+      <li>방어 이외의 자아 기능 연구는 주로 <b>인지 기능</b> 중심(현실 과업 처리에 필요한 기능이 인지 기능이고, 자아심리학자들이 집중 연구한 장애가 <b>조현병</b>). 생애 초기 심각한 문제를 경험할수록 자아가 미성숙해 자아 기능이 저하된다고 보고, 조현병 같은 정신증은 생애 초기 심각한 문제로 인한 <span class="k">자아 결핍 ego deficit</span> 때문이라 가정(이후 신경학적 연구로 부적절한 가정으로 확인됐지만 인지 기능 결함을 정교히 파악하는 성과).</li>
+      <li><b>Bellak &amp; Hurvich(1969)</b>가 조현병 연구로 정리한 자아의 핵심 기능 일부:</li>
+    </ul>
+    <div class="tw"><table>
+      <tr><th>기능</th><th>의미</th><th>건강할 때 / 약할 때</th></tr>
+      <tr><td><span class="k">현실 검증</span> reality testing</td><td>자신이 경험하는 것이 <b>현실인지 아닌지 분별</b></td><td>저하되면 보고·듣고·느끼는 것이 현실인지 구분 못해 <b>환각</b> 등. 이상심리학에서 <b>신경증–정신증 유형론</b>의 중요한 구분 기준</td></tr>
+      <tr><td><span class="k">자극 장벽</span> stimulus barrier</td><td>감각기관을 통해 들어오는 자극에 대한 민감성·<b>역치</b> 혹은 자극을 자각하는 정도</td><td>건강: 들어오는 자극 중 일부를 차단하고 필요한 자극만 의식 / 과도하게 약함: 불필요한 자극을 차단 못해 <b>혼란</b></td></tr>
+      <tr><td><span class="k">사고 과정</span> thought process</td><td>사고를 <b>생성·유지</b>하는 과정</td><td>건강: 주의를 유지하며 상황에 맞는 개념 형성, 논리적 전개 / 약함: 비논리적·비합리적 사고, 언어 사용의 비논리성·비현실성</td></tr>
+      <tr><td><span class="k">합성–통합 기능</span> synthetic-integrative function</td><td>경험의 다양한 측면을 통합. 특히 <b>서로 모순되거나 상충하는</b> 태도·가치·감정·행동의 통합</td><td>건강: 다양한 측면을 파악해 어느 정도 통합 / 약함: 통합 실패, 각 요소를 부적응적 방식으로 처리(예: 원치 않는 측면을 무의식에 담아둔 채 외면)</td></tr>
+    </table></div>
+    <div class="note lec"><b>수업 언급</b>합성–통합: "서로 다른 경험·가치를 마주쳐도 나는 하나이므로 그걸 나의 것으로 통합하는 것(정체성을 묶는 느낌)". 현실 검증력은 neurosis와 psychosis를 구분하는 기준 중 하나(환각 증상).</div>
+    <h4>성격의 문제와 치료</h4>
+    <ul>
+      <li>성격 문제는 <b>자아 기능의 결함</b>: 자아가 약해 원시적 방어기제를 경직되게 사용해 부적응 / 현실 적응 기능이 손상돼 현실적·합리적 지각·이해·추론에 실패. <b>치료 목표 = 자아 기능 증진</b>.</li>
+      <li>목표는 분명하지만 <b>기법에서의 차별성은 두드러지지 않음</b>(전통적 정신분석 기법을 거의 그대로 사용 — 꿈 분석·자유 연상·전이 분석). 내담자의 방어기제를 체계적으로 분석·명료화하고 효과적으로 통제하도록 돕는 것이 자아 기능 강화에 기여.</li>
+      <li><b>한계</b>: 자아의 현실 적응 기능·인지 기능에 대한 체계적 분석이 구체적 치료 기법으로 이어지지 않음 → 인지적 측면을 체계적으로 분석·개입하는 <span class="k">인지치료</span> 개발을 촉진(<b>Aaron Beck</b>은 자아심리학 수련 배경).</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>대상관계 이론 ① 배경: Melanie Klein <span class="pg">p.207~208</span></h3>
+    <ul>
+      <li><span class="k">Melanie Klein</span>: 오스트리아 빈 출생. 의학을 공부하고 싶었으나 가세가 기울어 포기. 21세 결혼·두 아이, 이 과정에서 심각한 우울장애. <b>1910</b> 헝가리 부다페스트 이주 → Freud의 측근 <b>Sándor Ferenczi</b>에게 분석받고 정신분석가로 활동 시작(소아 정신분석, 아이들의 <b>놀이(play)가 꿈과 같은 상징적 의미</b>를 가진다고 믿음). 약 10년 헝가리 활동 후 <b>1921</b> 이혼, 독일 베를린으로 이주 → <b>Karl Abraham</b>에게 분석(Abraham의 지지를 얻었으나 유럽 대륙에서 활동하던 다른 분석가들의 호응은 못 얻음). 이후 영국 정신분석가들이 Klein 이론에 관심 → <b>영국으로 이주</b>, 정신분석가로서의 전성기.</li>
+      <li><b>남근기 이전</b> 발달 시기에 집중한 이론으로 호응과 비판을 동시에 받음, <b>A. Freud와 심한 갈등</b>. <b>1938</b> 영국 정신분석학회(British Psychoanalytical Society)가 세 집단으로 분리: ①<b>Klein 지지</b> ②<b>A. Freud 지지</b> ③<b>독립 집단 independent group</b>(Klein 이론을 대체로 따르지만 일부 가정·이론은 지지하지 않음; <b>Donald Winnicott(1896~1971)</b>, <b>Ronald Fairbairn(1889~1964)</b>). 첫째와 셋째 집단 분석가들이 발전시킨 이론 = <span class="k">대상관계 이론 object-relations theory</span>.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>대상관계 이론 ② 주요 가정과 개념 <span class="pg">p.208~211</span> <span class="tag must">필수</span></h3>
+    <ul>
+      <li>대상관계 이론가들은 남근기 이전의 영유아를 세심히 관찰해 Freud의 가정과 다른 현상을 포착: 영유아는 <b>추동의 만족보다 '관계를 추구하는 경향'이 더 강함</b>(Fairbairn 1952). 어머니의 젖을 얻는 데 집중하기보다 <b>양육되는 경험 자체</b>와 그에 수반되는 <b>따스함·정서적 유대</b>에 집중(McWilliams 1994). 따라서 아동 어린 시절 <b>중요했던 대상이 누구였는지, 그들과의 경험이 어떻게 기억되는지, 내면화된 대상·관계 경험이 무의식적으로 어떻게 작동하는지</b>에 관심. 발달 과정에서 특별한 어려움이 있으면 정상적이지 못한 형태로 내재화되고 이는 다른 사람과의 상호작용에 영향, 부적응 초래.</li>
+      <li>S. Freud도 대상(object)이 내재화될 수 있음을 알았지만, 대상관계 이론가는 대상뿐 아니라 <b>'관계(relations)'가 동시에 내재화</b>된다고 봄(Fairbairn 1952).</li>
+    </ul>
+    <div class="note ok"><b>핵심 정의</b><span class="k">대상관계 object-relations</span> = <b>자기(self) + 대상(object) + 둘 간의 관계(relations)</b>로 구성되며, 특정 대상과의 실질적 경험을 담아 형성된다.</div>
+    <div class="g2">
+      <div class="mini"><b class="t">긍정적 대상관계</b>적절한 시기·만큼 욕구 충족 → 적절한 양육을 받은 <b>자기</b>에 대한 긍정적 태도 + 적절한 양육을 제공한 <b>대상</b>에 대한 긍정적 태도 + 욕구 충족 과정의 쾌감·포만감(<b>관계</b>)을 동시에 내면화</div>
+      <div class="mini"><b class="t">부정적 대상관계</b>양육자로부터 욕구 충족을 외면당함 → 부정적 자기 + 부정적 대상 + 욕구 좌절 과정의 불쾌감·불만족감(부정적 감정 경험)을 내면화</div>
+    </div>
+    <ul>
+      <li>욕구는 항상 원하는 방식으로 충족되기 어려워 긍정/부정 대상관계가 <b>모두</b> 형성됨. 아기가 성장하며 당면하는 중요한 과제 = <b>서로 반대되는 대상관계를 하나로 통합</b>. 한 번에 일어나지 않고 상반되는 쌍 사이의 충돌과 타협이 반복되며 <b>점진적</b>으로 진행. → 대상관계 이론가들은 추동과 방어 사이의 투쟁뿐 아니라 <b>대상관계 단위들의 서로 반대되는 쌍 간의 충돌</b>도 중요한 갈등이라고 봄(Ogden 1983).</li>
+    </ul>
+    <h4>고전적 구조 이론에서 확장된 4가지 분석</h4>
+    <div class="tw"><table>
+      <tr><th>①</th><td><span class="k">자아(ego)와 자기(self)의 구분</span>: 정신역동에서 <b>자아 = 기능</b>(function; 원활한 적응 위해 필요한 의식적·무의식적 조절·통제·감찰·방어 기능). <b>자기 = 표상(representation)·개념·기억 체계</b>(특히 타인이 내재화되어 표상으로 나타나는 대상과 관계하는 마음의 요소). 표상·개념으로서의 자기는 이후 사회심리학·인지심리학에서 활발히 연구.</td></tr>
+      <tr><th>②</th><td><span class="k">자기와 대상의 다양한 관계 양상</span>: 생애 초기 영아는 자기와 타인을 구분하지 못함 = <span class="k">융합 fusion</span> → 인지 발달로 분리되어 <span class="k">2자 관계 dyadic</span> → 남근기 이후 <span class="k">3자 관계 triadic</span>.</td></tr>
+      <tr><th>③</th><td><span class="k">방어기제 개념의 확장</span>: 기존 = 무의식적 추동·부정적 경험을 다루는 전략 → 대상관계 이론 = <b>대상관계의 서로 반대되는 쌍 간의 갈등을 다루는 전략</b>. 예: <span class="k">분열 splitting</span>.</td></tr>
+      <tr><th>④</th><td><span class="k">전이와 역전이 개념의 발전</span>.</td></tr>
+    </table></div>
+    <div class="tw"><table>
+      <tr><th>관계 양상</th><th>설명 (그림 6.3)</th></tr>
+      <tr><td><span class="k">융합</span> fusion (겹친 두 원)</td><td>생애 초기에 <b>자기 자신과 타인을 구분하지 못하는</b> 상태</td></tr>
+      <tr><td><span class="k">2자 관계</span> dyadic (연결된 두 원)</td><td>자기와 대상을 <b>구분할 수 있지만</b>, 대상을 <b>자기와 관계된 존재로만</b> 인식. 즉 오로지 자기를 <b>사랑하거나 미워하는</b> 존재로만 인식</td></tr>
+      <tr><td><span class="k">3자 관계</span> triadic (삼각형의 세 원)</td><td><b>남근기 이후</b>, 대상이 자기와 <b>완벽히 분리된 독립적 개체</b>임을 깨달음. 사랑하는 어머니(아버지)가 자기가 아닌 다른 대상을 사랑할 수 있으며, 그럼에도 어머니·아버지가 사랑하는 대상과 적절한 유대·애정을 형성할 수 있음을 받아들임 → 건강한 방식으로 대인관계를 <b>맺고, 유지하고, 정리</b>할 수 있도록 돕는 중요한 특성</td></tr>
+    </table></div>
+    <ul>
+      <li><span class="k">분열 splitting</span>: 수용하기 힘든 <b>자기의 한 측면을 분리</b>해 무의식에 담아 둠. 자기를 통합하는 과정에서 부정적 자기를 인정·수용하는 데 실패해 과도한 불안·긴장이 유발되면 분열 방어를 통해 원치 않는 자기의 모습을 무의식에 담아 둠.</li>
+      <li><span class="k">전이 transference</span>(대상관계 관점) = 과거의 중요한 대상에게 경험했던 감정을 치료자에게서 느끼는 것. S. Freud는 현상을 파악했지만 왜 나타나는지는 부분적 설명만, 대상관계에서는 <b>"대상관계가 치료자와의 관계에서 활성화 혹은 재현된 것"</b>이라고 쉽고 명료하게 설명.</li>
+      <li><span class="k">역전이 countertransference</span> = <b>내담자와의 관계에서 치료자가 경험하는 욕구나 감정, 그와 관련된 반응</b>. 예: 내담자가 아이처럼 울며 위축된 모습을 보이자 치료자에게 안쓰러운 감정과 돕고 싶은 욕구가 일고 실제로 머리를 쓰다듬으려는 행동을 함 → 역전이. 내담자의 전이는 고유한 역전이를 불러일으킬 수 있고, 역전이는 내담자의 대상관계에 다시 영향.</li>
+    </ul>
+    <div class="note lec"><b>수업 언급</b>융합: "엄마가 나고 내가 엄마" 같은 상태 → 점점 다른 개체로 인식. 2자 관계는 Oedipus/Electra를 지나며 3자 관계로. 전이 사례: 해결되지 않은 부모와의 갈등을 치료자에게 투정("선생님이 저를 서운하게 만들었어요"). 역전이는 나쁜 것이 아니라 <b>캐치·분석해서 활용</b>하면 좋고(내담자의 갈등 원인 단서, 상담자 자신의 성장), 상담 수련에서 역전이에 대한 주의를 많이 받음. 윤리상 스킨십은 안 됨.</div>
+  </div>
+
+  <div class="card">
+    <h3>대상관계 이론 ③ 성격의 문제와 치료 · Mahler <span class="pg">p.212~214</span></h3>
+    <ul>
+      <li>대상관계 이론은 성격의 <b>대인관계적 측면</b> 이해에 큰 도움(자아·원초아·초자아의 구조 이론만으로는 설명 어려움). 특히 <b>심각한 수준의 성격 문제</b> = 매우 혼란스러운 대인관계 갈등: 타인을 이상화했다가 평가절하하는 등 타인에 대한 정서 반응·행동이 매우 <b>불안정하고 비일관적</b>, 자기 자신에 대해서도 극단적 긍정·부정 인식이 번갈아, 심한 경우 여러 개의 분리된 인격이 시기를 달리해 의식을 장악. 통합된 자아가 없거나 매우 불안정.</li>
+      <li><span class="k">병리적 대상관계</span>: 충분히 통합되지 못한 채 <b>분리되어 존재하는 대상관계가 불안정하게 번갈아</b> 작동. 발달 과정의 문제로 <b>대상관계의 통합에 실패</b>한 것. 대상관계 이론가들은 <b>생애 초기부터 남근기 이전, 즉 생후 2년까지</b>를 특히 중요하게 봄(양육자에 대한 의존·독립을 반복 연습하며 긍정적 대상관계를 중심으로 부정적 대상관계를 통합).</li>
+      <li><b>치료</b>: 목적 = 대상관계의 정상적 <b>발달·통합</b>. 기법 차이는 두드러지지 않지만 <b>전이와 역전이를 적극 활용</b>해 내담자와 치료자가 <b>서로 마주 보는 위치</b>에서 진행하는 경향(S. Freud의 카우치와 다름). 치료자는 경청·공감·해석·직면으로 대상관계에 대한 자각을 증진시키고 적응적으로 변화시킴. 치료자 마음속 <b>역전이를 민감하게 파악</b>해 내담자 이해에 활용하는 동시에 <b>이전 주요 대상과는 다른 방식으로 반응</b>해 대상관계 변화를 유도 → 치료자는 새롭고 적응적인 관계 경험의 도구.</li>
+    </ul>
+    <h4>박스: Mahler의 발달 단계 (분리–개별화) <span class="pg">p.213~214</span></h4>
+    <p><b>Margaret Mahler(1897~1985)</b>: 헝가리 출신 소아과 의사·정신의학자. 본인을 대상관계 이론가로 칭하진 않았지만 개념과 잘 맞는 발달 모형 제안. 생후 3년 = <span class="k">분리–개별화 separation-individuation</span> 과정(주양육자와 분리되지 않은 상태에서 점차 분리되어 독립적 존재로 개별화) (Mahler 1975).</p>
+    <div class="tw"><table>
+      <tr><th>단계</th><th>시기</th><th>특징</th></tr>
+      <tr><td><span class="k">정상적 자폐 단계</span><br>normal autism</td><td>생후 몇 주</td><td>외부 대상을 인식하지 못한 채 <b>자기몰두적</b>. 배고플 때 외엔 거의 잠. 생리 과정이 절대적으로 우선</td></tr>
+      <tr><td><span class="k">정상적 공생 단계</span><br>normal symbiotic</td><td>~6개월</td><td>외부 대상은 인식하나 자기와 분리된 존재로 파악 못함. <b>아기는 엄마와 자신이 하나</b>라고 인식</td></tr>
+      <tr><td rowspan="4"><span class="k">분리–개별화 단계</span></td><td><span class="k">부화기</span> hatching: 6~9개월</td><td>외부 자극에 관심 증가. 엄마 품에서 벗어나 근처에 머물며 낯선 자극을 인식</td></tr>
+      <tr><td><span class="k">연습기</span> practicing: 9~15개월</td><td>운동 기능 발달(기기·걷기)으로 적극적 환경 탐색. <b>전능감·고양감</b>. 엄마와의 친밀 욕구 감소하기도 하지만 단절을 인식하면 불쾌감 → 다시 엄마를 찾음</td></tr>
+      <tr><td><span class="k">재접근기</span> rapprochement: 15~24개월</td><td>안정적으로 걷고 언어 사용. 엄마로부터 더 오래 멀어지며 새 기술·경험을 엄마와 나누려 함 → 친밀감·상호작용 욕구↑('화해/재접근'). 엄마가 <b>독립적 존재</b>임을 확실히 인식하고, 엄마가 자기 뜻대로만 움직이지 않음을 깨달아 <b>긍정·부정 감정이 공존하는 양가적 상태</b>('엄마 따라다니기'와 '달아나기' 반복, 분리 불안)</td></tr>
+      <tr><td><span class="k">대상 항상성</span> object constancy: 24~36개월</td><td>분리–개별화의 마지막. <b>엄마가 시야에서 사라져도 여전히 존재함</b>을 이해하며 정서적 유대를 유지. Piaget의 <b>대상 영속성</b>과 유사. 대상을 <b>표상으로 내면화</b>하고 긍정·부정 경험을 <b>통합</b>(긍정적인 것을 중심으로 부정적인 것을 수용). 초보적 형태의 자아 정체성/자기(self) 형성도 이 시기의 과제</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <h3>자기심리학 (Kohut) <span class="pg">p.214~217</span> <span class="tag must">필수</span></h3>
+    <ul>
+      <li>자아심리학과 대상관계 이론이 발전하며 고전적 추동 이론만으로 설명 어렵던 문제를 이해할 수 있게 됐지만, 대략 <b>1960년대</b>에 기존 이론으로 설명되지 않는 새 환자들이 나타남: 특별히 심각한 문제 행동은 없지만 삶의 방향을 잃고 <b>공허감과 우울감</b>을 호소, 대인관계에서 의미 있는 <b>내적 대상이 존재하지 않는 듯</b>, 자신이 가치 있는 존재인지 반복적으로 확인하려 함.</li>
+      <li><span class="k">Heinz Kohut(1913~1981)</span>(오스트리아 출생, 미국에서 활동): 기존 자아심리학·대상관계 전통에서 벗어나 <span class="k">자기심리학 self psychology</span>이라는 새 이론 체계 확립. 내적 공허함을 호소하는 내담자는 <b>자기(self)의 발달</b> 측면에서 문제를 경험한 것이라고 봄.</li>
+      <li>적절한 <b>자기가치감</b>과 삶의 목적·의미를 가지고 살아가려면 <b>'이상화할 수 있는 적절한 대상'</b>이 필요. 아동은 그런 대상을 <span class="k">이상화</span>하고 그 대상과 자신을 <span class="k">동일시</span>하며 자기가치감을 키움 → 적당한 시기가 되면 이상화했던 대상을 현실적으로 평가하며 <span class="k">탈이상화</span> → <b>현실적인 자기감각</b> 발달. (수업: 위인전·롤모델·부모 등 이상화 대상)</li>
+      <li>내적 공허감 내담자는 <b>이상화와 탈이상화를 할 만한 적절한 대상이 없었음</b> → 가상적 대상을 만들 수밖에 없었고 → 자기 인식·자기감각이 현실에 맞게 조정되지 못해 <b>과대한 자기 지각과 무가치감이 공존</b>, 끊임없이 자기가치를 확인하려 하나 만족을 못 얻음 → 일종의 <span class="k">자기애적 성격 narcissistic personality</span>(겉으로는 오만·거만한 행동이 아니지만 속으로 과대한 자기지각을 갖고 반복적으로 자기가치를 확인하려 함).</li>
+      <li><b>자기 이론의 의의</b>: 대상관계의 한 요소로만 간주되던 자기의 기능을 확장. 자기는 대상과의 관계로 형성되지만 그 자체로 존재하며 정서·행동 특징에 직접 영향. 개인은 일정 수준의 <b>자기가치감 sense of self-worth</b>을 유지하기 위해 다양한 전략을 개발·사용하고 그 양상에 따라 적응 수준이 달라짐 → 치료자들이 <b>자기표상·자기상·자기감각</b> 관점에서 내담자를 파악, 적절한 자기가치감 유지 노력이 효과적인지 체계적으로 분석.</li>
+    </ul>
+    <div class="note tip"><b>박스: 공허감이란 무엇인가? (p.216)</b>공허감 emptiness = 20세기 중반 임상가들이 주목한 감정으로, 대인관계·직업에서 심각한 어려움이 없으면서도 호소. 학자들이 지적한 사회적 변화 두 가지: <b>전통적 가치의 붕괴</b>와 <b>미래에 대한 불확실성</b>. Kohut = 가족의 와해, 특히 <b>동일시할 적절한 양육자의 부재</b>. <b>Victor Frankl</b>(1905~1997, 오스트리아 정신의학자·홀로코스트 생존자) = 의미를 발견하려는 노력의 부재/의미 발견 실패. 일부 치료적 접근은 가치의 '부재'가 아니라 '<b>불일치</b>'(자기 고유 가치를 못 따르고 주변이 강요한 가치에 맞춤)를 강조 → 치료는 내담자 스스로 자신만의 가치를 발견·인식하도록 돕는 것(8장 인본주의에서 다룸).</div>
+    <div class="note lec"><b>수업 언급</b>"공허감은 외로움(교류할 사람이 없음)과는 조금 다르다"고 구분. 지금 우리도 전통적 가치 붕괴·미래 불확실성을 경험한다는 이야기.</div>
+  </div>
+
+  <div class="card">
+    <h3>정신분석 계열 이론 한눈 비교 <span class="tag must">필수</span></h3>
+    <div class="tw"><table>
+      <tr><th></th><th>Freud 정신분석</th><th>자아심리학</th><th>대상관계 이론</th><th>자기심리학</th></tr>
+      <tr><td>대표</td><td>S. Freud</td><td>A. Freud, Hartmann, Rapaport</td><td>Klein, Fairbairn, Winnicott, (Mahler)</td><td>Kohut</td></tr>
+      <tr><td>핵심 동기/초점</td><td>성적 추동(리비도)·무의식</td><td><b>자아의 기능</b>(방어 + 갈등으로부터 자유로운 기능), 적응</td><td><b>관계를 추구</b>하는 경향이 추동보다 근본적</td><td><b>자기가치감</b>, 이상화·동일시, 공허감</td></tr>
+      <tr><td>핵심 개념</td><td>지형학·구조 모형, 방어기제, 심리성적 발달</td><td>방어기제의 효과성·유형·패턴, 현실 검증·자극 장벽·사고 과정·합성–통합</td><td>자기·대상·관계의 내재화, 융합→2자→3자, 분열, 전이·역전이</td><td>자기 이론, 이상화/탈이상화, 자기애적 성격</td></tr>
+      <tr><td>성격 문제의 원인</td><td>리비도 고착, 자아 약화(균형 실패)</td><td>자아 기능의 결함(자아 결핍)</td><td>대상관계의 <b>통합 실패</b>(생후 2년까지)</td><td>이상화할 적절한 대상의 부재 → 자기 발달 문제</td></tr>
+      <tr><td>치료 목표</td><td>무의식의 의식화</td><td>자아 기능 증진</td><td>대상관계의 정상 발달·통합</td><td>적절한 자기가치감 유지</td></tr>
+      <tr><td>특징적 기법</td><td>자유 연상·꿈 분석·전이/저항 분석, 카우치</td><td>(전통 기법 그대로) 방어기제 분석</td><td>전이·역전이 적극 활용, <b>마주 보는</b> 자리</td><td>자기표상·자기상·자기감각 분석</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <h3>6장 요약 체크리스트</h3>
+    <ul>
+      <li>Freud: 에너지 체계 · 항상성 · 추동 · 리비도 · 히스테리 → 지형학(의식/전의식/무의식) → 구조(원초아·자아·초자아).</li>
+      <li>원초아=쾌락 원리·일차 과정, 자아=현실 원리·이차 과정, 초자아=도덕 원리(양심↔죄책감, 자아이상↔수치심).</li>
+      <li>불안 3종(현실·신경증적·도덕적) → 방어기제 7종(억압·합리화·반동 형성·투사·퇴행·전치·승화).</li>
+      <li>심리성적 발달: 구강→항문→남근→잠복→성기. 고착과 성격. 오이디푸스/엘렉트라.</li>
+      <li>치료: 자유 연상·꿈 분석·전이·저항·해석·통찰·훈습. 한계 4가지(Popper 비과학 등).</li>
+      <li>자아심리학 → 대상관계(Klein, 융합→2자→3자, 분열, 전이·역전이, Mahler) → 자기심리학(Kohut).</li>
+    </ul>
+  </div>
+</section>
+<!-- ===================== 암기표 ===================== -->
+<section class="sec" id="memo">
+  <h2><span class="no">★</span>인명 · 연도 · 숫자 암기표 <span class="pg">지엽 출제 대비</span></h2>
+  <p class="lead">범위가 줄어서 디테일로 낼 가능성이 큽니다. 암기 모드를 켜고 오른쪽 칸을 가린 채 외워 보세요.</p>
+
+  <div class="card">
+    <h3>인명 ↔ 한 줄 요약</h3>
+    <div class="tw"><table>
+      <tr><th>인명</th><th>기억할 것</th><th>장</th></tr>
+      <tr><td>Galton</td><td>어휘 가설 최초 시도(약 1,000개 어휘), 행동유전학·쌍생아 연구법, Darwin의 사촌</td><td>3·5</td></tr>
+      <tr><td>Allport &amp; Odbert 1936</td><td>Webster 사전 40만 단어 → 17,953개 성격 어휘, 4목록</td><td>3</td></tr>
+      <tr><td>Allport</td><td>공통/개인 특질 → 개인 성향(주·중심·이차), 기능적 자율성, 개별 사례 접근</td><td>3</td></tr>
+      <tr><td>Spearman</td><td>요인분석 개발·명명, 지능 연구, Cattell을 도움</td><td>3</td></tr>
+      <tr><td>Cattell</td><td>표면/근원 특질, 요인분석, 16PF(Cattell &amp; Mead 1949), 자료 기반</td><td>3</td></tr>
+      <tr><td>Eysenck</td><td>이론 기반, 4수준 위계, 3유형(외향·신경증·정신증), 생물학적 기반(망상체·변연계), 1952 정신분석 효과 비판, 메타분석 계기</td><td>3</td></tr>
+      <tr><td>Galen</td><td>4체액 → 다혈질·우울질·담즙질·점액질</td><td>3</td></tr>
+      <tr><td>Jung / Kretschmer</td><td>내향·외향 등 유형론 / 세장형·비만형·운동형</td><td>3</td></tr>
+      <tr><td>Haslam et al. 2020</td><td>차원 변인이 범주 변인보다 약 5배 많음(메타분석)</td><td>3</td></tr>
+      <tr><td>Fiske · Tupes &amp; Christal · Norman</td><td>1949 · 1958 · 1963: 5요인의 선구 (Norman: 외향성/성실성 명칭)</td><td>4</td></tr>
+      <tr><td>Mischel 1968</td><td>『Personality and Assessment』, 특질–행동 상관 &lt; .3 → 개인–상황 논쟁</td><td>4</td></tr>
+      <tr><td>Costa &amp; McCrae</td><td>NEO(1978) → NEO-PI(1985) → NEO-PI-R(1992), 5요인 이론 성격 체계(1994), NIH 노화연구소</td><td>4</td></tr>
+      <tr><td>Goldberg 1981</td><td>'Big Five' 명명</td><td>4</td></tr>
+      <tr><td>Roberts, Walton &amp; Viechtbauer 2006</td><td>5요인 연령별 변화 종단연구 메타분석(약 90여 편)</td><td>4</td></tr>
+      <tr><td>Ashton &amp; Lee / Lee &amp; Ashton</td><td>HEXACO(정직-겸손 추가), 이론생물학 설명. Lee는 한국인 연구자</td><td>4</td></tr>
+      <tr><td>Trivers 1971 / Hamilton 1964</td><td>호혜성 이타주의 / 친족 이타주의</td><td>4</td></tr>
+      <tr><td>Waddington · Gottesman · Roberts &amp; Jackson</td><td>수로화(1966) · 반응 범위(1963) · 사회유전체(2008)</td><td>5</td></tr>
+      <tr><td>Plomin &amp; Daniels 1987 / Dunn &amp; Plomin 1990</td><td>공유/비공유 환경 구분 / 40:35:5:20</td><td>5</td></tr>
+      <tr><td>Thomas &amp; Chess 1977</td><td>9차원·3유형 (뉴욕 종단 연구)</td><td>5</td></tr>
+      <tr><td>Buss &amp; Plomin 1984</td><td>EAS: 정서성·활동성·사회성</td><td>5</td></tr>
+      <tr><td>Rothbart</td><td>반응성·자기조절 → 외향성/긍정 정서성·부정 정서성·의도적 통제. Hampson이 Big5와 매칭</td><td>5</td></tr>
+      <tr><td>McAdams &amp; Olson 2010</td><td>성격 3층 모형(기질/특질 → 특징적 적응 → 서사 정체성)</td><td>5</td></tr>
+      <tr><td>Bowlby 1969 / Ainsworth 1978</td><td>애착 개념 / 낯선 상황 절차(안정·불안·회피). Main &amp; Solomon 1986: 혼란</td><td>5</td></tr>
+      <tr><td>Gottman 1997</td><td>자녀의 정서에 대한 부모의 반응 행동</td><td>5</td></tr>
+      <tr><td>Furman &amp; Buhrmester 1985</td><td>형제자매 관계 4차원(애정·지위/권력·갈등·경쟁)</td><td>5</td></tr>
+      <tr><td>Asendorpf &amp; Van Aken 2003</td><td>12세 230명 → 17세 종단: 성격이 또래 지지를 예측</td><td>5</td></tr>
+      <tr><td>Elkind 1981</td><td>개인적 신화(personal fable)</td><td>5</td></tr>
+      <tr><td>Erikson 1968 / Marcia 1980</td><td>정체성 위기, 직업·이념·성적 지향 / 정체성 지위(성취·유실·혼미·유예)</td><td>5</td></tr>
+      <tr><td>McAdams 2001</td><td>정체성은 하나의 이야기</td><td>5</td></tr>
+      <tr><td>Breuer / Charcot</td><td>Anna O. 담화 치료 / 최면술 스승(1825~1893)</td><td>6</td></tr>
+      <tr><td>Adler · Jung · Rank · Ferenczi</td><td>Freud 측근, 이후 결별(Adler가 가장 먼저). Ferenczi=적극적 개입 → 'here and now', Klein의 분석가</td><td>6</td></tr>
+      <tr><td>Popper</td><td>정신분석은 비과학적(검증 불가능)</td><td>6</td></tr>
+      <tr><td>Anna Freud</td><td>『자아와 방어 기제』1936, 1938 영국, War Nursery(1941), 아동 정신분석</td><td>6</td></tr>
+      <tr><td>Hartmann / Rapaport</td><td>자아의 현실 적응 기능, 1941 미국 / 배터리 검사·사고 과정, 오스틴 릭스 센터</td><td>6</td></tr>
+      <tr><td>Bellak &amp; Hurvich 1969</td><td>조현병 연구로 자아 기능 정리(현실 검증·자극 장벽·사고 과정·합성-통합)</td><td>6</td></tr>
+      <tr><td>Klein · Fairbairn · Winnicott</td><td>대상관계 이론가. Klein: 소아 분석·놀이. 1938 영국 정신분석학회 3집단</td><td>6</td></tr>
+      <tr><td>Mahler 1975</td><td>분리–개별화(정상적 자폐 → 공생 → 부화·연습·재접근 → 대상 항상성)</td><td>6</td></tr>
+      <tr><td>Kohut</td><td>자기심리학, 이상화·탈이상화, 자기애적 성격, 공허감</td><td>6</td></tr>
+      <tr><td>Frankl</td><td>공허감 = 의미 발견 실패(홀로코스트 생존자)</td><td>6</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <h3>숫자 · 연령 · 연도</h3>
+    <div class="tw"><table>
+      <tr><th>항목</th><th>값</th></tr>
+      <tr><td>Galton 사전 성격 어휘</td><td><span class="k">약 1,000개</span></td></tr>
+      <tr><td>Allport &amp; Odbert 1936</td><td>사전 <span class="k">약 40만</span> 단어 중 <span class="k">17,953</span>개 / 4목록 <b>4,504 · 4,541 · 5,226 · 3,682</b></td></tr>
+      <tr><td>개인 성향 중 중심 성향 수</td><td><span class="k">5~10개</span></td></tr>
+      <tr><td>16PF</td><td><span class="k">16개</span> 요인, 1949, 상위 5~6개 (외향성·불안·통제·독립성·민감한 자각·능력)</td></tr>
+      <tr><td>Eysenck 차원/수준</td><td>3개 유형, 4개 수준</td></tr>
+      <tr><td>Eysenck 정신분석 효과 연구</td><td>1952</td></tr>
+      <tr><td>범주 vs 차원 메타분석(Haslam 2020)</td><td>차원 변인 <span class="k">약 5배</span></td></tr>
+      <tr><td>Mischel 상관 기준</td><td>.3을 넘기 어렵다 (.1 작음, .3 중등도, .5 강함)</td></tr>
+      <tr><td>NEO-PI-R / NEO-FFI</td><td><span class="k">240문항</span>(5×6×8) / <span class="k">60문항</span>. 5점 척도</td></tr>
+      <tr><td>5요인 연령 변화 연구</td><td>종단연구 약 90여 편 메타분석(Roberts 2006); 신경과민성 20~40세 감소; 개방성 20세까지 급증, 50세 이후 하락; 사회적 활력 50세 이후 감소</td></tr>
+      <tr><td>HEXACO</td><td>6차원 × 하위요소 <span class="k">4개</span> (24개)</td></tr>
+      <tr><td>유전성 추정치 h²</td><td>N .37 · E .36 · <b>O .41(최고)</b> · A .35 · <b>C .31(최저)</b> / 성격의 약 30~40%</td></tr>
+      <tr><td>Dunn &amp; Plomin 1990</td><td>유전 40 · 비공유 환경 35 · 공유 환경 5 · 오차 20 (%)</td></tr>
+      <tr><td>Thomas &amp; Chess</td><td>9차원 · 3유형 (1977)</td></tr>
+      <tr><td>Rothbart–Big5 상관</td><td>.59(외향성) · .49(신경과민성) · .43(성실성)</td></tr>
+      <tr><td>2층(특징적 적응) 본격 발달</td><td>만 2세 이후</td></tr>
+      <tr><td>낯선 상황 절차</td><td>7단계, 분리 2회(첫 번째 분리·혼자 남음)</td></tr>
+      <tr><td>유아기 / 아동기</td><td>2~5세 / 6~11세</td></tr>
+      <tr><td>Asendorpf &amp; Van Aken</td><td>12세 <b>230명</b> → 17세</td></tr>
+      <tr><td>Freud 연표</td><td>1856 출생 · 1873 빈 대학 · 1881 박사 · 1885 Charcot · 1895 히스테리 연구 · 1900 꿈의 해석 · 1905 심리성적 발달 · 1909 미국 강연 · 1913 비밀 위원회 · 1923 구조 모형 · 1939 사망</td></tr>
+      <tr><td>자아 / 초자아 분화·확립</td><td>자아 6~8개월 → 2~3세 / 초자아 5~6세 → 10~11세</td></tr>
+      <tr><td>심리성적 발달 연령</td><td>구강기 ~18개월 · 항문기 2~3세 · 남근기 3~5세 · 잠복기 5~13세 · 성기기 사춘기 이후</td></tr>
+      <tr><td>A. Freud 연표</td><td>1936 『자아와 방어 기제』 · 1938 영국 이주 · 1941 War Nursery</td></tr>
+      <tr><td>Klein 연표</td><td>1910 부다페스트 · 1921 베를린 · (영국 이주) · 1938 영국 정신분석학회 3집단</td></tr>
+      <tr><td>Mahler 분리–개별화</td><td>자폐 몇 주 → 공생 ~6개월 → 부화기 6~9 → 연습기 9~15 → 재접근기 15~24 → 대상 항상성 24~36개월</td></tr>
+      <tr><td>생후 대상관계 통합 중요 시기</td><td>생후 2년까지(남근기 이전)</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <h3>헷갈리는 짝 정리</h3>
+    <div class="g2">
+      <div class="mini"><b class="t">표면 특질 vs 근원 특질</b>표면 = 관찰 가능한 행동 군집 / 근원 = 그 이면의 잠재 요인(원인)</div>
+      <div class="mini"><b class="t">공통 특질 vs 개인 특질</b>비교 가능·보편 / 비교 불가능·고유 → 1961 특질 / 개인 성향</div>
+      <div class="mini"><b class="t">법칙정립 vs 개별 사례</b>Cattell·Eysenck(통계로 보편 법칙) / Allport(한 사람을 깊이)</div>
+      <div class="mini"><b class="t">자료 기반 vs 이론 기반</b>Cattell(요인분석으로 탐색) / Eysenck(가설 → 자료 확인)</div>
+      <div class="mini"><b class="t">신경증 vs 정신증</b>neuroticism = 정서적 불안정(통원 가능) / psychoticism = 공격·냉담·반사회, 조현병적 경향</div>
+      <div class="mini"><b class="t">정직-겸손 vs 우호성(HEXACO)</b>착취 '기회'에서의 공정함 / 착취당한 '후'의 관용</div>
+      <div class="mini"><b class="t">공유 vs 비공유 환경</b>가정 공통 요소 / 형제마다 다른 요소(비체계적: 사고·질병 / 체계적: 출생 순위·또래)</div>
+      <div class="mini"><b class="t">수로화 vs 반응 범위 vs 사회유전체</b>발달 경로 제한 / 가능성 범위 결정 / 환경이 유전적 특성도 변화</div>
+      <div class="mini"><b class="t">기질 vs 성격</b>기질 = 유전·체질 기반, 생애 초기 / 성격 = 기질 + 환경 영향</div>
+      <div class="mini"><b class="t">상호작용 모형 vs 양방향 모형</b>양육이 기질→행동 경로를 조절 / 기질과 양육이 서로 영향</div>
+      <div class="mini"><b class="t">유실 vs 유예</b>유실 = 위기 없이 헌신 / 유예 = 현재 위기 중, 헌신 불분명</div>
+      <div class="mini"><b class="t">원초아 vs 자아 vs 초자아</b>쾌락·일차 과정 / 현실·이차 과정 / 도덕(양심·자아이상)</div>
+      <div class="mini"><b class="t">양심 vs 자아이상</b>처벌로 형성·죄책감 / 칭찬·수용으로 형성·수치심</div>
+      <div class="mini"><b class="t">전이 vs 역전이</b>내담자가 치료자에게 과거 중요 타인의 감정을 느낌 / 치료자가 내담자에 대해 경험하는 욕구·감정</div>
+      <div class="mini"><b class="t">갈등 관련 vs 갈등으로부터 자유로운 자아 기능</b>방어기제 / 지각·주의·기억·운동·언어·사고 등 인지 기능</div>
+      <div class="mini"><b class="t">융합 vs 2자 vs 3자 관계</b>자기·타인 구분 못함 / 구분하나 '나와 관련된' 존재로만 / 대상이 독립된 개체, 제3자 가능</div>
+      <div class="mini"><b class="t">자아(ego) vs 자기(self)</b>기능(조절·통제·감찰·방어) / 표상·개념·기억 체계</div>
+      <div class="mini"><b class="t">대상 영속성 vs 대상 항상성</b>Piaget: 사라져도 실재함을 이해 / Mahler: 엄마가 사라져도 존재를 이해하며 정서적 유대 유지, 긍정·부정 통합</div>
+    </div>
+  </div>
+</section>
+<!-- ===================== 서술형 ===================== -->
+<section class="sec" id="essay">
+  <h2><span class="no">✎</span>서술형 대비 <span class="pg">교재 연습문제 32개</span></h2>
+  <p class="lead">교재 각 장 끝의 연습문제가 서술형의 가장 유력한 출처입니다. 먼저 스스로 써 보고 펼쳐서 비교하세요. 모범답안은 교재·수업 내용을 바탕으로 제가 정리한 것이며 공식 채점 기준이 아닙니다.</p>
+  <div class="note tip"><b>쓰는 요령</b>"무엇을 쓰시오"에서 요구한 것만, 용어(한글+영어)를 먼저 쓰고 한 줄 설명을 덧붙입니다. 꼬리문제(1-1, 1-2)는 앞 답과 이어지게 씁니다.</div>
+
+  <h3 style="margin:22px 0 6px">3장 초기 특질 이론</h3>
+
+  <details class="ans-d"><summary>3-1. Allport의 특질 개념을 기술하고, 특질이 성격의 기본 단위가 될 수 있는 이유를 쓰시오.</summary><div class="body">
+    <ul>
+      <li><b>특질</b>: 서로 다른 자극·상황에 유사한 방식으로 반응하게 하는 경향성. 자극을 <b>기능적으로 동등하게</b> 처리하는 고유한 신경학적 시스템이며, 직접 관찰할 수 없고 행동으로 발현될 때 유추한다.</li>
+      <li>기본 단위가 될 수 있는 이유: ①정신역동 이론의 추상적·모호한 개념과 달리 <b>측정 가능한 단위</b>로 성격을 쪼갤 수 있다 ②상황이 달라져도 나타나는 <b>행동의 일관성</b>을 설명한다(예: 분노 경향성이 학교·게임·연애 상황에서 모두 드러남) ③성격 어휘(사전)로 포착·측정할 수 있어 <b>어휘 가설</b>에 따라 개인 간 비교(공통 특질)와 개인의 고유성(개인 특질)을 모두 다룰 수 있다.</li>
+    </ul></div></details>
+
+  <details class="ans-d"><summary>3-2. 공통 특질·개인 특질이 특질·개인 성향으로 바뀐 이유와, 개인 성향이 특질과 어떤 관계인지 쓰시오.</summary><div class="body">
+    <ul>
+      <li>공통 특질과 개인 특질의 구분이 모호하다는 비판(결국 모든 개인 특질도 개인이 가진 특질들로 구성되는데 '비교 불가능'이라는 구분이 불분명) → 1961년 개정판에서 공통 특질 → <b>특질</b>, 개인 특질 → <b>개인 성향(personal disposition)</b>으로 변경.</li>
+      <li>관계: <b>개인 성향 = 한 개인의 고유한 특질의 조합·패턴</b>(복잡한 구성 개념). 같은 특질(예: 공격적)도 개인마다 다르게 발현된다(A는 망설이면서 공격적, B는 호전적으로 공격적). 개인 성향은 일반성·일관성 정도에 따라 <b>주 성향·중심 성향·이차 성향</b>으로 나뉜다.</li>
+    </ul></div></details>
+
+  <details class="ans-d"><summary>3-3. 사례 B(40대 중반, 어울리기 싫어하고 혼자 취미·독서·사색, 집안일을 체계적으로 관리, 게임 개발자, 고객에게 정중하고 일을 깔끔히 해 인기, 동물을 싫어했으나 길고양이를 입양해 애지중지)를 Allport의 세 가지 개인 성향 유형으로 기술하시오.</summary><div class="body">
+    <ul>
+      <li><b>주 성향</b>: B의 생활 전반을 하나로 포괄하는 단일한 성향은 뚜렷하지 않다 → 해당 없음.</li>
+      <li><b>중심 성향</b>(비교적 폭넓은 일관성, 5~10개): 혼자 있기를 선호하는 <b>내향적</b>·소극적 대인 태도, <b>사색적·지적 추구</b>(독서·사색), <b>성실하고 체계적</b>(집안일 관리·깔끔한 업무), <b>정중함</b>(클라이언트 대응).</li>
+      <li><b>이차 성향</b>(일관성이 낮고 특정 대상·상황에 한정): 원래 동물을 싫어하다 <b>길고양이에게만 보이는 애정 어린 태도</b> 같은 특정 대상에 대한 유동적 태도.</li>
+    </ul>
+    <p class="en">교재 연습문제의 사례 문장 세부는 교재를 확인해 맞춰 쓰세요.</p></div></details>
+
+  <details class="ans-d"><summary>3-4. Cattell의 16개 근원 특질 중 상관이 높을 것 같은 것들을 묶어 상위 근원 특질을 구성해 보시오.</summary><div class="body">
+    <ul>
+      <li>논리: 요인분석 — 서로 상관이 높은 특질은 하나의 <b>잠재 요인</b>으로 묶인다. 예를 들어 지배성·쾌활성·대담성·온정성 → <b>외향성</b>, 걱정 많음·긴장성·정서적 불안정 → <b>불안</b>, 규칙 준수·완벽성 → <b>통제</b>, 지배성·변화 개방성·자기 충족성 → <b>독립성</b>, 예민성·추상성 → <b>민감한 자각</b>.</li>
+      <li>교재 박스(p.95)의 16PF 상위 구조: <b>외향성 · 불안 · 통제 · 독립성 · 민감한 자각 · 능력</b>(능력은 개인 역량이라 제외하면 5요인과 유사).</li>
+    </ul>
+    <p class="en">16요인 이름은 교재 표 3.1(p.92~93)로 확인하세요(이 정리에는 사진이 없어 일반적인 16PF 명칭을 썼습니다).</p></div></details>
+
+  <details class="ans-d"><summary>3-5. Eysenck의 4수준 중 Cattell의 근원 특질과 유사한 위계 수준은?</summary><div class="body">
+    <ul>
+      <li>Cattell의 <b>근원 특질</b>은 여러 표면 특질의 <b>이면에 있는 잠재 요인</b>이므로, 습관적 반응들의 상관(특질)을 다시 묶는 상위 수준, 즉 Eysenck의 <b>유형(상위 특질)</b> 수준에 해당한다고 볼 수 있다. 관찰 가능한 행동 군집인 <b>표면 특질</b>은 Eysenck의 <b>특질</b> 수준(습관적 반응들 간의 상관)과 대응한다.</li>
+      <li>차이: Cattell은 16개 근원 특질을 기본 차원으로, Eysenck는 3개 유형을 기본 차원으로 삼았다.</li>
+    </ul></div></details>
+
+  <details class="ans-d"><summary>3-6. Eysenck의 세 가지 유형 개념을 기술하고, 16PF 중 이 개념으로 포착되지 않는 특질을 쓰시오.</summary><div class="body">
+    <ul>
+      <li><b>외향성</b>(사교성·활동성·자기주장성·충동성·감각 추구·지배성; 망상체 각성 체계) / <b>신경증 성향</b>(불안·우울·낮은 자존감·변덕·죄책감, 정서적 불안정–안정; 변연계·자율신경계) / <b>정신증 성향</b>(공격성·냉담·비인간성·반사회성·자기중심성·창의성; 신경학적 기반 불명확).</li>
+      <li>포착되지 않는 특질: 16PF에는 성격 외에 <b>능력(지능·추론 등 지적 역량)</b>, <b>태도(보수성 등)</b>처럼 질적으로 다른 특질이 섞여 있어 Eysenck의 세 차원(주로 기질적 성격 차원)으로는 설명되지 않는다. 또한 3개 차원은 수가 적어 세부 특질(예: 규칙 준수·완벽성)을 충분히 담지 못한다.</li>
+    </ul></div></details>
+
+  <h3 style="margin:22px 0 6px">4장 현대 특질 이론</h3>
+
+  <details class="ans-d"><summary>4-1. 신경과민성이 적응적으로 기능할 수 있는 상황·조건은?</summary><div class="body">
+    <ul>
+      <li>부정 정서(불안)는 위협을 예측해 미리 피하게 하는 <b>보호 시스템</b>(Watson &amp; Casillas 2003).</li>
+      <li>노력이 필요한 과제에서 불안·걱정이 많아 <b>과제 성취 수준이 높아짐</b>(Tamir 2005).</li>
+      <li><b>성실성과 함께 높을 때</b>(건강한 신경과민성): 건강을 염려해 흡연·음주를 줄이고 운동을 늘림(Graham et al. 2020).</li>
+    </ul></div></details>
+
+  <details class="ans-d"><summary>4-2. 외향성이 부적응적으로 기능할 수 있는 상황·조건은?</summary><div class="body">
+    <ul>
+      <li>하위요소 <b>흥분 추구</b>는 양극성장애 등과 정적 관계(Watson et al. 2015) → 충동적·위험 추구 행동.</li>
+      <li>활발한 사회적 상호작용이 필수인 관리직·판매직이 아닌 일에서는 직무 성과와 무관 → 혼자 집중해야 하는 과제 상황에서는 이점이 없고 산만할 수 있음.</li>
+      <li>외향적이라고 심리장애가 예방되는 것은 아님(우울과 약한~중간 부적 상관, 불안과는 대체로 무관).</li>
+    </ul></div></details>
+
+  <details class="ans-d"><summary>4-3. 개방성이 극단적으로 높거나 낮을 때의 특징은?</summary><div class="body">
+    <ul>
+      <li><b>극단적으로 높을 때</b>: 관습·기존 인식 틀에 얽매이지 않고 집단 지침·규정을 맹목적으로 따르지 않으며 주관에 따라 행동, 새 경험·독창성 추구. 지나치면 비현실적이거나 집단 안정과 충돌.</li>
+      <li><b>극단적으로 낮을 때(관습성)</b>: 기존 시스템·권위·전통을 보호·수용, 질서·안정 추구, 감정 억제, 개인 자유보다 집단 안정을 우선. 새로운 변화·경험에 폐쇄적.</li>
+    </ul></div></details>
+
+  <details class="ans-d"><summary>4-4. 외향성과 우호성의 차이점은?</summary><div class="body">
+    <ul>
+      <li><b>외향성</b>: 대인관계 <b>자극·흥분·즐거움</b>을 추구하고 활력·긍정 정서가 높은 경향(사교성·주장성·활동성). 상호작용의 '양과 에너지'.</li>
+      <li><b>우호성</b>: 타인에 대한 <b>태도</b>(신뢰·솔직함·이타성·순응성·겸손함·온유함), 동정심↔적대감 연속선. 상호작용의 '질과 협력성'.</li>
+      <li>그래서 외향적이면서도 비협조적·조종적일 수 있다.</li>
+    </ul></div></details>
+
+  <details class="ans-d"><summary>4-5. 성실성이 신체 건강·삶의 질과 정적 상관을 보이는데 어떻게 기여하는지 쓰시오.</summary><div class="body">
+    <ul>
+      <li>목표 설정·계획·자기절제 → <b>건강 도움 행동</b>이 많음(Bogg &amp; Roberts 2004) → <b>수명이 김</b>(Martin &amp; Friedman 2000).</li>
+      <li>직무 성과와 가장 안정적인 정적 상관(Barrick &amp; Mount 1991) → 경제적 수입·삶 만족도·긍정 정서↑(Duckworth et al. 2012).</li>
+    </ul></div></details>
+
+  <details class="ans-d"><summary>4-6. 성실성이 부적응적으로 기능할 수 있는 상황·조건은?</summary><div class="body">
+    <ul>
+      <li>높은 기준을 지키려는 경향이 지나치면 <b>완벽주의</b>(하위요소 유능성의 극단), <b>강박적 성격(강박성 성격장애)</b>과 강한 정적 상관(Samuel &amp; Widiger 2011) → 융통성 부족·스트레스.</li>
+    </ul></div></details>
+
+  <details class="ans-d"><summary>4-7. 대학생 K 사례(큰 연합 동아리 회장; 어울리기 좋아해 회장직 수락, 행사에 빠지는 동아리원을 지적, 불만을 달래주지 않고 계획대로 철저히 운영, 선배들이 정한 규칙을 중시, 저항·변화 요구자는 은근히 적대·따돌림, 평가 극단적)를 5요인 측면에서 기술하시오.</summary><div class="body">
+    <div class="tw"><table>
+      <tr><th>요인</th><th>K의 근거</th></tr>
+      <tr><td>외향성 ↑</td><td>어울리기 좋아하고 회장직을 흔쾌히 수락(사교성·주장성·지도력)</td></tr>
+      <tr><td>성실성 ↑</td><td>계획한 대로 철저히 운영, 책임감·질서. 극단적이면 독단·경직</td></tr>
+      <tr><td>개방성 ↓</td><td>선배들이 정한 규칙(기존 시스템·권위) 중시, 변화 요구를 수용하지 않음 = <b>관습성</b></td></tr>
+      <tr><td>우호성 ↓</td><td>구성원의 불만을 달래주지 않고, 저항하는 사람을 적대·따돌림(냉소·비협조·적대)</td></tr>
+      <tr><td>신경과민성</td><td>직접 근거는 적음(필요하면 '규칙이 흔들리는 것에 대한 불안' 정도로 언급)</td></tr>
+    </table></div>
+    <p>→ 외향·성실·낮은 개방성·낮은 우호성의 조합이라 "잘 운영한다"와 "독단적이다"의 평가가 갈린다.</p></div></details>
+
+  <details class="ans-d"><summary>4-8. HEXACO에서 정직함과 우호성의 차이는?</summary><div class="body">
+    <ul>
+      <li><b>정직-겸손</b>: 타인을 <b>착취·이용할 수 있는 기회</b>가 주어졌을 때의 반응. 처벌 위협이 없어도 착취하지 않고 공정(예: 아무도 안 봐도 돈뭉치를 경찰서에 전달). 이론생물학에서 호혜성 이타주의의 <b>공정함</b>.</li>
+      <li><b>우호성</b>: 자신이 <b>착취당하고 있음을 자각</b>했을 때의 반응. 높으면 관계를 유지하며 협력·피해 감수, 낮으면 복수심·적대. 호혜성 이타주의의 <b>관용</b>.</li>
+    </ul></div></details>
+
+  <details class="ans-d"><summary>4-9. HEXACO의 정서성과 5요인의 신경과민성의 차이, 두 모형에서 우호성이 어떻게 다른지 쓰시오.</summary><div class="body">
+    <ul>
+      <li><b>정서성 vs 신경과민성</b>: 둘 다 부정 정서(불안·두려움·슬픔)를 쉽게 경험하는 경향이지만 HEXACO 정서성은 <b>분노·적대감을 제외</b>(우호성의 반대극으로 이동)하고 <b>'대인관계에 대한 의존성'을 하위요소로 포함</b>(두려움·불안·의존성·감수성). 친족 이타주의(정서적 애착·공감적 염려·도움 추구)와 연결.</li>
+      <li><b>우호성</b>: 5요인=신뢰·솔직함·이타성·순응성·겸손함·온유함(협력·동조 경향 + 분노가 반대극 쪽이 아님) / HEXACO=관용성·온유성·융통성·인내심 — <b>착취·조종에 대한 관용적 태도</b> 중심(분노·적대감·복수심 결여 반영), <b>솔직함·겸손함은 정직-겸손으로 이동</b>.</li>
+    </ul></div></details>
+
+  <h3 style="margin:22px 0 6px">5장 생물사회적 관점</h3>
+
+  <details class="ans-d"><summary>5-1. 특정 성격을 예측하는 유전자를 확정적으로 파악할 수 있는가? 아니라면 이유는?</summary><div class="body">
+    <ul>
+      <li><b>없다.</b> 유전자는 행동을 직접 지배하지 않고 <b>단백질 합성을 지시</b>하며, 합성된 단백질이 여러 단계를 거쳐 행동으로 발현되는 <b>복잡하고 간접적인</b> 과정이다.</li>
+      <li>수많은 유전자가 복잡하게 상호작용하므로 특정 심리 특성과 특정 유전자를 일대일로 연결하는 시도는 대부분 실패했고, 환경에 의해 발현이 달라지므로(사회유전체 모형) 확정적 예측이 어렵다. 그래서 구체적 유전자 대신 행동유전학으로 <b>유전의 영향력(유전성 추정치)</b>을 추정한다.</li>
+    </ul></div></details>
+
+  <details class="ans-d"><summary>5-2. 쌍생아 연구의 기본 가정과 논리, 한계를 서술하시오.</summary><div class="body">
+    <ul>
+      <li><b>논리</b>: 일란성(유전자 100% 공유)과 이란성(약 50% 공유) 쌍생아의 유사성을 비교한다. 일란성 간 상관이 이란성 간 상관보다 강하면 그 차이는 공유 유전자 비율의 차이로 해석 → <b>h² = 2(rM − rD)</b>.</li>
+      <li><b>기본 가정</b>: <b>환경 동일성 가정</b> — 같은 집에서 자란 쌍생아는 동일한 환경을 공유한다고 가정해 환경 효과를 통제.</li>
+      <li><b>한계</b>: 같은 집이라도 각자의 방·교류하는 가족 구성원·친구·공간이 달라 환경이 동일하지 않을 수 있어 상관 차이가 유전 때문인지 환경 때문인지 구분이 어렵다 → <b>입양 연구</b>로 보완.</li>
+    </ul></div></details>
+
+  <details class="ans-d"><summary>5-3. 사회유전체 모형이 수로화·반응 범위 모형과 기본 가정에서 어떻게 다르고 그 시사점은?</summary><div class="body">
+    <ul>
+      <li>수로화 모형(유전자가 발달 경로를 제한)과 반응 범위 모형(유전자가 가능성의 범위를 결정, 환경이 그 안에서 실제 수준 결정)은 <b>유전이 먼저 틀을 정하고 환경이 그 안에서 작용</b>한다고 본다.</li>
+      <li><b>사회유전체 모형</b>은 환경이 상태·특질뿐 아니라 <b>유전적 특성(DNA 발현·생물학적 시스템) 자체를 변화시킬 수 있다</b>고 가정한다(환경이 변하면 생물학적 시스템도 조정).</li>
+      <li>시사점: 적절한 환경 자극이 꾸준히 주어지면 성격은 물론 생물학적 수준의 변화도 가능 → 심리치료·교육 개입의 의미(심리치료 후 성격·신경학적 변화 보고가 간접 지지).</li>
+    </ul></div></details>
+
+  <details class="ans-d"><summary>5-4. 기질의 정의를 쓰고, Rothbart가 반응성 이외에 기질의 핵심 요소로 본 것을 구체적으로 기술하시오.</summary><div class="body">
+    <ul>
+      <li><b>기질</b>: 생애 초기부터 존재하며 생물학적(유전적·체질적) 기반을 갖는 <b>반응 경향성</b>.</li>
+      <li>Rothbart는 반응성(자극에 의해 정서·운동·자율신경·내분비 반응이 활성화되는 정도; 역치·잠재기·강도·회복 시간) 외에 <b>자기조절(self-regulation)</b>을 핵심 요소로 보았다: 반응성을 <b>촉진하거나 억제하는 과정</b>(주의 기울이기·접근·후퇴·행동 억제·자기위안). 이를 토대로 <b>외향성/긍정 정서성·부정 정서성·의도적 통제</b> 세 차원을 제시. 반응 경향성만 강조한 이론가들과 달리 <b>반응을 조절하는 능력</b>까지 기질에 포함.</li>
+    </ul></div></details>
+
+  <details class="ans-d"><summary>5-5. D 사례(16개월 남아, 예민하고 생리 활동이 불규칙, 엄마가 처음엔 규칙적 돌봄을 하려 했지만 수면·영양이 나빠지고 엄마가 화를 내자 아이가 더 예민해짐) — 이 상호작용을 잘 포착하는 모형은?</summary><div class="body">
+    <ul>
+      <li><b>양방향 모형(bidirectional model)</b>: 아이의 기질(예민함·불규칙)이 엄마의 양육 행동(통제·분노)에 영향을 주고, 엄마의 양육 행동이 다시 아이의 반응(더 예민해짐, 통제 불능)에 영향을 주는 <b>상호 영향</b> 과정이다.</li>
+      <li>(상호작용 모형은 기질→행동 경로를 양육이 조절하는 한 방향 모형이라 이 사례의 악순환을 덜 잘 포착한다.)</li>
+    </ul></div></details>
+
+  <details class="ans-d"><summary>5-6. 아동기 애착의 주요 유형을 나열하고 각각의 개념을 기술하시오.</summary><div class="body">
+    <ul>
+      <li><b>애착</b>: 한 개인이 다른 대상과 맺는 정서적 유대. Ainsworth의 낯선 상황 절차로 구분.</li>
+      <li><b>안정 애착</b>: 주양육자와 있으면 편안히 탐색, 부재 시 일시적 불안, 재회 후 빠르게 회복.</li>
+      <li><b>불안 애착</b>: 주양육자 위치를 반복 확인, 부재 시 극심한 불안, 재회해도 달래지지 않고 밀쳐내거나 저항.</li>
+      <li><b>회피 애착</b>: 부재에 무심한 듯, 돌아와도 안기는 것을 회피.</li>
+      <li><b>혼란 애착</b>(후속 연구로 추가): 일관성 없는 행동 패턴. 불안·회피·혼란은 모두 <b>불안정 애착</b>.</li>
+    </ul></div></details>
+
+  <details class="ans-d"><summary>5-7. 언어를 구사할 수 있는 나이가 되면 가족 이외의 사람들과 본격적으로 상호작용한다. 이 사회적 활동이 성격과 어떤 관계를 맺는지 구체적으로 설명하시오.</summary><div class="body">
+    <ul>
+      <li><b>형제자매 관계</b>: 애정·지위/권력·갈등·경쟁(Furman &amp; Buhrmester). 성격 → 관계: 우호성이 높을수록 관계의 질이 좋음. 관계 → 성격: 형제 간 애정이 강할수록 자기조절 양호·친사회적 행동↑·문제 행동↓.</li>
+      <li><b>또래 관계</b>: 가상 놀이·협력·갈등 해결 학습 → 사회성. 친사회적 행동은 수용↑, 공격성·수줍음은 거절↑. Asendorpf &amp; Van Aken(12세 230명 → 17세): 12세 5요인 성격이 17세 또래 지지를 예측, 12세 또래 지지는 17세 전반적 자기가치감(표면적 특성·특징적 적응)을 예측.</li>
+      <li>정리: 성격의 핵심(특질)은 안정적이어서 사회적 관계에 영향을 주고, 사회적 관계는 성격의 표면(특징적 적응·자기가치감)에 영향을 준다 — 쌍방향.</li>
+    </ul></div></details>
+
+  <details class="ans-d"><summary>5-8. 청소년기의 생물학적·인지적·사회적 특징이 자기 지식과 정체성 발달에 미치는 영향을 서술하시오.</summary><div class="body">
+    <ul>
+      <li><b>생물학적</b>: 성호르몬 분비 → 신체 변화·성적 호기심·연인 관계, 신경 발달이 가소성에서 안정성으로, 빠른 신체 변화·감정 기복이 "나는 누구인가"의 혼란을 증폭.</li>
+      <li><b>인지적</b>: 추론·추상적 사고·메타인지 향상 → 자기·타인·세계에 대한 정교한 모형 구성, 자기를 성찰.</li>
+      <li><b>사회적</b>: 학업 성취·집단 소속 요구 → 차별적 피드백이 자기평가에 영향, 근면성↑, 사회 기술↑(우호성↑).</li>
+      <li>결과: 개인적 신화(비현실적 환상; 서사 정체성의 초안) → 현실과 충돌하며 <b>정체성 위기</b>(Erikson) → 직업·이념·성적 지향에 헌신하며 극복·잠정적 정체성 수립(Marcia 지위). 청소년기에 현실적·통합적인 서사 정체성이 처음 구성됨.</li>
+    </ul></div></details>
+
+  <details class="ans-d"><summary>5-9. 청소년기 자기 지식이 비현실적이고, 현실을 부정한 채 정체성 확인을 위한 탐색 없이 사회로부터 단절된 생활을 하는 청소년은 Marcia 모형에서 어떤 유형인가?</summary><div class="body">
+    <ul>
+      <li><b>정체성 혼미(identity diffusion)</b>: 정체성에 대한 고민·의사결정 기간(위기)을 가졌는지와 상관없이 현재 특정 직업·이념에 <b>헌신하지 않는</b> 상태. 탐색이 없고 사회적 요구·역할 수행에 관심이 적다.</li>
+      <li>(유실=위기 없이 헌신 / 유예=현재 위기 중 / 성취=위기 후 스스로 선택한 헌신과 구분)</li>
+    </ul></div></details>
+
+  <h3 style="margin:22px 0 6px">6장 정신분석 이론</h3>
+
+  <details class="ans-d"><summary>6-1. Freud가 무의식을 탐색하는 도구로 사용한 기법과 그 이유를 서술하시오.</summary><div class="body">
+    <ul>
+      <li><b>자유 연상</b>: 떠오르는 생각·이미지·감정을 검열 없이 말하게 하는 기법. <b>꿈 분석</b>: 꿈의 내용과 그에 대한 자유 연상을 분석.</li>
+      <li>이유: 환자들이 증상과 관련된 외상 경험을 의식적으로 보고하지 못했다(중요한 경험이 '의식 너머'에 있음). 의식의 <b>자동적 검열</b>을 최소화하면 무의식의 내용이 드러나며, 꿈은 <b>잠자는 동안 검열이 약해져</b> 의식에서 수용되기 어려운 욕구·감정이 상징적으로 표현되므로 무의식을 풍부히 담고 있다.</li>
+    </ul></div></details>
+
+  <details class="ans-d"><summary>6-2. 무의식을 의식화하는 것이 증상 완화에 어떻게 기여하는지 서술하시오.</summary><div class="body">
+    <ul>
+      <li>신경증은 의식에서 용납되지 않는 경험·추동(리비도)을 무의식에 과도하게 담아 두어 <b>압력</b>이 쌓이고 증상(예: 히스테리의 신체 증상)으로 표출된 것이다.</li>
+      <li>무의식을 의식화하면(언어적 표출·전이 분석 등) 쌓인 <b>에너지가 방출</b>되고 무의식의 압박이 줄어, 자아가 그 내용을 합리적으로 다룰 수 있게 된다. 해석 → 통찰 → 훈습을 거치며 현실에서의 적응적 행동이 늘고 증상이 개선된다.</li>
+    </ul></div></details>
+
+  <details class="ans-d"><summary>6-3. 원초아의 기본적 기능은 무엇이며 인간의 적응적 삶에 어떻게 기여하는가?</summary><div class="body">
+    <ul>
+      <li>원초아는 <b>리비도의 저장고</b>로서 신체 과정의 본능적 욕구를 정신적 표상으로 넘겨 주는 매개체이며, <b>쾌락 원리</b>와 <b>일차 과정</b>(욕구 충족과 연합된 대상의 심상 형성)으로 긴장을 줄이려 한다.</li>
+      <li>기여: 생애 초기에는 쾌락 원리와 일차 과정만으로도 생존이 가능하고, 이후에도 욕구를 충족하려는 <b>동기의 에너지원</b>이 된다. 자아·초자아와의 역동 속에서 욕구를 현실적·도덕적으로 조율하게 만드는 출발점이다(단, 통제되지 않으면 불안·부적응).</li>
+    </ul></div></details>
+
+  <details class="ans-d"><summary>6-4. 3살 무렵 우연히 원시적 환경에서 홀로 자란 아이(먹고 마실 것은 풍부, 해를 입히는 야생동물·위험한 환경)가 10살 정도까지 자랐을 때의 심리적 특징을 삼원 구조 모형으로 기술하시오.</summary><div class="body">
+    <ul>
+      <li><b>원초아</b>: 욕구 충족 자원이 풍부해 쾌락 원리·본능적 욕구 충족이 비교적 지속.</li>
+      <li><b>자아</b>: 야생동물·위험한 환경에 적응해야 하므로 <b>현실 원리·이차 과정</b>(안전한 행동 경로 계획, 욕구 지연)과 <b>현실 불안</b>이 발달. 현실 검증·생존 기술 중심으로 확립.</li>
+      <li><b>초자아</b>: 규범을 내면화할 양육자·사회가 없어 <b>미발달</b>(5~6세 분화, 10~11세 확립되어야 할 시기). 양심(죄책감)·자아이상(수치심)·도덕적 불안이 약하다.</li>
+      <li>→ 원초아와 자아 중심, 초자아가 빈약한 구조.</li>
+    </ul></div></details>
+
+  <details class="ans-d"><summary>6-5. 40대 남성 M: 대외적으로 평판이 좋고 친척 모임에서도 헌신적이지만, 회사에서 부정적 피드백이나 무시를 당하면 집에서 배우자·자녀에게 화를 낸다. 주로 사용하는 방어기제는?</summary><div class="body">
+    <ul>
+      <li><b>전치(displacement)</b>: 위협적인 대상(직장 상사·동료)에게 일어난 분노를 직접 표현하지 못하고 <b>상대적으로 덜 위험한 대상(가족)</b>에게 표현.</li>
+      <li>보조: 직장·친척 앞에서의 과도하게 친절한 모습은 억압된 공격 충동에 대한 <b>반동 형성</b>의 가능성도 언급할 수 있다. (주된 방어기제는 전치)</li>
+    </ul></div></details>
+
+  <details class="ans-d"><summary>6-6. 전통적 정신분석의 자아 기능과 자아심리학의 자아 기능이 어떻게 다른지 구체적으로 서술하시오.</summary><div class="body">
+    <ul>
+      <li><b>전통</b>: 원초아·초자아·현실의 요구를 적절히 들어주며 <b>균형을 유지</b>하는 것, 갈등·불안을 방어기제로 관리하는 데 초점. (S. Freud는 말년에야 자아 기능 정립 시도.)</li>
+      <li><b>자아심리학</b>: 자아의 핵심 목적이 <b>유기체의 적응</b>이므로 내적 갈등 관리뿐 아니라 외부 과업 해결도 중요 → <b>갈등 관련 자아 기능</b>(방어기제)과 <b>갈등으로부터 자유로운 자아 기능</b>(지각·주의·기억·운동 조절·인지적·정서적 통합·언어 등 인지 기능; 현실 검증·자극 장벽·사고 과정·합성–통합)을 모두 연구.</li>
+      <li>방어기제 자체도 <b>효과성·유형(현실 왜곡 정도)·사용 패턴</b> 관점에서 분석했고, 사용 목적(원치 않는 추동 → 다양한 불쾌한 욕구·감정)과 작동 범위(무의식 → 의식 포함)를 확장했다.</li>
+    </ul></div></details>
+
+  <details class="ans-d"><summary>6-7. 대상관계 이론이 인간에 대한 정신역동적 이해의 확장에 기여한 바를 설명하시오.</summary><div class="body">
+    <ul>
+      <li>동기: 성적 추동의 만족이 아니라 <b>관계를 추구하는 경향</b>이 더 근본적임을 제안.</li>
+      <li>내재화: 대상뿐 아니라 <b>자기·대상·관계</b>가 함께 내재화되어 대상관계가 형성되고 이후 대인관계에 직접 영향. 긍정·부정 대상관계를 <b>통합</b>하는 것이 핵심 과제.</li>
+      <li>개념 확장: 자아와 자기 구분, <b>융합 → 2자 → 3자 관계</b>, 방어기제 확장(<b>분열</b>), <b>전이·역전이</b>의 명료한 설명.</li>
+      <li>임상: 성격의 <b>대인관계적 측면</b>을 정교히 분석, 매우 불안정한 심각한 성격 문제(대상관계 통합 실패)를 이해·개입하는 틀 제공, 전이·역전이를 활용한 치료.</li>
+    </ul></div></details>
+
+  <details class="ans-d"><summary>6-8. 대상관계 이론에서의 자기와 자기심리학에서의 자기가 기능이나 존재 양상 등에서 어떻게 다른지 설명하시오.</summary><div class="body">
+    <ul>
+      <li><b>대상관계 이론의 자기</b>: 자아(기능)와 구분되는 <b>표상·개념·기억 체계</b>. 대상, 둘 간의 관계와 <b>함께 대상관계의 한 단위</b>로 내재화되어 존재(대상관계의 한 요소).</li>
+      <li><b>자기심리학의 자기</b>(Kohut): 대상관계의 한 요소로만 간주되던 자기의 기능을 <b>확장</b>. 대상과의 관계로 형성되지만 <b>그 자체로 존재</b>하며 개인의 정서·행동 특징에 직접 영향을 미친다. <b>자기가치감</b>을 유지하기 위한 전략을 개발·사용, <b>이상화·동일시·탈이상화</b>를 통해 발달하고 이를 못하면 공허감·자기애적 성격이 나타난다.</li>
+    </ul></div></details>
+</section>
+<!-- ===================== 2장 ===================== -->
+<section class="sec" id="ch2">
+  <h2><span class="no">2</span>성격 평가 <span class="pg">시험 범위 p.48~56</span></h2>
+  <p class="lead">교재 사진에는 2장이 없어서 <b>수업 녹취(9/3 수업, MMPI·로르샤흐 수업)</b>만으로 정리했습니다. <span class="tag must">범위 확정</span>은 자료·검사 분류, <span class="tag opt">참고</span>는 범위 밖일 가능성이 큰 부분입니다.</p>
+
+  <div class="card">
+    <h3>성격 평가에 쓰는 자료의 종류 <span class="tag must">범위</span></h3>
+    <div class="tw"><table>
+      <tr><th>자료</th><th>설명</th><th>장점·한계</th></tr>
+      <tr><td><span class="k">생애기록 자료</span></td><td>생애를 기록한 자료: 학교 성적, 범죄기록, 생활기록부, 의무기록, 직무기록 등. 일상생활의 성격 특성이 잘 반영(예: 오랜 기간 좋은 성적 → 성실·자기관리 철저할 가능성)</td><td>일반적으로 <b>간접적 증거</b> → 다른 방법으로 수집한 자료를 <b>보완·확인(confirm)</b>하는 용도로 사용</td></tr>
+      <tr><td><span class="k">관찰자 자료</span></td><td>수검자의 성격을 파악하고 있는 가까운 주변 사람(부모·형제·교사·친구·동료)의 <b>보고·평정</b></td><td>본인이 잘 의식하지 못하는 습관·특성을 타인이 말해 줄 수 있음. 그러나 관찰자도 <b>편향·기억 오류·의도적/비의도적 왜곡</b>이 있고 모든 걸 보고 있지 않음 → <b>2명 이상</b>의 관찰자 자료를 수집·비교해 보완</td></tr>
+      <tr><td><span class="k">자기보고형 검사</span> self-report</td><td>수검자가 문항에 스스로 응답하는 검사</td><td>자기 행동을 왜곡해 보고할 수 있음(예: 절제를 잘한다고 주장하지만 실제론 반대 행동)</td></tr>
+      <tr><td><span class="k">수행형 검사</span></td><td>수검자에게 <b>특정 과제를 수행</b>하게 하고 그 반응을 분석</td><td>—</td></tr>
+    </table></div>
+    <div class="note lec"><b>수업 언급</b>자기 행동을 본인이 잘 모르는 경우(예: 한 손으로 운전하는 습관)를 옆 사람은 알아챈다. 7년 전 어떤 학생이 "본인 + 본인이 고른 최소 3명"이 같은 성격 검사로 평가해 비교한 연구를 했는데, 부모·친구마다 다르게 보더라.</div>
+  </div>
+
+  <div class="card">
+    <h3>검사의 분류 <span class="tag must">범위</span></h3>
+    <div class="tw"><table>
+      <tr><th>분류 기준</th><th>유형</th><th>설명</th></tr>
+      <tr><td rowspan="2">구조화 정도</td><td><span class="k">객관적(구조화) 검사</span></td><td>시행·채점·분석·절차·해석 기준이 <b>명확</b>하게 제시된 도구. 부분적으로 구조화 검사라고도 함. 예: 자기보고형 검사(NEO-PI-R, MMPI, 16PF)</td></tr>
+      <tr><td><span class="k">투사적(비구조화) 검사</span></td><td>검사의 실시·채점·해석 등이 상대적으로 체계화되어 있지 않음. <b>모호하고 불분명한 자극</b>을 제시해 내면의 심리 특성이 반응에 <b>투사 projection</b>되도록 함. 단어연상검사·문장완성검사·그림 그리기 검사·로르샤흐 검사·주제통각검사</td></tr>
+      <tr><td rowspan="2">측정 범위<br>(자기보고형 안)</td><td><span class="k">다차원적 검사</span></td><td>성격의 여러 차원을 포괄적으로 검사. 대표 예: <b>NEO-PI-R</b>(Big 5를 모두 측정)</td></tr>
+      <tr><td><span class="k">단일 검사</span></td><td>특정한 성격 특성만 검사. 교재 예: 충동성이라는 단일 특질을 재는 <b>UPPS</b>(Urgency, Premeditation, Perseverance, Sensation seeking). 보편적으로는 다차원적 검사를 많이 사용</td></tr>
+    </table></div>
+    <div class="note tip"><b>시험 포인트</b>"MMPI는 객관적 자기보고형 검사, 로르샤흐는 투사 검사"를 헷갈리지 마세요. (수업: "어디 가서 로르샤흐를 객관적 검사라고 하면 안 된다.")</div>
+  </div>
+
+  <div class="card">
+    <h3>NEO-PI-R <span class="tag must">범위</span> <span class="pg">표 2.2 · 교재 p.58 부근</span></h3>
+    <ul>
+      <li>Big 5를 측정하도록 개발된 <b>다차원적 자기보고형 검사</b>. 이름의 유래: 개발자들이 <b>N</b>euroticism · <b>E</b>xtroversion · <b>O</b>penness to experience 세 개를 재는 인벤토리를 먼저 개발(<b>NEO-I</b>) → 나머지 두 개를 추가하며 이름을 유지. <b>R = Revised</b>. 가장 많이 쓰이는 판.</li>
+      <li>문항 구성: <b>240문항</b> = 5개 상위 특질 × 6개 하위 특질 × <b>8문항</b>(상위 특질당 48문항). <b>5점 척도</b>.</li>
+      <li>특징: 다양한 연령층에 사용 가능, <b>자기보고형 질문지와 관찰자 보고형 질문지</b>가 구분되어 관찰자 평가도 측정 가능. 240문항이 부담스러운 연구자·응답자를 위한 <span class="k">NEO-FFI</span>(5 Factor Inventory, <b>60문항</b>)도 있음.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>MBTI <span class="tag opt">참고 · 범위 밖(p.59~) 가능성</span></h3>
+    <ul>
+      <li><b>Jung</b>의 이론이 기원. Jung이 제안한 축: 자아지향성(<b>외향 E</b>/<b>내향 I</b>), <b>사고 T</b>/<b>감정 F</b>, <b>감각 S</b>/<b>직관 N</b> → MBTI 개발자들이 판단 <b>J</b>/인식 <b>P</b>를 더함.</li>
+      <li>외향/내향 = 바깥 세계 vs 내부 세계에 <b>관심을 갖는 태도</b>. 한 사람이 외부에만/내부에만 관심이 있는 것이 아니라 <b>어떨 때 더 활력을 얻고 시간을 자발적으로 쓰는가</b>의 문제(상황에 따라 달라질 수 있음).</li>
+      <li>T는 판단 과정에서 논리적 사고, F는 감정을 이용. S는 구체적·실제적 감각 경험, N은 보이는 것 이면의 의미·원리·숨은 의도를 인식. J는 판단을 많이 하므로 계획·예상 가능한 시나리오에서 편안, P는 인식 중심으로 "이거 좋아 보이네, 하자" 쪽.</li>
+      <li>우성 기능·보조 기능은 유형별 가이드가 있으나 <b>외울 필요 없음</b>(수업). 결정 방식의 타당성은 체계적 연구가 부족, 신뢰도·타당도에 대한 의문이 지속적으로 제기되었지만 학교·기업·상담기관에서는 활발히 사용. 성격 연구 학회에선 거의 다루지 않음.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>MMPI <span class="tag opt">참고 · 범위 밖 가능성</span></h3>
+    <ul>
+      <li><b>미네소타 다면적 인성검사</b> Minnesota Multiphasic Personality Inventory. <b>임상 목적</b>의 성격 검사. 특정 심리적 문제 집단과 정상인 집단을 구분하는 문항을 선별. 1943년 개발. 최근판 <b>MMPI-3(2020)</b>, 한국은 아직 직전의 <b>MMPI-2-RF</b>를 사용. 청소년용 <b>MMPI-A</b>(기준 만 18세; 맥락상 성인에 가까우면 성인용 사용 가능).</li>
+      <li><b>임상 척도 10개</b>(이 외 보충척도·소척도·재구성 임상 척도(RC)·성격병리 5요인 척도 등):</li>
+    </ul>
+    <div class="tw"><table>
+      <tr><th>번호</th><th>척도</th><th>의미</th></tr>
+      <tr><td>1</td><td><span class="k">건강염려증</span> Hs</td><td>신체 증상·기능에 대한 과도한 관심·염려·집착</td></tr>
+      <tr><td>2</td><td><span class="k">우울</span> D</td><td>슬픔·의욕 감소·부정적 생각·무기력·불면</td></tr>
+      <tr><td>3</td><td><span class="k">히스테리</span> Hy</td><td>특정 신체 증상 호소 (1번과 같이 높은 경우가 흔함)</td></tr>
+      <tr><td>4</td><td><span class="k">반사회성</span> Pd</td><td>가족·권위에 대한 불만, 일탈 행동, 무책임성, 소속감 결여</td></tr>
+      <tr><td>5</td><td><span class="k">남성성–여성성</span> Mf</td><td>성별에 따라 점수 방향이 반대. 문제로 보는 것이 아니라 성향의 하나. 1943년 개발 시기의 한계로 비판받는 척도</td></tr>
+      <tr><td>6</td><td><span class="k">편집증</span> Pa</td><td>피해의식·의심·경직된 사고·관계망상, 대인 예민성</td></tr>
+      <tr><td>7</td><td><span class="k">강박증</span> Pt</td><td>자기 비판·걱정·불안, 주의 집중 곤란, 우유부단, 강박적 경향, 만성 불안</td></tr>
+      <tr><td>8</td><td><span class="k">조현병</span> Sc</td><td>기이한 사고·비정상적 지각(<b>양성 증상</b>), 사회적 소외·고립(<b>음성 증상</b>), 충동 억제 곤란</td></tr>
+      <tr><td>9</td><td><span class="k">경조증</span> Ma</td><td>매닉(조증). 2번과 9번이 함께 나타나면 양극성장애</td></tr>
+      <tr><td>10 (0)</td><td><span class="k">내향성</span> Si</td><td>사회적 불편감·회피, 혼자 있는 것을 선호하는 정도(내향적이라고 비정상이 아님)</td></tr>
+    </table></div>
+    <ul>
+      <li>한 척도만이 아니라 <b>여러 척도를 묶어서</b> 해석(예: 2+8은 충동 억제 곤란과 우울이 합쳐져 자해·자살 위험, 6+8은 편집증 심화). 맥락(인적 사항·호소 문제)을 함께 봐야 함(예: 고혈압 위험군이라 1번이 높다고 곧바로 건강염려증 아님).</li>
+      <li><b>표준점수</b>를 사용(원점수를 기준 집단에 맞춰 환산해 비교). <b>타당도 척도</b> = 내가 측정하려는 것을 측정하고 있는지, 거짓·왜곡 응답은 없는지 확인(병역 기피를 위해 정신장애를 꾸며 응답하는 사람을 거를 때 등).</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>투사적 검사: 로르샤흐 · TAT · 그림 · 문장완성 <span class="tag opt">참고</span></h3>
+    <div class="tw"><table>
+      <tr><th>검사</th><th>내용</th></tr>
+      <tr><td><span class="k">로르샤흐</span> Rorschach Inkblot Test</td><td>데칼코마니 형태의 <b>모호한 잉크 반점</b>이 무엇으로 보이는지 묻고 반응을 <b>양적·질적</b>으로 분석. Rorschach가 병원 환자들이 카드를 보며 독특한 반응을 보인다는 점을 발견해 개발. 하나의 응답이 아니라 <b>여러 반응을 종합</b>해 해석. <b>9가지 항목</b> 채점: 반응의 위치(W 등) · 발달질 · 결정인 · 형태질 · 반응 내용 · 평범 반응 · 조직화 활동 · 특수 점수 · 쌍반응. 스트레스·적응 수준, 정서·인지·대인관계·자기지각 특성, 우울·자살 위험·현실 지향·강박·지각/사고의 기이함 파악</td></tr>
+      <tr><td><span class="k">주제통각검사 TAT</span></td><td>인물·상황을 <b>모호하게</b> 묘사한 그림 카드(1935 발표). 성별·연령에 따라 카드 구성이 다름. 인간은 자극을 처리할 때 <b>자극 자체의 특성 + 개인 내적 기억·정보</b>를 이용 → 특성이 모호할 때 <b>과거 경험과 현재의 소망·욕구</b>에 따라 해석. 이야기에 중요한 과거 경험·욕구·소망·해석 방식·주된 감정과 갈등·문제 해결 방식·미래에 대한 태도가 담김</td></tr>
+      <tr><td><span class="k">그림 검사</span></td><td><b>인물화 DAP</b>(Draw a Person): 원래 세부 묘사로 <b>지능 평가</b>를 위해 만들었으나 성격 특성도 반영됨이 확인되어 성격 평가로도 사용. <b>HTP</b>(집–나무–사람): 집, 나무, 사람, 반대 성별의 사람 총 4장을 그림, 사람을 먼저 그리는 것보다 부담이 덜해 집부터 그리게 함. 크기·위치·선의 굵기·선의 질 등 구조적 분석 + 질문. 종이와 연필만 있으면 됨</td></tr>
+      <tr><td><span class="k">문장완성검사</span> SCT</td><td>문장의 일부를 주고 완성하게 하는 <b>연상 검사(association test)</b>. 마음을 구성하는 요소들의 연결 구조를 파악. 프로이트의 <b>자유 연상</b>과 관련. (모든 문항을 한두 단어로 답하면 지능 의심 또는 반항/비협조로 해석될 수 있음)</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <h3>요인 분석 (연구 방법) <span class="tag opt">참고</span></h3>
+    <ul>
+      <li>Big 5 같은 특질 모형을 개발하는 중요한 방법. 예: 어떤 사람이 '불안'·'적대감'·'우울' 문항에 모두 높은 점수를 줬고 다른 많은 사람도 같은 패턴 → 이 문항들을 <b>하나의 요인(예: 신경과민성)</b>으로 묶는다. 다른 사람에게서 갈라져 나오는 문항(개방성 관련 등)은 별개 요인으로. 수천 명 자료로 반복할수록 묶어도 되는 것과 분리해야 하는 것이 분명해짐. → 3장 Cattell의 요인 분석과 같은 개념.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== 1장 ===================== -->
+<section class="sec" id="ch1">
+  <h2><span class="no">1</span>1장 안내 <span class="pg">시험 범위 p.20~25</span></h2>
+  <div class="card">
+    <h3>이 부분은 자료가 없습니다 <span class="tag must">확인 필요</span></h3>
+    <p>선생님이 말한 시험 범위에 <b>p.20~25</b>가 포함돼 있지만, 올려 주신 교재 사진은 p.79~219이고 수업 녹취에도 1장 내용이 없어서 정리하지 못했습니다. 해당 쪽 사진을 추가로 주시면 이 페이지에 바로 넣겠습니다.</p>
+    <p>대신 <a href="#ch3">3장</a>의 어휘 가설·특질 개념, <a href="#ch5">5장</a>의 천성 대 양육 논쟁은 1장과 이어지는 내용이라 먼저 보는 것이 좋습니다.</p>
+  </div>
+</section>
+<!-- ===================== 문제풀이 ===================== -->
+<section class="sec" id="quiz">
+  <h2><span class="no">?</span>문제풀이 <span class="pg" id="qtotal"></span></h2>
+  <p class="lead">객관식(5지선다)과 단답형을 교재 디테일 위주로 만들었습니다. 결과는 이 브라우저에 저장되어 틀린 문제만 다시 풀 수 있습니다.</p>
+  <div class="qbar">
+    <select id="fCh" aria-label="장 선택">
+      <option value="all">전체 장</option><option value="3">3장 초기 특질</option><option value="4">4장 현대 특질</option><option value="5">5장 생물사회적</option><option value="6">6장 정신분석</option><option value="2">2장 성격 평가</option>
+    </select>
+    <select id="fTy" aria-label="유형 선택"><option value="all">전체 유형</option><option value="mc">객관식</option><option value="sa">단답형</option></select>
+    <select id="fSt" aria-label="상태 선택"><option value="all">전체</option><option value="new">아직 안 푼 문제</option><option value="bad">틀린 문제만</option><option value="ok">맞은 문제만</option></select>
+    <button id="qShuffle">섞기</button>
+    <button id="qReset">결과 초기화</button>
+    <span class="score" id="qScore"></span>
+  </div>
+  <div id="qlist"></div>
+</section>
+<div class="foot">교재 『최신 성격심리학』 사진(p.79~219)과 수업 녹취로 정리한 비공식 학습 자료입니다. 1장(p.20~25)과 2장 교재 쪽은 자료가 없어 수업 녹취만 반영했고, 교재 p.80~81(Allport 배경)과 p.92~93(표 3.1 16PF 요인)은 사진이 없어 비워 두었습니다. 최종 범위·정답은 교재와 공지로 확인하세요.</div>
+</main>
+</div>
+
+<script>
+(function(){
+"use strict";
+var $=function(s,r){return (r||document).querySelector(s)};
+var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+var store={
+  get:function(k,d){try{var v=localStorage.getItem("pst:"+k);return v==null?d:JSON.parse(v)}catch(e){return d}},
+  set:function(k,v){try{localStorage.setItem("pst:"+k,JSON.stringify(v))}catch(e){}}
+};
+var esc=function(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")};
+
+/* ---------- header offset ---------- */
+function setHH(){var h=$(".top").offsetHeight;document.documentElement.style.setProperty("--hh",h+"px")}
+setHH();window.addEventListener("resize",setHH);
+/* ---------- theme ---------- */
+var root=document.documentElement;
+function applyTheme(t){root.setAttribute("data-theme",t);var b=$("#themeBtn");b.textContent=t==="dark"?"라이트":"다크";b.setAttribute("aria-pressed",t==="dark")}
+var th=store.get("theme",null)||(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
+applyTheme(th);
+$("#themeBtn").onclick=function(){th=th==="dark"?"light":"dark";store.set("theme",th);applyTheme(th)};
+
+/* ---------- cloze (암기 모드) ---------- */
+var cl=$("#clozeBtn");
+function setCloze(on){
+  document.body.classList.toggle("cloze",on);cl.setAttribute("aria-pressed",on);
+  if(!on)$$(".k.show").forEach(function(k){k.classList.remove("show")});
+  store.set("cloze",on);
+}
+cl.onclick=function(){setCloze(!document.body.classList.contains("cloze"))};
+document.addEventListener("click",function(e){
+  var k=e.target.closest&&e.target.closest(".k");
+  if(k&&document.body.classList.contains("cloze")){k.classList.toggle("show")}
+});
+setCloze(!!store.get("cloze",false));
+
+/* ---------- cards: ids, done checkbox ---------- */
+var doneMap=store.get("done",{});
+var secs=$$("section.sec");
+secs.forEach(function(sec){
+  $$(".card",sec).forEach(function(card,i){
+    var id=sec.id+"-"+(i+1);card.id=id;
+    var h=$("h3",card);if(!h)return;
+    var lab=document.createElement("label");lab.className="done-box";
+    var cb=document.createElement("input");cb.type="checkbox";cb.checked=!!doneMap[id];
+    lab.appendChild(cb);lab.appendChild(document.createTextNode("외움"));
+    h.appendChild(lab);card.classList.toggle("done",!!doneMap[id]);
+    cb.onchange=function(){doneMap[id]=cb.checked?1:0;if(!cb.checked)delete doneMap[id];store.set("done",doneMap);card.classList.toggle("done",cb.checked);updateNav()};
+  });
+});
+
+/* ---------- nav ---------- */
+function txt(el,drop){var c=el.cloneNode(true);drop.forEach(function(s){$$(s,c).forEach(function(x){x.remove()})});return c.textContent.replace(/\s+/g," ").trim()}
+var nav=$("#nav");
+secs.forEach(function(sec){
+  var h2=$("h2",sec);var no=$(".no",h2);
+  var wrap=document.createElement("div");wrap.className="nv-ch";wrap.dataset.sec=sec.id;
+  var a=document.createElement("a");a.href="#"+sec.id;
+  a.innerHTML='<span>'+esc((no?no.textContent+" ":"")+txt(h2,[".no",".pg"]))+'</span><span class="pr"></span>';
+  wrap.appendChild(a);
+  var sub=document.createElement("div");sub.className="nv-sub";
+  $$(".card",sec).forEach(function(card){
+    var h=$("h3",card);if(!h)return;
+    var s=document.createElement("a");s.href="#"+card.id;s.dataset.card=card.id;s.textContent=txt(h,[".pg",".tag",".done-box"]);sub.appendChild(s);
+  });
+  if(sub.children.length)wrap.appendChild(sub);
+  nav.appendChild(wrap);
+});
+function updateNav(){
+  $$(".nv-ch").forEach(function(w){
+    var sec=document.getElementById(w.dataset.sec);var cards=$$(".card",sec);
+    var d=cards.filter(function(c){return doneMap[c.id]}).length;
+    var pr=$(".pr",w);pr.textContent=cards.length?d+"/"+cards.length:"";
+    $$(".nv-sub a",w).forEach(function(a){a.classList.toggle("done",!!doneMap[a.dataset.card])});
+  });
+}
+updateNav();
+var ticking=false;
+function spy(){
+  ticking=false;var cur=null;
+  secs.forEach(function(s){if(s.getBoundingClientRect().top<=140)cur=s.id});
+  if(!cur&&secs.length)cur=secs[0].id;
+  $$(".nv-ch").forEach(function(w){w.classList.toggle("on",w.dataset.sec===cur)});
+}
+window.addEventListener("scroll",function(){if(!ticking){ticking=true;requestAnimationFrame(spy)}},{passive:true});
+spy();
+$("#menuBtn").onclick=function(){document.body.classList.toggle("nav-open")};
+$("#side").addEventListener("click",function(e){if(e.target.closest("a"))document.body.classList.remove("nav-open")});
+$("#openAll").onclick=function(){
+  if(!Object.keys(doneMap).length){return}
+  if(confirm("‘외움’ 체크를 모두 지울까요?")){
+    doneMap={};store.set("done",doneMap);
+    $$(".card").forEach(function(c){c.classList.remove("done");var i=$(".done-box input",c);if(i)i.checked=false});updateNav();
+  }
+};
+
+/* ---------- search ---------- */
+var qin=$("#q"),qcnt=$("#qcnt");
+function runSearch(){
+  var q=qin.value.trim().toLowerCase();
+  var items=$$("section.sec .card, section.sec details.ans-d");
+  if(!q){items.forEach(function(c){c.classList.remove("hidden")});secs.forEach(function(s){s.classList.remove("hidden")});qcnt.textContent="";return}
+  var n=0;
+  items.forEach(function(c){
+    var hit=c.textContent.toLowerCase().indexOf(q)>-1;
+    c.classList.toggle("hidden",!hit);if(hit)n++;
+    if(c.tagName==="DETAILS")c.open=hit;
+  });
+  secs.forEach(function(s){
+    if(s.id==="quiz"){s.classList.remove("hidden");return}
+    var any=$$(".card, details.ans-d",s).some(function(c){return !c.classList.contains("hidden")});
+    s.classList.toggle("hidden",!any);
+  });
+  qcnt.textContent=n+"건";
+}
+qin.addEventListener("input",runSearch);
+document.addEventListener("keydown",function(e){if(e.key==="/"&&document.activeElement.tagName!=="INPUT"&&document.activeElement.tagName!=="SELECT"){e.preventDefault();qin.focus()}});
+
+/* ---------- quiz ---------- */
+var M=function(c,q,o,a,e){return {t:"mc",c:c,q:q,o:o,a:a,e:e||""}};
+var S=function(c,q,a,e){return {t:"sa",c:c,q:q,a:a,e:e||""}};
+var QS=[
+/* ===== 3장 ===== */
+M("3","어휘 가설에 따라 사전에서 약 1,000개의 성격 어휘를 처음 찾아낸 사람은?",["Galton","Allport","Cattell","Eysenck","Spearman"],0,"Francis Galton(1822~1911, 영국). 교재 p.82."),
+M("3","Allport & Odbert(1936)가 Webster 사전에서 성격·행동을 기술하는 단어로 확인한 수는?",["1,000개","4,504개","10,000개","17,953개","40만 개"],3,"약 40만 단어 중 17,953개. 4,504개는 첫 번째 목록(안정적 성향)의 수."),
+M("3","Allport의 4목록 중 현재의 상태·태도·정서·기분을 나타내는 목록과 단어 수는?",["안정적 성향 4,504","일시적 상태 4,541","사회적 평가 5,226","기타 3,682","공통 특질 17,953"],1,"② 일시적 상태 4,541(rejoicing, frantic 등)."),
+M("3","개인 간 비교가 불가능하며 개인의 고유한 행동 방향을 결정·동기화하는 특질은?",["공통 특질","표면 특질","개인 특질","근원 특질","이차 특질"],2,"개인 특질(individual trait). 1961 개정판에서 개인 성향으로 바뀜."),
+M("3","Allport가 1961년 개정판에서 개인 특질을 바꿔 부른 이름은?",["주 성향","중심 성향","개인 성향","이차 성향","기능적 특질"],2,"공통 특질 → 특질, 개인 특질 → 개인 성향(personal disposition)."),
+M("3","대부분의 생활 영역에 포괄적 영향을 미치며 소수의 사람에게서만 발견되는 성향은?",["주 성향","중심 성향","이차 성향","공통 성향","표면 성향"],0,"cardinal disposition. 예: 나르키소스(자기애), 마더 테레사(인간애)."),
+M("3","상황과 시간에 대한 일관성이 가장 낮은 개인 성향은?",["주 성향","중심 성향","이차 성향","근원 성향","습관 성향"],2,"이차 성향: 특정 음식 기호, 특정 집단에 대한 유동적 태도 등."),
+M("3","Allport가 한 사람이 가진다고 제안한 중심 성향의 수는?",["1~2개","3~4개","5~10개","11~16개","약 30개"],2,"5~10개."),
+M("3","기능적 자율성에 대한 설명으로 옳은 것은?",["과거 경험이 현재 동기를 영구적으로 결정한다","시간이 지나면 동기가 과거 경험과 기능적으로 관련 없이 자체 시스템으로 작동한다","특질은 상황에 따라 계속 바뀐다","유아기 고착이 성격을 결정한다","부모의 압박이 있어야 행동이 유지된다"],1,"바이올린 예: 부모 압박이 사라져도 연주 동기만으로 연주. 과거 결정론(Freud)과 대비."),
+M("3","Allport 이론의 한계로 옳은 것은?",["개별 사례를 연구하지 않았다","대표적인 특질 측정 도구를 개발하지 못했다","어휘를 사용하지 않았다","성인을 연구하지 않았다","신경학적 기반을 완벽히 제시했다"],1,"기원 설명 부족과 측정 도구 미개발이 한계."),
+M("3","Cattell이 요인분석을 접하게 도와준 통계학자는?",["Spearman","Galton","Odbert","Thorndike","Mischel"],0,"Charles Spearman. 지능 연구에 요인분석을 개발·명명."),
+M("3","표면 특질과 근원 특질에 대한 설명으로 옳은 것은?",["근원 특질은 직접 관찰되는 행동 군집이다","표면 특질은 근원 특질의 원인이다","근원 특질은 표면 특질 이면의 잠재 변수(요인)이다","둘은 같은 개념이다","표면 특질은 생물학적 기반이다"],2,"표면 특질=관찰 가능한 군집, 근원 특질=그 이면의 잠재 요인."),
+M("3","16PF를 개발한 연구자와 연도는?",["Cattell & Mead, 1949","Allport & Odbert, 1936","Eysenck, 1967","Costa & McCrae, 1985","Mischel, 1968"],0,"Sixteen Personality Factor Questionnaire."),
+M("3","16PF의 상위 요인 중 유일하게 개인의 역량을 측정하여 제외하면 5요인과 유사해지는 요인은?",["불안","통제","독립성","능력","민감한 자각"],3,"외향성·불안·통제·독립성·민감한 자각·능력 중 능력 제외."),
+M("3","Cattell과 비교한 Eysenck의 특징으로 옳은 것은?",["자료 기반 분석","이론 기반 분석","개별 사례 접근","16개 기본 차원","생물학적 기반 제시 실패"],1,"Eysenck=이론 기반(이론적 가정 → 가설 → 자료 확인), Cattell=자료 기반."),
+M("3","Eysenck 성격 4수준의 올바른 위계(아래→위)는?",["특질 → 구체적 반응 → 습관적 반응 → 유형","구체적 반응 → 습관적 반응 → 특질 → 유형","습관적 반응 → 구체적 반응 → 유형 → 특질","구체적 반응 → 특질 → 습관적 반응 → 유형","유형 → 특질 → 습관적 반응 → 구체적 반응"],1,"구체적 반응 → 습관적 반응 → 특질 → 유형(상위 특질)."),
+M("3","다른 사람을 즐겁게 해 주려는 행동 습관과 웃으며 대화를 즐기는 습관으로 구성되는 사교성은 Eysenck의 어느 수준인가?",["구체적 반응","습관적 반응","특질","유형","근원 특질"],2,"특질 = 습관적 행동·반응들 간의 상관."),
+M("3","교재에 따르면 Galen의 4유형 중 쉽게 화를 내고 공격 행동을 보이는 유형은?",["다혈질(혈액)","우울질(흑담즙)","담즙질(황담즙)","점액질(점액)","신경질"],0,"교재는 일반 통념과 반대로 서술. 담즙질=진취적·낙관적, 점액질=냉정·끈기."),
+M("3","Eysenck의 3가지 차원이 아닌 것은?",["외향성","신경증 성향","정신증 성향","개방성","—"],3,"외향성·신경증·정신증. (개방성은 5요인)"),
+M("3","Eysenck가 외향–내향의 생물학적 기반으로 제시한 것은?",["변연계","망상체를 중심으로 한 각성 체계","편도체","부교감신경계","전두엽"],1,"뇌간 망상체의 각성 수준 조절. 내향=쉽게 과각성되어 자극 회피, 외향=자극 추구."),
+M("3","정서적으로 불안정한 사람에서 쉽게 활성화되고 오래 유지된다고 Eysenck가 본 신경계는?",["교감신경계","부교감신경계","체성신경계","운동신경계","—"],0,"변연계의 자율신경 조절. 교감 활성화·오래 유지, 부교감 억제."),
+M("3","Eysenck가 정신증 성향의 신경학적 기반 후보로 거론한 것이 아닌 것은?",["세로토닌","도파민","성호르몬","인간백혈구항원(HLA)","망상체"],4,"망상체는 외향성의 기반. 정신증은 구체적 이론 제시에 실패."),
+M("3","범주 모형과 차원 모형에 대한 설명으로 옳은 것은?",["범주 모형은 연속 변수로 측정한다","차원 모형은 명목 변수로 측정한다","차원 모형에서는 같은 차원이면 원인도 공유한다고 본다","메타분석에서 범주 변인이 차원 변인보다 5배 많았다","Allport·Cattell·Eysenck는 유형론자이다"],2,"차원 모형 변인이 범주 모형 변인보다 약 5배 많음."),
+S("3","Cattell이 직접 관찰 가능한 행동 요소를 담은 특질 어휘들의 군집을 부른 이름은?","표면 특질(surface trait)",""),
+S("3","Eysenck가 성격의 세 번째 차원으로 나중에 추가한, 공격성·냉담함·반사회성 등을 포함하는 차원은?","정신증 성향(psychoticism)",""),
+S("3","Cattell은 자료 기반 분석을 했다. Eysenck는 무슨 기반 분석을 했는가?","이론 기반 분석(theory-driven)",""),
+S("3","집단이 중요하게 여기는 성격 특질은 그 집단의 언어 일부가 될 가능성이 높다는 가설은?","어휘 가설(lexical hypothesis)","Crowne 2007"),
+/* ===== 4장 ===== */
+M("4","특질–행동 상관이 .3을 넘기 어렵다고 지적해 개인–상황 논쟁을 일으킨 사람(연도)은?",["Mischel, 1968","Goldberg, 1981","Norman, 1963","Fiske, 1949","Costa, 1992"],0,"『Personality and Assessment』"),
+M("4","Big Five라는 이름을 붙인 사람은?",["Goldberg","Costa & McCrae","Norman","Tupes & Christal","Digman"],0,"Goldberg(1981, 오리건대), 1990 재확인."),
+M("4","1992년 Costa & McCrae가 NEO에 우호성과 성실성을 추가해 개발한 검사는?",["NEO-PI","NEO-PI-R","NEO-FFI","16PF","HEXACO-PI"],1,"NEO(1978) → NEO-PI(1985) → NEO-PI-R(1992)."),
+M("4","Norman(1963)이 surgency, dependability를 바꿔 부른 현대 5요인의 요인은?",["외향성, 성실성","개방성, 우호성","신경과민성, 개방성","우호성, 성실성","외향성, 개방성"],0,"surgency → 외향성, dependability → 성실성."),
+M("4","NEO-PI-R에서 신경과민성의 하위요소가 아닌 것은?",["불안","적대감","자의식","충동성","신뢰"],4,"신뢰는 우호성의 하위요소."),
+M("4","개방성의 하위요소가 아닌 것은?",["상상력","심미안","감정 표현","사교성","비관습적 가치"],3,"사교성은 외향성."),
+M("4","신경과민성과 성실성이 함께 높을 때 건강 행동이 많다는 개념은?",["건강한 신경과민성","적응적 외향성","성실한 개방성","정서적 안정성","순기능적 우호성"],0,"healthy neuroticism (Graham et al. 2020)."),
+M("4","5요인의 연령 변화로 옳은 것은?",["신경과민성은 20~40세에 증가한다","개방성은 20세까지 급증하다 50세 이후 하락한다","성실성은 연령이 증가하며 하락한다","사회적 활력은 연령이 증가하며 증가한다","우호성은 감소한다"],1,"Roberts et al. 2006: 신경과민성 감소, 성실성·우호성 상승, 사회적 지배성 상승, 사회적 활력 50세 이후 감소."),
+M("4","직무 성과와 가장 포괄적이고 안정적인 정적 상관을 보이는 요인은?",["외향성","성실성","개방성","신경과민성","우호성"],1,"Barrick & Mount 1991. 외향성은 관리직·판매직에서만."),
+M("4","교재에서 일관되게 보고된 정치적 성향과 5요인의 관계는?",["개방성-보수주의, 성실성-진보주의","개방성-진보주의, 성실성-보수주의","우호성-진보주의","외향성-보수주의","신경과민성-진보주의"],1,"단 종단연구가 적어 인과는 단정 불가."),
+M("4","우호성이 지나치게 높을 때 나타날 수 있는 부적응적 성격은?",["강박적 성격","의존성 성격","반사회적 성격","편집성 성격","회피성 성격"],1,"dependent personality (Samuel & Gore 2012)."),
+M("4","성실성의 극단과 관련된 부적응적 성격은?",["의존성 성격","강박적 성격","자기애적 성격","편집성 성격","경계성 성격"],1,"완벽주의 → 강박성 성격장애."),
+M("4","5요인 이론 성격 체계에서 주변 요소에 해당하지 않는 것은?",["생물학적 기반","인생 경험","외부적 영향","기본적 성향","—"],3,"핵심 요소=기본적 성향·특징적 적응·자기개념."),
+M("4","5요인 이론 성격 체계에서 관찰 가능한 행동 패턴으로 기본적 성향을 추론하게 해 주는 요소는?",["특징적 적응","생물학적 기반","외부적 영향","인생 경험","자기개념"],0,"기본적 성향은 추상적 잠재력, 특징적 적응은 그 구체적 발현."),
+M("4","5요인 모형에 대한 비판이 아닌 것은?",["개인의 성격 구성요소를 밝힌 것이 아니다","영어권 이외에서 6요인이 반복 확인되었다","이론적 기반이 취약하다","성격의 역동성·모순을 설명하기 어렵다","생물학적 기반이 완벽히 밝혀졌다"],4,"교재의 비판 4가지: 개인 구성요소 X / 6요인 / 이론 취약 / 역동성."),
+M("4","HEXACO에서 5요인에 새로 추가된 차원은?",["정직-겸손","정서성","외향성","개방성","성실성"],0,"정서성·우호성은 구조·내용이 다름."),
+M("4","HEXACO 정서성이 5요인 신경과민성과 다른 점은?",["불안을 포함한다","분노·적대감을 제외한다","우울을 포함한다","충동성을 포함한다","스트레스 취약성을 포함한다"],1,"분노·적대감은 우호성의 반대극으로 이동."),
+M("4","교재가 흥미롭게도 HEXACO 정서성의 하위요소로 설정했다고 강조한, 5요인에서는 우호성이 지나칠 때의 문제로 다루던 요소는?",["두려움","불안","의존성","분노","우울"],2,"하위요소: 두려움·불안·의존성·감수성. 분노는 우호성 쪽으로 이동."),
+M("4","타인을 착취할 기회가 있어도 처벌 위협이 없는데 착취하지 않는 경향과 가장 관련 깊은 HEXACO 차원은?",["정직-겸손","우호성","정서성","개방성","외향성"],0,"돈뭉치를 경찰서에 전달하는 예."),
+M("4","자신이 착취당하고 있음을 자각했을 때 관계를 유지하며 협력하는 경향은 HEXACO의 어느 차원인가?",["정직-겸손","우호성","성실성","정서성","외향성"],1,"낮으면 복수심·적대적 행동."),
+M("4","이론생물학에서 HEXACO 차원과 개념의 연결로 옳은 것은?",["정직-겸손 - 친족 이타주의","정서성 - 호혜성 이타주의의 관용","우호성 - 호혜성 이타주의의 관용","외향성 - 아이디어 관련 활동","개방성 - 사회적 활동"],2,"정직-겸손=공정함, 우호성=관용, 정서성=친족 이타주의, 외향성=사회적 활동, 성실성=과제 관련 활동, 개방성=아이디어 관련 활동."),
+M("4","다크 트라이어드에 포함되지 않는 것은?",["마키아벨리아니즘","나르시시즘","정신병질성","조현병","—"],3,"마키아벨리아니즘·나르시시즘·정신병질성."),
+M("4","HEXACO의 각 차원이 가지는 하위요소의 수는?",["4개","5개","6개","8개","3개"],0,"4개씩(총 24개). 5요인은 6개씩(총 30개)."),
+M("4","HEXACO 정직-겸손의 하위요소가 아닌 것은?",["진실성","공정성","청렴성","겸손함","관용성"],4,"관용성은 우호성의 하위요소."),
+S("4","5요인을 영어 약자로 외우는 단어는?","OCEAN (Openness, Conscientiousness, Extroversion, Agreeableness, Neuroticism)",""),
+S("4","NEO-PI-R의 문항 수는? (5 x 6 x 8)","240문항","NEO-FFI는 60문항"),
+S("4","호혜성 이타주의와 친족 이타주의를 각각 제안한 사람(연도)은?","Trivers(1971) / Hamilton(1964)",""),
+S("4","5요인 이론 성격 체계(Five Factor Theory)를 제안한 사람(연도)은?","Costa & McCrae (1994)",""),
+/* ===== 5장 ===== */
+M("5","쌍생아 연구가 전제하는 한집에 사는 쌍생아는 동일한 환경을 공유한다는 가정은?",["공유 환경 가정","환경 동일성 가정","반응 범위 가정","수로화 가정","유전 동일성 가정"],1,"equal environment assumption. 후속 연구에서 결함 발견 → 입양 연구."),
+M("5","일란성·이란성 쌍생아가 공유하는 유전자 비율은?",["100% / 50%","50% / 25%","100% / 100%","75% / 50%","50% / 50%"],0,""),
+M("5","일란성 쌍생아 간 상관 .80, 이란성 쌍생아 간 상관 .50일 때 h² = 2(rM − rD)는?",[".30",".60",".80","1.30",".45"],1,"2 x (.80 − .50) = .60"),
+M("5","5요인 중 유전성 추정치가 가장 높은 요인과 가장 낮은 요인은?",["개방성 / 성실성","신경과민성 / 외향성","외향성 / 우호성","우호성 / 개방성","성실성 / 신경과민성"],0,"개방성 .41(최고), 성실성 .31(최저). N .37, E .36, A .35."),
+M("5","동일 가정에서 자라는 형제가 공유하는 환경 요소로 옳은 것은?",["가정의 기본적 가치·규율·사회경제적 수준","출생 순위","또래 관계","교사와의 관계","사고·질병"],0,"공유 환경. 출생 순위·또래는 비공유(체계적)."),
+M("5","비체계적 비공유 환경에 해당하는 것은?",["출생 순위","형제 간 상호작용","부모-자녀 관계","사고나 외상, 질병","또래 친구와의 관계"],3,"무작위로 발생."),
+M("5","Dunn & Plomin(1990)이 제시한 성격 변량의 구성으로 옳은 것은?",["유전 40 · 비공유 35 · 공유 5 · 오차 20","유전 20 · 비공유 40 · 공유 35 · 오차 5","유전 35 · 비공유 40 · 공유 20 · 오차 5","유전 50 · 비공유 20 · 공유 20 · 오차 10","유전 5 · 비공유 20 · 공유 35 · 오차 40"],0,"비공유 환경 영향 > 공유 환경 영향."),
+M("5","유전자가 유기체의 발달 양상을 제한해 소수의 발달 결과를 가져온다고 설명하는 모형은?",["수로화 모형","반응 범위 모형","사회유전체 모형","양방향 모형","상호작용 모형"],0,"Waddington 1966. 강하게 수로화: 옹알이, 약하게: 기질·성격."),
+M("5","유전자가 특성이 발달할 수 있는 가능성의 범위를 결정하고 환경의 질이 실제 수준을 결정한다고 보는 모형은?",["수로화 모형","반응 범위 모형","사회유전체 모형","환경 동일성 모형","양방향 모형"],1,"Gottesman 1963. 지능 예."),
+M("5","환경에 의해 유전적 특성(DNA 발현·생물학적 시스템)이 변할 수 있다고 가정하는 모형은?",["수로화 모형","반응 범위 모형","사회유전체 모형","상호작용 모형","EAS 모형"],2,"Roberts & Jackson 2008."),
+M("5","기질에 대한 설명으로 옳은 것은?",["환경의 영향을 가장 많이 받아 형성된 반응 경향","유전적·체질적 기반을 가진 반응 경향성","5세 이후에 나타나는 성격 특질","부모의 양육 행동으로만 결정된다","성인에게서만 측정 가능하다"],1,"환경 영향이 최소화된 생애 초기 영유아를 대상으로 연구."),
+M("5","Thomas와 Chess의 9개 기질 차원에 포함되지 않는 것은?",["활동 수준","규칙성","반응 역치","사회성","기분의 질"],3,"사회성은 EAS 모형(Buss & Plomin)."),
+M("5","생리적 기능이 불규칙하고 반응·기분 표현이 강렬하며 새 환경에 거부적이고 기분이 부정적인 아동은?",["순한 기질","까다로운 기질","더딘 기질","안정 애착","회피 애착"],1,"difficult child. 활동 수준 높음, 적응 느림."),
+M("5","압박 없이 반복적으로 노출시키면 점진적으로 적응하는 기질 유형은?",["순한 기질","까다로운 기질","더딘 기질","외향적 기질","불안정 기질"],2,"slow to warm up child. 반응 강도 약하고 활동 수준 낮음."),
+M("5","Buss와 Plomin의 EAS 모형에서 활동성의 핵심 요소 두 가지는?",["속도와 활력","반응성과 자기조절","접근과 위축","주의폭과 산만성","정서성과 사회성"],0,"tempo, vigor."),
+M("5","Rothbart가 기질의 핵심 요소로 제시한 것은?",["정서성·활동성·사회성","반응성과 자기조절","규칙성과 적응성","외향성·신경증·정신증","애정과 통제"],1,"반응성(reactivity), 자기조절(self-regulation)."),
+M("5","Rothbart의 기질 차원 중 5요인의 성실성과 연결되는 것은?",["외향성/긍정 정서성","부정 정서성","의도적 통제","지향 민감성","친화성"],2,"의도적 통제 r=.43. 부정 정서성=신경과민성(.49), 외향성(.59)."),
+M("5","Hampson(2012)이 정리한 기질-5요인 대응에서 개방성과 연결되는 기질은?",["친화성","지향 민감성","부정 정서성","의도적 통제","활동성"],1,"친화성=우호성."),
+M("5","McAdams & Olson의 성격 3층 모형에서 만 2세 이후 본격 발달하며 동기 부여된 주체로서의 자기가 필요한 층은?",["1층 기질/특질","2층 특징적 적응","3층 서사 정체성","4층 자기개념","모든 층"],1,"2층은 자기 인식이 필요, 1층은 불필요."),
+M("5","부모의 양육 행동 중 애정이 지나친 경우의 결과는?",["신뢰감·가치감 미형성","일정 수준의 불편감을 견뎌야 습득하는 능력·기술 발달 지연","제멋대로 행동","욕구 결핍으로 부적응","정서 둔감"],1,"애정 결여: 신뢰감·가치감 미형성. 통제 과도: 욕구 외면. 통제 결여: 제멋대로."),
+M("5","자녀의 기질이 행동에 미치는 영향의 정도가 부모의 양육 행동에 따라 달라진다고 보는 모형은?",["양방향 모형","상호작용 모형","수로화 모형","사회유전체 모형","반응 범위 모형"],1,"Rothbart & Bates 2007. 양방향=Hinshaw 2008."),
+M("5","낯선 상황 절차에서 주양육자가 돌아와도 안기는 것을 회피하며 부재에 무심한 아동의 애착은?",["안정 애착","불안 애착","회피 애착","혼란 애착","분리 애착"],2,""),
+M("5","애착 개념을 제안한 사람과 낯선 상황 절차를 개발한 사람은?",["Bowlby / Ainsworth","Ainsworth / Bowlby","Main / Mahler","Erikson / Marcia","Thomas / Chess"],0,"Bowlby 1969, Ainsworth 1978. 혼란 애착=Main & Solomon 1986."),
+M("5","Furman과 Buhrmester의 형제자매 관계 4차원 중 부모의 편애로 인한 경쟁을 반영하는 것은?",["애정/친밀함","상대적 지위/권력","갈등","경쟁","—"],3,"rivalry = 부모의 편애(parental partiality)로 인한 경쟁."),
+M("5","형제자매 관계에서 5요인 중 관계의 질과 가장 뚜렷한 정적 관계를 보인다고 한 요인은?",["우호성","개방성","외향성","성실성","신경과민성"],0,"Furman & Lanthier 1996."),
+M("5","Asendorpf & Van Aken(2003)의 결과로 옳은 것은?",["12세 또래 지지가 17세 5요인 성격을 예측했다","12세 5요인 성격이 17세 또래 지지를 예측했다","성격과 또래 지지는 무관했다","대상은 12세 100명이었다","12세 성격은 17세 자기가치감을 예측하지 못했다"],1,"12세 230명 → 17세. 12세 또래 지지는 17세 전반적 자기가치감을 예측."),
+M("5","초기 청소년이 자신의 잠재력에 대해 과도하게 긍정적인 환상을 갖는 경향(Elkind)은?",["개인적 신화","정체성 혼미","자기중심성","유예","자서전적 기억"],0,"personal fable. McAdams & Olson: 서사 정체성의 초안."),
+M("5","Erikson이 청소년이 헌신하며 정체성 위기를 극복하는 세 가지 영역으로 든 것은?",["직업·이념·성적 지향","학업·우정·가족","직업·학업·종교","이념·우정·가족","성격·가치·직업"],0,""),
+M("5","부모가 정해 준 직업·이념을 위기 없이 그대로 받아들이고 헌신하는 Marcia의 정체성 지위는?",["정체성 성취","유실","정체성 혼미","유예","탐색"],1,"위기 없음 + 헌신 있음."),
+M("5","현재 정체성 위기를 겪으며 직업·이념에 대해 씨름 중인 지위는?",["정체성 성취","유실","정체성 혼미","유예","성취 유예"],3,"moratorium: 성취로 가는 과도기."),
+M("5","교재에서 청소년기의 시작으로 보는 기준은?",["성호르몬 분비에 따른 신체 변화가 두드러지는 시기","만 10세","중학교 입학","추상적 사고 시작","사회적 독립"],0,"대략 10대."),
+M("5","중년기 성격 변화에 대한 설명으로 옳은 것은?",["성실성·우호성이 거의 정점, 신경과민성은 감소","신경과민성이 증가한다","개방성이 정점이다","외향성이 급증한다","성실성이 급감한다"],0,""),
+S("5","한집에 사는 쌍생아가 동일한 환경을 공유한다고 가정하는 것을 무엇이라 하나?","환경 동일성 가정",""),
+S("5","유전성 추정치를 구하는 쌍생아 연구 공식은?","h² = 2(rM − rD)","rM=일란성 상관, rD=이란성 상관"),
+S("5","Thomas & Chess의 세 가지 기질 유형은?","순한 기질, 까다로운 기질, 더딘 기질",""),
+S("5","Buss & Plomin EAS 모형의 E, A, S는 각각 무엇인가?","정서성(Emotionality), 활동성(Activity), 사회성(Sociability)",""),
+S("5","Rothbart의 세 기질 차원은?","외향성/긍정 정서성, 부정 정서성, 의도적 통제",""),
+S("5","양육 행동의 전통적 2차원과 최근 추가된 세 번째 차원은?","애정, 통제 / 자녀의 정서에 대한 반응 행동(Gottman)",""),
+S("5","낯선 상황 절차에서 불안·회피·혼란 애착을 묶어 부르는 이름은?","불안정 애착",""),
+S("5","Marcia의 정체성 지위 모형의 두 차원은?","위기(crisis)와 헌신(commitment)",""),
+/* ===== 6장 ===== */
+M("6","Breuer가 Anna O. 치료에서 발견하고 Freud가 이어받은 대화를 이용한 치료는?",["담화 치료(talking cure)","자유 연상","꿈 분석","전이 분석","최면 요법"],0,"1895 『히스테리 연구』."),
+M("6","Freud가 『꿈의 해석』을 펴낸 해는?",["1895","1900","1905","1913","1923"],1,"1895 히스테리 연구, 1905 심리성적 발달, 1923 구조 모형."),
+M("6","Freud의 구조 모형이 제안된 해는?",["1895","1900","1905","1913","1923"],4,"심리성적 발달 이론(1905)이 구조 모형보다 앞섬."),
+M("6","Freud가 정신 에너지의 근원이라 생각한 것과 그 흥분 상태의 이름은?",["중추신경계의 흥분 상태 - 추동(drive)","호르몬 - 리비도","무의식 - 방어","본능 - 원초아","자아 - 불안"],0,"성적 추동에 수반되는 에너지가 리비도."),
+M("6","지형학적 모형에서 일정한 수준의 노력을 기울이면 의식될 수 있는 경험은?",["의식","전의식","무의식","초자아","자아"],1,"지난 학기 수업 내용 등."),
+M("6","원초아에 대한 설명으로 옳은 것은?",["현실 원리를 따른다","이차 과정 사고를 한다","쾌락 원리를 따르며 일차 과정을 사용한다","5~6세에 분화한다","사회 규범이 내면화된 것이다"],2,""),
+M("6","자아의 분화 시기와 확립 시기로 옳은 것은?",["6~8개월 / 2~3세","2~3세 / 5~6세","5~6세 / 10~11세","출생 시 / 6개월","10~11세 / 청소년기"],0,"초자아는 5~6세 분화 → 10~11세 확립."),
+M("6","잘못된 행동에 대한 처벌로 형성되고 죄책감과 관련 있는 초자아의 하위 체계는?",["양심","자아이상","자아","원초아","리비도"],0,"자아이상=칭찬·수용으로 형성, 수치심."),
+M("6","다음 주에 깜짝 퀴즈를 보겠다는 말을 듣고 느끼는 불안은?",["현실 불안","신경증적 불안","도덕적 불안","분리 불안","실존 불안"],0,"외부 현실의 위협."),
+M("6","Freud가 특히 중요하게 고려한 불안은?",["현실 불안","신경증적 불안","도덕적 불안","분리 불안","—"],1,"원초아의 추동을 자아가 통제하지 못할 것이라는 두려움 → 방어기제."),
+M("6","직장 상사에게 야단 맞고 집에 와서 가족에게 화를 내는 방어기제는?",["전치","투사","반동 형성","합리화","승화"],0,""),
+M("6","호감을 느끼면서도 억압하고 오히려 그 사람을 놀리거나 밀어내는 방어기제는?",["반동 형성","투사","억압","퇴행","전치"],0,""),
+M("6","자신이 상대에게 화가 났음을 인정하지 못하고 상대가 나에게 화를 낸다고 여기는 방어기제는?",["투사","합리화","반동 형성","승화","퇴행"],0,""),
+M("6","지원했다가 떨어진 회사가 사실은 별로 좋은 회사가 아니었다고 위로하는 방어기제(이솝 우화 신 포도)는?",["합리화","억압","전치","반동 형성","투사"],0,"현실 왜곡을 통해 정당화."),
+M("6","동생이 태어난 후 혼자 잘하던 것도 엄마에게 해 달라고 하는 행동에 해당하는 방어기제는?",["퇴행","전치","승화","억압","투사"],0,"안전했던 초기 발달 단계로 돌아감."),
+M("6","용납할 수 없는 추동을 사회적으로 허용되는 사고·행위로 전환하는, 건강하고 적응적인 방어기제의 전형은?",["승화","합리화","투사","반동 형성","전치"],0,"공격적 추동을 예술·경찰관 직업으로."),
+M("6","억압의 단점으로 교재가 든 것은?",["억압을 유지하는 데 에너지가 지속 소모된다","불안이 커진다","현실을 인식 못한다","대인관계가 끊긴다","방어기제가 없어진다"],0,""),
+M("6","구강기에 과도한 좌절을 겪어 형성되는 성격은?",["구강기 수용 성격","구강기 공격 성격","항문기 보유 성격","항문기 배출 성격","남근기 성격"],1,"과도한 충족=구강기 수용 성격(의존적)."),
+M("6","완강함·인색함·질서에 대한 과도한 집착을 보이는 성격은?",["구강기 수용 성격","구강기 공격 성격","항문기 보유 성격","항문기 배출 성격","성기기 성격"],2,"과도한 충족: 항문기 배출 성격(무질서·충동적)."),
+M("6","남근기 아동이 어머니를 성적 대상으로 삼고 싶지만 아버지에 대한 두려움으로 그럴 수 없는 내적 갈등 상태를 부르는 말은?",["엘렉트라 콤플렉스","오이디푸스 콤플렉스","분리 불안","고착","퇴행"],1,"아버지와의 동일시로 해결."),
+M("6","심리성적 발달 5단계의 올바른 순서는?",["구강기-항문기-남근기-잠복기-성기기","구강기-남근기-항문기-성기기-잠복기","항문기-구강기-남근기-잠복기-성기기","구강기-항문기-잠복기-남근기-성기기","남근기-구강기-항문기-잠복기-성기기"],0,""),
+M("6","어떤 발달 단계에서 욕구가 과도하게 좌절되거나 충족되어 그 시기 행동을 반복하는 것은?",["고착","퇴행","전이","저항","승화"],0,"fixation. 스트레스 시 퇴행하며 고착 시기 행동이 현저해짐."),
+M("6","과거 중요한 타인에게 느꼈던 감정을 무의식적으로 치료자에게 느끼는 것은?",["전이","역전이","저항","통찰","훈습"],0,""),
+M("6","치료 시간에 반복해서 늦거나 특정 주제를 말하기를 거부하는 내담자 행동은?",["저항","전이","역전이","통찰","해석"],0,"저항 분석으로 이어짐."),
+M("6","통찰이 한 번에 일어나지 않고 반복적·점진적으로 일어나는 과정을 Freud가 부른 이름은?",["훈습","해석","전이 분석","저항 분석","자유 연상"],0,"working through."),
+M("6","정신분석이 비과학적이라고 지적한 과학철학자는?",["Popper","Kuhn","Jung","Adler","Rank"],0,"Karl Popper(1902~1994)."),
+M("6","Freud 이론 비판으로 교재에 제시된 것이 아닌 것은?",["비과학적이다","내담자가 사회경제적으로 특수했다","남근기 이전 시기 체계화가 미흡하다","치료 기간이 지나치게 길다","동물 실험에서만 연구했다"],4,"비판 4가지: 비과학 / 특수한 내담자 / 남근기 편중 / 긴 치료."),
+M("6","Anna Freud가 1936년 출간한 저서는?",["『자아와 방어 기제』","『꿈의 해석』","『히스테리 연구』","『정신분석 입문』","『자기의 분석』"],0,"1938 영국 이주, 1941 War Nursery."),
+M("6","자아심리학에서 갈등으로부터 자유로운 자아 기능에 해당하는 것은?",["방어기제","지각·주의·기억·언어 등 인지 기능","억압","전치","반동 형성"],1,"갈등 관련 자아 기능=방어기제."),
+M("6","자아심리학자들이 방어기제에서 특별히 중요하게 고려한 것이 아닌 것은?",["방어기제의 효과성","방어기제의 유형(현실 왜곡 정도)","방어기제의 사용 패턴","방어기제의 발달 연령","—"],3,"효과성·유형·사용 방식(패턴)."),
+M("6","자아심리학에서 건강한 사람의 방어기제 사용 특징은?",["한두 개를 경직되게 사용","다양한 방어기제를 유연하게 사용","방어기제를 사용하지 않음","가장 원시적인 방어기제만 사용","무의식 수준에서만 사용"],1,"Shapiro 1965. 현실 왜곡이 심할수록 원시적, 많이 쓸수록 부적응."),
+M("6","자신이 경험하는 것이 현실인지 아닌지를 분별하는 자아 기능은?",["현실 검증","자극 장벽","사고 과정","합성-통합 기능","합리화"],0,"저하되면 환각. 신경증-정신증 구분 기준."),
+M("6","감각기관을 통해 들어오는 자극에 대한 민감성·역치와 관련된 자아 기능은?",["현실 검증","자극 장벽","사고 과정","합성-통합 기능","억압"],1,"건강하면 필요한 자극만 의식."),
+M("6","서로 모순되거나 상충하는 태도·가치·감정·행동을 통합하는 자아 기능은?",["합성-통합 기능","현실 검증","자극 장벽","사고 과정","자유 연상"],0,""),
+M("6","자아심리학자들이 조현병이 생애 초기 심각한 문제로 인한 무엇 때문이라고 가정했는가?",["자아 결핍(ego deficit)","초자아 과잉","리비도 고착","분열","대상 항상성 실패"],0,"이후 신경학적 연구로 부적절한 가정으로 확인."),
+M("6","자아심리학이 촉진한 새 치료 접근은?",["인지치료","행동치료","가족치료","인간중심치료","집단치료"],0,"Aaron Beck은 자아심리학 수련 배경."),
+M("6","Klein과 함께 대상관계 이론을 발전시킨 영국의 독립 집단 학자는?",["Winnicott","Hartmann","Rapaport","Kohut","Popper"],0,"Winnicott, Fairbairn."),
+M("6","대상관계(object-relations)를 구성하는 요소로 옳은 것은?",["자기 + 대상 + 둘 간의 관계","원초아 + 자아 + 초자아","의식 + 전의식 + 무의식","애정 + 통제","위기 + 헌신"],0,""),
+M("6","대상관계 이론가들이 영유아에서 발견한 추동의 만족보다 더 강한 경향은?",["관계를 추구하는 경향","공격 욕구","성적 욕구","쾌락 추구","자율성 추구"],0,"Fairbairn 1952."),
+M("6","자기와 타인을 구분 못하는 상태 → 자기와 대상을 구분하나 나와 관련된 존재로만 인식 → 독립된 개체로 인식하는 순서는?",["융합 → 2자 관계 → 3자 관계","2자 관계 → 융합 → 3자 관계","3자 관계 → 2자 관계 → 융합","융합 → 3자 관계 → 2자 관계","분열 → 융합 → 3자 관계"],0,"3자 관계는 남근기 이후."),
+M("6","수용하기 힘든 자기의 한 측면을 분리하여 무의식에 담아 두는 방어기제는?",["분열","억압","투사","전치","승화"],0,"splitting."),
+M("6","내담자가 아이처럼 울며 위축된 모습을 보이자 치료자가 안쓰러움과 머리를 쓰다듬고 싶은 욕구를 느꼈다. 이에 해당하는 개념은?",["전이","역전이","저항","통찰","동일시"],1,"치료자가 경험하는 욕구·감정 = 역전이."),
+M("6","대상관계 이론에 기반한 치료가 일반적으로 갖는 특징은?",["내담자와 치료자가 서로 마주 보는 위치에서 진행하는 경향","카우치에 눕고 치료자는 머리맡","시선이 마주치지 않도록 배치","역전이를 배제","전이 사용 금지"],0,"전이·역전이를 적극 활용."),
+M("6","대상관계 이론가들이 대상관계 통합 실패가 일어나는 특히 중요한 시기로 본 것은?",["생후 2년까지","잠복기","청소년기","성기기","노년기"],0,"남근기 이전."),
+M("6","Mahler의 분리-개별화 단계 중 엄마가 시야에서 사라져도 존재함을 이해하며 정서적 유대를 유지하는 단계(24~36개월)는?",["부화기","연습기","재접근기","대상 항상성","정상적 공생"],3,"Piaget의 대상 영속성과 유사."),
+M("6","Mahler의 재접근기(15~24개월)의 특징은?",["엄마가 독립적 존재임을 확실히 인식하며 엄마 따라다니기와 달아나기를 반복","외부 대상을 인식 못하고 자기몰두","엄마와 자신을 하나로 인식","운동 기능으로 전능감 경험","엄마 품에서 벗어나 근처에 머묾"],0,"연습기 9~15개월=전능감, 부화기 6~9개월."),
+M("6","내적 공허감을 호소하는 내담자를 이해하기 위해 Kohut이 제안한 이론은?",["자기심리학","자아심리학","분석심리학","개인심리학","인지심리학"],0,""),
+M("6","Kohut에 따르면 적절한 자기가치감 발달에 필요한 것은?",["이상화할 수 있는 적절한 대상","엄격한 규율","쾌락 추구","분리 불안","방어기제"],0,"이상화·동일시 → 탈이상화로 현실적 자기감각."),
+S("6","Freud가 말한 성적 추동에 수반되는 에너지를 무엇이라 하나?","리비도(libido)",""),
+S("6","지형학적 모형의 세 수준은?","의식, 전의식, 무의식",""),
+S("6","쾌락 원리 / 현실 원리 / 도덕 원리를 따르는 구조를 순서대로 쓰시오.","원초아 / 자아 / 초자아",""),
+S("6","Freud가 제안한 불안 세 가지는?","현실 불안, 신경증적 불안, 도덕적 불안",""),
+S("6","Freud의 방어기제 7종(교재)을 쓰시오.","억압, 합리화, 반동 형성, 투사, 퇴행, 전치, 승화",""),
+S("6","대상관계 이론에서 서로 반대되는 대상관계를 통합하지 못할 때 쓰는 대표 방어기제는?","분열(splitting)",""),
+S("6","Mahler 분리-개별화 하위 4단계를 순서대로 쓰시오.","부화기(6~9개월) → 연습기(9~15) → 재접근기(15~24) → 대상 항상성(24~36)",""),
+/* ===== 2장 ===== */
+M("2","생애기록 자료의 일반적 용도로 옳은 것은?",["다른 방법으로 수집한 자료를 보완·확인","주된 진단 근거","투사적 검사","무의식 분석","타당도 검증"],0,"간접적 증거."),
+M("2","관찰자 자료의 한계를 보완하는 방법은?",["2명 이상의 관찰자 자료를 비교","본인 응답만 사용","관찰자를 한 명으로 한정","생애기록 사용 금지","검사 문항 수 증가"],0,""),
+M("2","다음 중 투사적 검사가 아닌 것은?",["로르샤흐","주제통각검사(TAT)","문장완성검사","MMPI","집-나무-사람 검사"],3,"MMPI=객관적 자기보고형."),
+M("2","NEO-PI-R의 구성으로 옳은 것은?",["5개 상위 특질 x 6개 하위 특질 x 8문항 = 240문항","6차원 x 4하위 x 10문항","5차원 x 8하위 x 6문항 = 240문항","60문항 5점 척도","16요인 x 15문항"],0,"NEO-FFI는 60문항."),
+M("2","Jung의 이론에 MBTI 개발자들이 추가한 축은?",["판단(J)-인식(P)","외향-내향","사고-감정","감각-직관","—"],0,""),
+M("2","MMPI 임상 척도 5번(남성성-여성성)에 대한 설명으로 옳은 것은?",["성별에 따라 점수 방향이 반대로 나오며 성향의 하나로 해석","높으면 병리","남성만 응답","측정 불가","타당도 척도"],0,"개발 시기(1943)의 한계로 비판."),
+S("2","MMPI 임상 척도 10개를 쓰시오.","건강염려증, 우울, 히스테리, 반사회성, 남성성-여성성, 편집증, 강박증, 조현병, 경조증, 내향성",""),
+S("2","NEO-PI-R에서 R은 무엇의 약자인가?","Revised (개정판)","")
+];
+QS.forEach(function(q,i){q.id=i});
+$("#qtotal").textContent="총 "+QS.length+"문항";
+
+var qres=store.get("quiz",{});
+var order=null;
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+function filtered(){
+  var ch=$("#fCh").value,ty=$("#fTy").value,st=$("#fSt").value;
+  var list=QS.filter(function(q){
+    if(ch!=="all"&&q.c!==ch)return false;
+    if(ty!=="all"&&q.t!==ty)return false;
+    var r=qres[q.id];
+    if(st==="new"&&r)return false;
+    if(st==="bad"&&r!=="bad")return false;
+    if(st==="ok"&&r!=="ok")return false;
+    return true;
+  });
+  if(order){list.sort(function(a,b){return order.indexOf(a.id)-order.indexOf(b.id)})}
+  return list;
+}
+function score(){
+  var ch=$("#fCh").value,ty=$("#fTy").value;
+  var base=QS.filter(function(q){return (ch==="all"||q.c===ch)&&(ty==="all"||q.t===ty)});
+  var ok=0,bad=0;base.forEach(function(q){if(qres[q.id]==="ok")ok++;else if(qres[q.id]==="bad")bad++});
+  $("#qScore").textContent="맞음 "+ok+" · 틀림 "+bad+" · 남음 "+(base.length-ok-bad)+" / "+base.length;
+}
+var chName={"2":"2장","3":"3장","4":"4장","5":"5장","6":"6장"};
+function render(){
+  var list=filtered();var box=$("#qlist");box.innerHTML="";
+  if(!list.length){box.innerHTML='<div class="note tip"><b>안내</b>조건에 맞는 문제가 없습니다.</div>';score();return}
+  list.forEach(function(q,n){
+    var d=document.createElement("div");d.className="q";d.dataset.id=q.id;
+    var h='<div class="qh"><span class="pg">'+chName[q.c]+'</span><span>'+(q.t==="mc"?"객관식":"단답형")+'</span><span>#'+(n+1)+'</span></div><div class="qt">'+esc(q.q)+'</div>';
+    if(q.t==="mc"){
+      var idx=[];q.o.forEach(function(o,i){if(o!=="—")idx.push(i)});idx=shuffle(idx);
+      h+='<div class="opts">'+idx.map(function(i,k){return '<button class="opt" data-i="'+i+'">'+(k+1)+") "+esc(q.o[i])+'</button>'}).join("")+'</div>';
+      h+='<div class="ans"><b>정답:</b> '+esc(q.o[q.a])+(q.e?"<br>"+esc(q.e):"")+'</div>';
+    }else{
+      h+='<div class="row"><button class="reveal">정답 보기</button></div>';
+      h+='<div class="ans"><b>정답:</b> '+esc(q.a)+(q.e?"<br>"+esc(q.e):"")+'</div>';
+      h+='<div class="row rate" style="display:none"><button class="good">알고 있었다</button><button class="bad">몰랐다</button></div>';
+    }
+    d.innerHTML=h;box.appendChild(d);
+    var r=qres[q.id];
+    if(r){d.classList.add("mark-"+r);}
+  });
+  score();
+}
+function mark(q,el,val){
+  qres[q.id]=val;store.set("quiz",qres);
+  el.classList.remove("mark-ok","mark-bad");el.classList.add("mark-"+val);score();
+}
+$("#qlist").addEventListener("click",function(e){
+  var box=e.target.closest(".q");if(!box)return;
+  var q=QS[+box.dataset.id];
+  var opt=e.target.closest(".opt");
+  if(opt&&q.t==="mc"&&!box.classList.contains("shown")){
+    var i=+opt.dataset.i;var right=i===q.a;
+    $$(".opt",box).forEach(function(b){if(+b.dataset.i===q.a)b.classList.add("right")});
+    if(!right)opt.classList.add("wrong");
+    box.classList.add("shown");mark(q,box,right?"ok":"bad");return;
+  }
+  if(e.target.classList.contains("reveal")){
+    box.classList.add("shown");e.target.style.display="none";$(".rate",box).style.display="flex";return;
+  }
+  if(e.target.classList.contains("good")){mark(q,box,"ok");$(".rate",box).style.display="none";return}
+  if(e.target.classList.contains("bad")){mark(q,box,"bad");$(".rate",box).style.display="none";return}
+});
+["fCh","fTy","fSt"].forEach(function(id){$("#"+id).addEventListener("change",render)});
+$("#qShuffle").onclick=function(){order=shuffle(QS.map(function(q){return q.id}));render()};
+$("#qReset").onclick=function(){if(confirm("문제 풀이 결과를 모두 지울까요?")){qres={};store.set("quiz",qres);render()}};
+render();
+})();
+</script>
+</body>
+</html>
