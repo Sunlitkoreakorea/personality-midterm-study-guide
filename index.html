@@ -254,6 +254,21 @@ details.ans-d[open]{padding-bottom:10px}
 details.ans-d .body{border-top:1px dashed var(--line);padding-top:8px}
 .hidden{display:none!important}
 mark.hit{background:var(--key);color:var(--key-ink);border-radius:3px}
+/* 검색 결과 패널 */
+.sres{position:fixed;z-index:60;top:calc(var(--hh,64px) - 2px);left:50%;transform:translateX(-50%);width:min(660px,calc(100vw - 20px));max-height:calc(100vh - var(--hh,64px) - 18px);overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 36px rgba(20,25,40,.22);padding:6px}
+.sres[hidden]{display:none}
+.sres .sh{font-size:12.5px;color:var(--muted);padding:8px 10px 6px}
+.sres a.sr{display:block;padding:9px 10px;border-radius:10px;color:var(--ink);text-decoration:none;cursor:pointer}
+.sres a.sr:hover,.sres a.sr:focus,.sres a.sr.on{background:var(--accent-soft);outline:0}
+.sres .sr-t{display:flex;gap:8px;align-items:baseline;font-weight:650;font-size:14.5px;line-height:1.45}
+.sres .sr-c{flex:0 0 auto;font-size:11.5px;font-weight:600;color:var(--accent);background:var(--accent-soft);border-radius:6px;padding:1px 7px}
+.sres .sr-s{display:block;font-size:13px;color:var(--muted);line-height:1.55;margin-top:3px}
+.sres .sr-q{border-top:1px dashed var(--line);margin-top:4px}
+.sres .none{padding:14px 12px;color:var(--muted);font-size:14px;line-height:1.65}
+.flash{animation:flashbox 1.8s ease-out}
+@keyframes flashbox{0%,55%{box-shadow:0 0 0 3px var(--accent)}100%{box-shadow:var(--shadow)}}
+#qTag{display:none;border:1px solid var(--accent);background:var(--accent-soft);color:var(--accent);border-radius:999px;padding:5px 12px;font-size:13px}
+#qTag.on{display:inline-block}
 .foot{margin:40px 0 0;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:14px}
 
 /* mobile */
@@ -301,6 +316,7 @@ mark.hit{background:var(--key);color:var(--key-ink);border-radius:3px}
     <button class="chip" id="themeBtn" aria-pressed="false">다크</button>
   </div>
 </header>
+<div class="sres" id="qres" hidden></div>
 <div class="app">
 <aside class="side" id="side"><h4>목차 · 진행도</h4><nav id="nav"></nav></aside>
 <main id="main">
@@ -2510,6 +2526,7 @@ DATA.forEach(function(ch){
 var box=$("#clozeBox");
 if(!box)return;
 box.innerHTML=html;
+$$(".card",box).forEach(function(cd){cd.dataset.s=" "+$$("input.bl",cd).map(function(i){return BL[i.dataset.id].alts.join(" ")}).join(" ")});
 $("#cTotal").textContent="총 "+seq+"칸";
 
 /* ---------- 상태 ---------- */
@@ -2588,6 +2605,7 @@ $("#cResetAll").onclick=function(){if(confirm("빈칸 노트의 입력과 기록
     </select>
     <select id="fTy" aria-label="유형 선택"><option value="all">전체 유형</option><option value="mc">객관식</option><option value="sa">단답형</option></select>
     <select id="fSt" aria-label="상태 선택"><option value="all">전체</option><option value="new">아직 안 푼 문제</option><option value="bad">틀린 문제만</option><option value="ok">맞은 문제만</option></select>
+    <button id="qTag" type="button" title="검색어 필터 해제"></button>
     <button id="qShuffle">섞기</button>
     <button id="qReset">결과 초기화</button>
     <span class="score" id="qScore"></span>
@@ -2761,26 +2779,133 @@ $("#openAll").onclick=function(){
 };
 
 /* ---------- search ---------- */
-var qin=$("#q"),qcnt=$("#qcnt");
-function runSearch(){
-  var q=qin.value.trim().toLowerCase();
-  var items=$$("section.sec .card, section.sec details.ans-d");
-  if(!q){items.forEach(function(c){c.classList.remove("hidden")});secs.forEach(function(s){s.classList.remove("hidden")});qcnt.textContent="";return}
-  var n=0;
-  items.forEach(function(c){
-    var hit=c.textContent.toLowerCase().indexOf(q)>-1;
-    c.classList.toggle("hidden",!hit);if(hit)n++;
-    if(c.tagName==="DETAILS")c.open=hit;
+var qin=$("#q"),qcnt=$("#qcnt"),qpanel=$("#qres");
+var SKIP="[\\s\\u00b7\\u30fb\\u2010-\\u2015\\u2212()\\[\\]{}/,.~\\uff5e%*'\"\\u201c\\u201d\\u2018\\u2019:;?!\\u2192\\u2190\\u2194-]";
+function reEsc(c){return c.replace(/[.*+?^${}()|[\]\\\/\-]/g,"\\$&")}
+function makeRe(q){
+  var chars=q.replace(new RegExp(SKIP,"g"),"").split("");
+  if(!chars.length)return null;
+  return new RegExp(chars.map(reEsc).join(SKIP+"*"),"i");
+}
+var qtext=null;
+function unmarkAll(){
+  $$("mark.hit").forEach(function(m){var p=m.parentNode;if(!p)return;p.replaceChild(document.createTextNode(m.textContent),m);p.normalize()});
+}
+function markIn(root,re){
+  var g=new RegExp(re.source,"gi");
+  var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:function(n){
+    var p=n.parentNode;
+    if(!p||/^(SCRIPT|STYLE|TEXTAREA|OPTION)$/.test(p.nodeName)||(p.closest&&p.closest("svg,input,.done-box,mark")))return NodeFilter.FILTER_REJECT;
+    return NodeFilter.FILTER_ACCEPT}});
+  var nodes=[];while(w.nextNode())nodes.push(w.currentNode);
+  nodes.forEach(function(n){
+    var t=n.nodeValue,m,last=0,frag=null;g.lastIndex=0;
+    while((m=g.exec(t))){
+      if(!m[0].length){g.lastIndex++;continue}
+      if(!frag)frag=document.createDocumentFragment();
+      frag.appendChild(document.createTextNode(t.slice(last,m.index)));
+      var k=document.createElement("mark");k.className="hit";k.textContent=m[0];frag.appendChild(k);
+      last=m.index+m[0].length;
+    }
+    if(frag){frag.appendChild(document.createTextNode(t.slice(last)));n.parentNode.replaceChild(frag,n)}
   });
+}
+function secLabel(c){
+  var s=c.closest("section.sec"),h=s?$("h2",s):null;if(!h)return "";
+  var no=$(".no",h);return (no?no.textContent+" ":"")+txt(h,[".no",".pg"]);
+}
+function itemTitle(c){
+  if(c.tagName==="DETAILS"){var sm=$("summary",c);return sm?sm.textContent.replace(/\s+/g," ").trim():"서술형"}
+  var h=$("h3",c);return h?txt(h,[".pg",".tag",".done-box"]):"카드";
+}
+function snippet(c,re){
+  var t=c.textContent.replace(/\s+/g," ");
+  var m=re.exec(t);
+  if(!m)return '<span class="sr-s">빈칸 노트의 정답에 포함된 용어입니다.</span>';
+  var s=Math.max(0,m.index-26),e=Math.min(t.length,m.index+m[0].length+46);
+  return '<span class="sr-s">'+(s>0?"…":"")+esc(t.slice(s,m.index))+'<mark class="hit">'+esc(m[0])+'</mark>'+esc(t.slice(m.index+m[0].length,e))+(e<t.length?"…":"")+'</span>';
+}
+function qHaystack(x){return x.q+" "+(x.o||[]).join(" ")+" "+(x.t==="sa"?x.a:(x.o?x.o[x.a]:""))+" "+x.e}
+function closePanel(){qpanel.hidden=true}
+function goItem(c){
+  closePanel();
+  c.classList.remove("flash");void c.offsetWidth;c.classList.add("flash");
+  c.scrollIntoView({block:"start",behavior:"smooth"});
+}
+function buildPanel(hits,re,raw,qn){
+  var h='';
+  if(!hits.length&&!qn){
+    h='<div class="none">‘'+esc(raw)+'’에 대한 결과가 없습니다.<br>다른 표현(예: 영문 용어, 띄어쓰기를 뺀 단어)으로 검색해 보세요.</div>';
+  }else{
+    h='<div class="sh">본문 '+hits.length+'건'+(qn?' · 문제풀이 '+qn+'문항':'')+' — 눌러서 이동</div>';
+    hits.slice(0,40).forEach(function(c,i){
+      if(!c.id)c.id="ans-"+i+"-"+Math.random().toString(36).slice(2,6);
+      h+='<a class="sr" href="#'+c.id+'" data-id="'+c.id+'"><span class="sr-t"><span class="sr-c">'+esc(secLabel(c))+'</span><span>'+esc(itemTitle(c))+'</span></span>'+snippet(c,re)+'</a>';
+    });
+    if(hits.length>40)h+='<div class="sh">…외 '+(hits.length-40)+'건은 본문에서 계속 이어집니다.</div>';
+    if(qn)h+='<a class="sr sr-q" href="#quiz" data-quiz="1"><span class="sr-t"><span class="sr-c">문제풀이</span><span>‘'+esc(raw)+'’이(가) 들어간 '+qn+'문항만 풀기</span></span></a>';
+  }
+  qpanel.innerHTML=h;qpanel.hidden=false;
+}
+function setQTag(){
+  var t=$("#qTag");
+  if(qtext){t.textContent="검색어 ‘"+qin.value.trim()+"’ 적용 중 ✕";t.classList.add("on")}else t.classList.remove("on");
+}
+function runSearch(){
+  var raw=qin.value.trim();
+  unmarkAll();
+  var items=$$("section.sec .card, section.sec details.ans-d");
+  var re=raw?makeRe(raw):null;
+  if(!re){
+    items.forEach(function(c){c.classList.remove("hidden")});secs.forEach(function(s){s.classList.remove("hidden")});
+    qcnt.textContent="";closePanel();
+    if(qtext){qtext=null;setQTag();render()}
+    return;
+  }
+  var hits=[];
+  items.forEach(function(c){
+    var hit=re.test(c.textContent+(c.dataset.s||""));
+    c.classList.toggle("hidden",!hit);
+    if(c.tagName==="DETAILS")c.open=hit;
+    if(hit)hits.push(c);
+  });
+  hits.sort(function(a,b){return (a.closest("#cloze")?1:0)-(b.closest("#cloze")?1:0)});
   secs.forEach(function(s){
     if(s.id==="quiz"){s.classList.remove("hidden");return}
     var any=$$(".card, details.ans-d",s).some(function(c){return !c.classList.contains("hidden")});
     s.classList.toggle("hidden",!any);
   });
-  qcnt.textContent=n+"건";
+  if(raw.length>=2)hits.forEach(function(c){markIn(c,re)});
+  var qn=QS.filter(function(x){return re.test(qHaystack(x))}).length;
+  qcnt.textContent=hits.length+"건";
+  buildPanel(hits,re,raw,qn);
 }
 qin.addEventListener("input",runSearch);
-document.addEventListener("keydown",function(e){if(e.key==="/"&&document.activeElement.tagName!=="INPUT"&&document.activeElement.tagName!=="SELECT"){e.preventDefault();qin.focus()}});
+qin.addEventListener("search",runSearch);
+qin.addEventListener("focus",function(){if(qin.value.trim())runSearch()});
+qin.addEventListener("keydown",function(e){
+  if(e.key==="Escape"){closePanel();qin.blur();return}
+  if(e.key==="Enter"&&!e.isComposing&&e.keyCode!==229){
+    var first=$("a.sr[data-id]",qpanel);
+    if(first){e.preventDefault();goItem(document.getElementById(first.dataset.id))}
+  }
+});
+qpanel.addEventListener("click",function(e){
+  var a=e.target.closest("a.sr");if(!a)return;
+  e.preventDefault();
+  if(a.dataset.quiz){
+    qtext=makeRe(qin.value.trim());setQTag();render();closePanel();
+    $("#quiz").scrollIntoView({block:"start",behavior:"smooth"});return;
+  }
+  var c=document.getElementById(a.dataset.id);if(c)goItem(c);
+});
+document.addEventListener("click",function(e){
+  if(qpanel.hidden)return;
+  if(e.target.closest("#qres")||e.target.closest(".search"))return;
+  closePanel();
+});
+document.addEventListener("keydown",function(e){if(e.key==="/"&&document.activeElement.tagName!=="INPUT"&&document.activeElement.tagName!=="SELECT"&&document.activeElement.tagName!=="TEXTAREA"){e.preventDefault();qin.focus()}});
+$("#qTag").addEventListener("click",function(){qtext=null;setQTag();render()});
 
 /* ---------- quiz ---------- */
 var M=function(c,q,o,a,e){return {t:"mc",c:c,q:q,o:o,a:a,e:e||""}};
@@ -3030,6 +3155,7 @@ function filtered(){
   var ch=$("#fCh").value,ty=$("#fTy").value,st=$("#fSt").value;
   var list=QS.filter(function(q){
     if(ch!=="all"&&q.c!==ch)return false;
+    if(qtext&&!qtext.test(qHaystack(q)))return false;
     if(ty!=="all"&&q.t!==ty)return false;
     var r=qres[q.id];
     if(st==="new"&&r)return false;
