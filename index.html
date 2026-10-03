@@ -113,6 +113,14 @@ input.kin{font:inherit;font-size:16px;font-weight:650;color:var(--ink);backgroun
 input.kin::placeholder{color:var(--muted);opacity:.8;font-weight:500}
 .en{color:var(--muted);font-weight:400;font-size:.92em}
 
+/* 장별 볼드 개념어 총정리 */
+.tl{list-style:none;margin:8px 0 0;padding:0}
+.tl li{display:flex;gap:10px;align-items:flex-start;border-top:1px dashed var(--line);padding:7px 0}
+.tl .p{flex:0 0 3.6em;font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:4px}
+.tl .tms{display:flex;flex-wrap:wrap;gap:6px;min-width:0}
+.tm{display:inline-block;border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:2px 9px;font-weight:650;font-size:14px;line-height:1.55}
+.tm i{font-style:normal;font-weight:400;color:var(--muted);font-size:12px;margin-left:6px}
+
 /* 빈칸 노트 (typed blanks) */
 input.bl{font:inherit;font-size:16px;font-weight:650;color:var(--ink);background:var(--surface2);border:0;border-bottom:2px solid var(--accent);border-radius:6px 6px 0 0;padding:1px 6px;margin:0 2px;text-align:center;outline:0;max-width:100%;vertical-align:baseline;min-width:3em}
 input.bl::placeholder{color:var(--muted);opacity:.8;font-weight:500}
@@ -245,7 +253,7 @@ mark.hit{background:var(--key);color:var(--key-ink);border-radius:3px}
 <div class="hero">
   <h1>성격과 자기 이해 · 시험 직전 정리</h1>
   <p>교재 『최신 성격심리학』 사진(p.20~25, 48~56, 79~219)과 수업 녹취 9개를 합쳐 시험에 나올 내용만 추렸습니다.</p>
-  <p>외우는 순서: <b>① 빈칸 노트</b>(타이핑으로 바로 채우기) → <b>② 본문</b>(형광 핵심어, <b>암기 모드</b>를 켜면 핵심어가 입력칸으로 바뀌어 직접 타이핑하고 Enter로 채점. 빈 칸에서 Enter는 정답 보기, 정답 칸을 누르면 다시 가려짐) → <b>③ 암기표·서술형</b> → <b>④ 문제풀이</b>.</p>
+  <p>외우는 순서: <b>① 빈칸 노트</b>(타이핑으로 바로 채우기) → <b>② 본문</b>(형광 핵심어, <b>암기 모드</b>를 켜면 핵심어가 입력칸으로 바뀌어 직접 타이핑하고 Enter로 채점. 빈 칸에서 Enter는 정답 보기, 정답 칸을 누르면 다시 가려짐) → <b>③ 암기표·서술형</b> → <b>④ 문제풀이</b>. 각 장 끝에는 교재 볼드체 개념어를 쪽 순서로 모은 <b>핵심 개념어 총정리</b> 카드가 있습니다.</p>
   <div class="meta"><span>빈칸 노트 439칸</span><span>1장 연구 주제</span><span>2장 성격 평가</span><span>3장 초기 특질</span><span>4장 현대 특질</span><span>5장 생물사회적 관점</span><span>6장 정신분석</span><span>서술형 모범답안 40개</span><span>문제풀이 227문항</span></div>
 </div>
 
@@ -395,6 +403,18 @@ mark.hit{background:var(--key);color:var(--key-ink);border-radius:3px}
       <li>성격장애 이론이 부적응적 특성의 완화에 관심을 두는 동안, 다른 한편에서는 인간의 <b>긍정적 성격 특성을 개발·강화</b>하려는 연구가 진행. 긍정적 특성에 대한 과학적 연구의 역사는 길지 않다(기존 성격심리학은 주로 부정적 특성에 주목, 긍정적 특성 연구는 산발적). 심리학 연구 주제의 편향에 대한 문제의식으로 <span class="k">긍정심리학 positive psychology</span>이 태동하며 긍정적 성격 특성 연구가 체계적으로 시작됨.</li>
     </ul>
     <div class="note ok"><b>다음 절 첫머리(p.25 하단)</b>"4. 성격심리학의 주요 이론적 관점": 성격 연구 성과는 성격 이론을 구축하는 데 기여한다. 심리학에서 <span class="k">이론 theory</span>이란 <b>논리적으로 연결된 명제들의 집합</b>을 의미한다.</div>
+  </div>
+<!-- terms ch1 -->
+  <div class="card">
+    <h3>1장 핵심 개념어 총정리 <span class="pg">교재 볼드체 · 쪽 순서 · 고유 13개</span></h3>
+    <p class="en">교재 본문에서 굵은 글씨(또는 연두 형광펜이 칠해진 용어)로 표시된 개념어입니다. 영문은 교재 병기를 그대로 옮겼습니다.</p>
+    <ul class="tl">
+      <li><span class="p">p.20</span><span class="tms"><span class="tm">기술<i>description</i></span></span></li>
+      <li><span class="p">p.22</span><span class="tms"><span class="tm">성격의 작용 과정<i>personality process</i></span><span class="tm">기제<i>mechanism</i></span><span class="tm">조절 변인<i>moderator</i></span><span class="tm">매개 변인<i>mediator</i></span></span></li>
+      <li><span class="p">p.23</span><span class="tms"><span class="tm">유전<i>heredity</i></span><span class="tm">환경<i>environment</i></span></span></li>
+      <li><span class="p">p.24</span><span class="tms"><span class="tm">성격 발달<i>personality development</i></span></span></li>
+      <li><span class="p">p.25</span><span class="tms"><span class="tm">심리장애<i>psychological disorder</i></span><span class="tm">성격장애<i>personality disorder</i></span><span class="tm">근거 기반 개입<i>evidence-based intervention</i></span><span class="tm">긍정심리학<i>positive psychology</i></span><span class="tm">이론<i>theory</i></span></span></li>
+    </ul>
   </div>
 </section>
 
@@ -567,6 +587,20 @@ mark.hit{background:var(--key);color:var(--key-ink);border-radius:3px}
       <li><b>MMPI</b>(1943, 임상 목적): 임상 척도 10개(건강염려증·우울·히스테리·반사회성·남성성-여성성·편집증·강박증·조현병·경조증·내향성), 표준점수, <b>타당도 척도</b>(응답 왜곡 확인), 청소년용 MMPI-A.</li>
       <li><b>로르샤흐</b>: 잉크 반점 반응을 양적·질적으로 분석(위치·발달질·결정인·형태질·반응 내용·평범 반응·조직화 활동·특수 점수·쌍반응 9항목 채점). <b>TAT</b>: 모호한 그림 카드로 이야기를 만들게 해 욕구·소망 파악. <b>DAP/HTP</b>: 인물화/집·나무·사람. <b>문장완성검사</b>: 연상 검사(자유 연상과 관련).</li>
       <li><b>요인 분석</b>: 비슷하게 응답되는 문항을 하나의 요인으로 묶는 통계(3장 Cattell과 연결).</li>
+    </ul>
+  </div>
+<!-- terms ch2 -->
+  <div class="card">
+    <h3>2장 핵심 개념어 총정리 <span class="pg">교재 볼드체 · 쪽 순서 · 고유 24개</span></h3>
+    <p class="en">교재 본문에서 굵은 글씨(또는 형광펜이 칠해진 용어)로 표시된 개념어입니다. 영문은 교재 병기를 그대로 옮겼습니다. p.55 이후는 자기보고형·수행형 검사 분류가 핵심입니다.</p>
+    <ul class="tl">
+      <li><span class="p">p.48</span><span class="tms"><span class="tm">성격 평가<i>personality assessment</i></span></span></li>
+      <li><span class="p">p.49</span><span class="tms"><span class="tm">법정심리학<i>forensic psychology</i></span><span class="tm">의식적 자료<i>conscious material</i></span><span class="tm">무의식적 자료<i>unconscious material</i></span></span></li>
+      <li><span class="p">p.50</span><span class="tms"><span class="tm">자기보고형 검사</span><span class="tm">수행형 검사</span></span></li>
+      <li><span class="p">p.53</span><span class="tms"><span class="tm">면접<i>interview</i></span><span class="tm">구조화 면접<i>structured interview</i></span><span class="tm">비구조화 면접<i>unstructured interview</i></span><span class="tm">행동 관찰<i>behavioral observation</i></span><span class="tm">자연주의적 관찰<i>naturalistic observation</i></span><span class="tm">통제 관찰<i>controlled observation</i></span><span class="tm">생태학적 타당도<i>ecological validity</i></span></span></li>
+      <li><span class="p">p.54</span><span class="tms"><span class="tm">생애기록 자료<i>life-record data: L-data</i></span><span class="tm">관찰자 자료<i>observer data: O-data</i></span></span></li>
+      <li><span class="p">p.55</span><span class="tms"><span class="tm">자기보고형 검사<i>self-report test</i></span><span class="tm">자기보고 자료<i>self-report data: S-data</i></span><span class="tm">수행형 검사<i>performance-based test</i></span><span class="tm">구조화 검사<i>structured test</i></span><span class="tm">객관적 검사<i>objective test</i></span><span class="tm">객관적 검사 자료<i>objective test data: T-data</i></span><span class="tm">비구조화 검사<i>unstructured test</i></span><span class="tm">투사적 검사</span></span></li>
+      <li><span class="p">p.56</span><span class="tms"><span class="tm">투사적 검사<i>projective test</i></span><span class="tm">로르샤흐 검사<i>Rorschach test</i></span><span class="tm">주제 통각 검사<i>thematic apperception test</i></span><span class="tm">LOTS (L-data · O-data · T-data · S-data)<i>Block, 1993</i></span></span></li>
     </ul>
   </div>
 </section>
@@ -770,6 +804,28 @@ mark.hit{background:var(--key);color:var(--key-ink);border-radius:3px}
       <tr><td>발달</td><td>정교한 이론 없음, 기능적 자율성</td><td>시기 구분, 유아기(~6세) 중시</td><td>기원=생물학적 기반</td></tr>
       <tr><td>한계</td><td>기원·측정 도구 부족</td><td>요인 너무 많음, 기원 불명, 이질적 특질 혼재</td><td>정신증 불명확, 차원 너무 적음</td></tr>
     </table></div>
+  </div>
+<!-- terms ch3 -->
+  <div class="card">
+    <h3>3장 핵심 개념어 총정리 <span class="pg">교재 볼드체 · 쪽 순서 · 고유 41개</span></h3>
+    <p class="en">교재 본문에서 굵은 글씨로 표시된 개념어입니다. 영문은 교재 병기를 그대로 옮겼습니다. 사진이 없는 p.80~81과 p.92~93(표 3.1)의 볼드 용어는 빠져 있습니다.</p>
+    <ul class="tl">
+      <li><span class="p">p.82</span><span class="tms"><span class="tm">어휘 가설<i>lexical hypothesis</i></span></span></li>
+      <li><span class="p">p.83</span><span class="tms"><span class="tm">공통 특질<i>common trait</i></span><span class="tm">개인 특질<i>individual trait</i></span></span></li>
+      <li><span class="p">p.84</span><span class="tms"><span class="tm">개인 성향<i>personal disposition</i></span><span class="tm">주성향<i>cardinal disposition</i></span><span class="tm">중심 성향<i>central disposition</i></span><span class="tm">이차 성향<i>secondary disposition</i></span></span></li>
+      <li><span class="p">p.86</span><span class="tms"><span class="tm">기능적 자율성<i>functional autonomy</i></span></span></li>
+      <li><span class="p">p.90</span><span class="tms"><span class="tm">요인 분석<i>factor analysis</i></span><span class="tm">측정 변수<i>measurement variable</i></span><span class="tm">잠재 변수<i>latent variable</i></span><span class="tm">요인<i>factor</i></span></span></li>
+      <li><span class="p">p.91</span><span class="tms"><span class="tm">표면 특질<i>surface traits</i></span><span class="tm">근원 특질<i>source traits</i></span><span class="tm">16PF<i>Sixteen Personality Factor Questionnaire</i></span></span></li>
+      <li><span class="p">p.95</span><span class="tms"><span class="tm">외향성<i>extraversion</i></span><span class="tm">불안<i>anxiety</i></span><span class="tm">통제<i>control</i></span><span class="tm">독립성<i>independence</i></span><span class="tm">민감한 자각<i>sensitive awareness</i></span><span class="tm">능력<i>ability</i></span></span></li>
+      <li><span class="p">p.97</span><span class="tms"><span class="tm">자료 기반 분석<i>data-driven analysis</i></span><span class="tm">이론 기반 분석<i>theory-driven analysis</i></span></span></li>
+      <li><span class="p">p.98</span><span class="tms"><span class="tm">구체적 반응<i>specific response</i></span><span class="tm">습관적 반응<i>habitual response</i></span><span class="tm">특질<i>trait</i></span><span class="tm">유형<i>type</i></span></span></li>
+      <li><span class="p">p.99</span><span class="tms"><span class="tm">범주<i>category, class</i></span><span class="tm">차원<i>dimension</i></span><span class="tm">유형<i>type</i></span><span class="tm">특질<i>trait</i></span></span></li>
+      <li><span class="p">p.100</span><span class="tms"><span class="tm">외향성<i>extraversion</i></span></span></li>
+      <li><span class="p">p.101</span><span class="tms"><span class="tm">신경과민성(신경증 성향)<i>neuroticism</i></span><span class="tm">정서적 불안정<i>emotionally unstable</i></span><span class="tm">정서적 안정<i>emotionally stable</i></span><span class="tm">정신증 성향<i>psychoticism</i></span><span class="tm">각성<i>arousal</i></span></span></li>
+      <li><span class="p">p.102</span><span class="tms"><span class="tm">뇌간<i>brain stem</i></span><span class="tm">망상체<i>reticular formation</i></span></span></li>
+      <li><span class="p">p.103</span><span class="tms"><span class="tm">변연계<i>limbic system</i></span><span class="tm">내장뇌<i>visceral brain</i></span><span class="tm">자율신경계<i>autonomic nervous system</i></span></span></li>
+      <li><span class="p">p.104</span><span class="tms"><span class="tm">교감신경계<i>sympathetic nervous system</i></span><span class="tm">부교감신경계<i>parasympathetic nervous system</i></span></span></li>
+    </ul>
   </div>
 </section>
 <!-- ===================== 4장 ===================== -->
@@ -985,6 +1041,31 @@ mark.hit{background:var(--key);color:var(--key-ink);border-radius:3px}
       <tr><td>(없음)</td><td><b>정직-겸손</b></td><td>착취할 기회에서의 공정함. 다크 트라이어드와 관련</td></tr>
       <tr><td>배경: 어휘 가설, 영어권, 탈이론적</td><td>비영어권 6요인 반복 발견, 이론생물학(호혜성·친족 이타주의, 투자)으로 설명</td><td>HEXACO가 이론적 설명 시도</td></tr>
     </table></div>
+  </div>
+<!-- terms ch4 -->
+  <div class="card">
+    <h3>4장 핵심 개념어 총정리 <span class="pg">교재 볼드체 · 쪽 순서 · 고유 37개</span></h3>
+    <p class="en">교재 본문에서 굵은 글씨로 표시된 개념어입니다. 영문은 교재 병기를 그대로 옮겼습니다. 같은 용어가 다른 맥락에서 다시 나오면 쪽마다 따로 적었습니다.</p>
+    <ul class="tl">
+      <li><span class="p">p.111</span><span class="tms"><span class="tm">상관계수<i>correlational coefficient</i></span></span></li>
+      <li><span class="p">p.112</span><span class="tms"><span class="tm">Big Five</span></span></li>
+      <li><span class="p">p.113</span><span class="tms"><span class="tm">신경과민성<i>Neuroticism (N)</i></span></span></li>
+      <li><span class="p">p.114</span><span class="tms"><span class="tm">신경증<i>neurosis</i></span><span class="tm">부정 정서성<i>negative emotionality</i></span><span class="tm">정서적 불안정성<i>emotional instability</i></span></span></li>
+      <li><span class="p">p.115</span><span class="tms"><span class="tm">건강한 신경과민성<i>healthy neuroticism</i></span><span class="tm">외향성<i>Extroversion (E)</i></span><span class="tm">긍정 정서성<i>positive emotionality</i></span></span></li>
+      <li><span class="p">p.117</span><span class="tms"><span class="tm">개방성(경험에 대한 개방성)<i>Openness to experience (O)</i></span></span></li>
+      <li><span class="p">p.118</span><span class="tms"><span class="tm">우호성<i>Agreeableness (A)</i></span></span></li>
+      <li><span class="p">p.119</span><span class="tms"><span class="tm">정치<i>politics</i></span><span class="tm">보수주의<i>conservatism</i></span><span class="tm">진보주의<i>progressivism</i></span></span></li>
+      <li><span class="p">p.120</span><span class="tms"><span class="tm">의존성 성격<i>dependent personality</i></span></span></li>
+      <li><span class="p">p.121</span><span class="tms"><span class="tm">성실성<i>Conscientiousness (C)</i></span></span></li>
+      <li><span class="p">p.122</span><span class="tms"><span class="tm">강박적 성격<i>obsessive-compulsive personality</i></span></span></li>
+      <li><span class="p">p.124</span><span class="tms"><span class="tm">5요인 이론 성격 체계<i>five factor theory personality system</i></span><span class="tm">기본적 성향<i>basic tendencies</i></span></span></li>
+      <li><span class="p">p.125</span><span class="tms"><span class="tm">특징적 적응<i>characteristic adaptation</i></span><span class="tm">자기개념<i>self-concept</i></span><span class="tm">생물학적 기반<i>biological bases</i></span><span class="tm">인생 경험<i>objective biography</i></span></span></li>
+      <li><span class="p">p.126</span><span class="tms"><span class="tm">외부적 영향<i>external influences</i></span><span class="tm">성격장애<i>personality disorder</i></span></span></li>
+      <li><span class="p">p.132</span><span class="tms"><span class="tm">정직함<i>honesty</i></span></span></li>
+      <li><span class="p">p.133</span><span class="tms"><span class="tm">HEXACO</span><span class="tm">우호성<i>Agreeableness</i></span></span></li>
+      <li><span class="p">p.134</span><span class="tms"><span class="tm">정직-겸손<i>Honesty-Humility</i></span><span class="tm">다크 트라이어드<i>the dark triad</i></span><span class="tm">마키아벨리아니즘<i>Machiavellianism</i></span><span class="tm">나르시시즘<i>Narcissism</i></span><span class="tm">정신병질성<i>Psychopathy</i></span><span class="tm">정서성<i>Emotionality</i></span></span></li>
+      <li><span class="p">p.136</span><span class="tms"><span class="tm">호혜성 이타주의<i>reciprocal altruism</i></span><span class="tm">공정함<i>fairness</i></span><span class="tm">관용<i>tolerance</i></span><span class="tm">친족 이타주의<i>kin altruism</i></span></span></li>
+    </ul>
   </div>
 </section>
 <!-- ===================== 5장 ===================== -->
@@ -1271,6 +1352,41 @@ mark.hit{background:var(--key);color:var(--key-ink);border-radius:3px}
       <li>성격 3층: 기질/특질 → 특징적 적응(만 2세~) → 서사 정체성.</li>
       <li>양육: 애정·통제(+정서 반응). 모형: 상호작용 vs 양방향. 애착: 안정·불안·회피·혼란(낯선 상황 7단계).</li>
       <li>발달: 자서전적 기억·목표 지향 / 형제 4차원 / 또래 수용·거절 / 개인적 신화·정체성 위기 / Marcia 4지위.</li>
+    </ul>
+  </div>
+<!-- terms ch5 -->
+  <div class="card">
+    <h3>5장 핵심 개념어 총정리 <span class="pg">교재 볼드체 · 쪽 순서 · 고유 76개</span></h3>
+    <p class="en">교재 본문에서 굵은 글씨로 표시된 개념어입니다. 영문은 교재 병기를 그대로 옮겼습니다. 같은 용어가 다른 맥락에서 다시 나오면 쪽마다 따로 적었습니다.</p>
+    <ul class="tl">
+      <li><span class="p">p.142</span><span class="tms"><span class="tm">행동유전학<i>behavior genetics</i></span></span></li>
+      <li><span class="p">p.143</span><span class="tms"><span class="tm">행동주의<i>behaviorism</i></span></span></li>
+      <li><span class="p">p.144</span><span class="tms"><span class="tm">세포<i>cell</i></span><span class="tm">염색체<i>chromosome</i></span><span class="tm">DNA<i>Deoxyribo Nucleic Acid</i></span><span class="tm">유전자<i>gene</i></span></span></li>
+      <li><span class="p">p.145</span><span class="tms"><span class="tm">쌍생아 연구<i>twin studies</i></span><span class="tm">일란성 쌍생아<i>monozygotic twins</i></span><span class="tm">이란성 쌍생아<i>dizygotic twins</i></span><span class="tm">환경 동일성 가정<i>equal environment assumption</i></span></span></li>
+      <li><span class="p">p.146</span><span class="tms"><span class="tm">입양 연구<i>adoption studies</i></span></span></li>
+      <li><span class="p">p.147</span><span class="tms"><span class="tm">유전성 추정치<i>heritability estimate (h²)</i></span></span></li>
+      <li><span class="p">p.148</span><span class="tms"><span class="tm">공유 환경<i>shared environment</i></span><span class="tm">비공유 환경<i>nonshared environment</i></span></span></li>
+      <li><span class="p">p.149</span><span class="tms"><span class="tm">비체계적 비공유 환경<i>nonsystematic nonshared environment</i></span><span class="tm">체계적 비공유 환경<i>systematic nonshared environment</i></span></span></li>
+      <li><span class="p">p.150</span><span class="tms"><span class="tm">수로화<i>canalization</i></span><span class="tm">반응 범위<i>range of reaction</i></span></span></li>
+      <li><span class="p">p.151</span><span class="tms"><span class="tm">사회유전체 모형<i>sociogenomic model of personality</i></span></span></li>
+      <li><span class="p">p.152</span><span class="tms"><span class="tm">생물학적 요인<i>biological factors</i></span><span class="tm">환경<i>environment</i></span><span class="tm">특질<i>trait</i></span><span class="tm">상태<i>state</i></span></span></li>
+      <li><span class="p">p.153</span><span class="tms"><span class="tm">기질<i>temperament</i></span></span></li>
+      <li><span class="p">p.154</span><span class="tms"><span class="tm">순한 기질의 아동<i>easy child</i></span><span class="tm">까다로운 기질의 아동<i>difficult child</i></span><span class="tm">더딘 기질의 아동<i>slow to warm up child</i></span></span></li>
+      <li><span class="p">p.155</span><span class="tms"><span class="tm">EAS 모형<i>Emotionality, Activity, Sociability</i></span><span class="tm">정서성<i>emotionality</i></span><span class="tm">활동성<i>activity</i></span></span></li>
+      <li><span class="p">p.156</span><span class="tms"><span class="tm">사회성<i>sociability</i></span><span class="tm">반응성<i>reactivity</i></span><span class="tm">자기조절<i>self-regulation</i></span><span class="tm">외향성<i>surgency/extraversion</i></span></span></li>
+      <li><span class="p">p.157</span><span class="tms"><span class="tm">긍정 정서성<i>positive emotionality</i></span><span class="tm">부정 정서성<i>negative affectivity / negative emotionality</i></span><span class="tm">의도적 통제<i>effortful control</i></span><span class="tm">친화성<i>affiliativeness</i></span></span></li>
+      <li><span class="p">p.158</span><span class="tms"><span class="tm">지향 민감성<i>orienting sensitivity</i></span></span></li>
+      <li><span class="p">p.159</span><span class="tms"><span class="tm">성격의 3층 모형<i>three layers of personality</i></span><span class="tm">기질 · 특질<i>temperament · trait</i></span><span class="tm">특징적 적응<i>characteristic adaptation</i></span><span class="tm">서사 정체성<i>narrative identity</i></span></span></li>
+      <li><span class="p">p.160</span><span class="tms"><span class="tm">애정<i>affect</i></span><span class="tm">통제<i>control</i></span><span class="tm">자녀의 정서에 대한 반응 행동<i>responses to children's emotions</i></span></span></li>
+      <li><span class="p">p.161</span><span class="tms"><span class="tm">상호작용 모형<i>interaction model</i></span><span class="tm">양방향 모형<i>bidirectional model</i></span></span></li>
+      <li><span class="p">p.162</span><span class="tms"><span class="tm">애착<i>attachment</i></span><span class="tm">낯선 상황 절차<i>strange situation procedure</i></span></span></li>
+      <li><span class="p">p.164</span><span class="tms"><span class="tm">안정 애착<i>secure attachment</i></span><span class="tm">불안 애착<i>anxious attachment</i></span><span class="tm">회피 애착<i>avoidant attachment</i></span><span class="tm">혼란 애착<i>disorganized attachment</i></span><span class="tm">불안정 애착<i>insecure attachment</i></span></span></li>
+      <li><span class="p">p.165</span><span class="tms"><span class="tm">자서전적 기억<i>autobiographical memory</i></span><span class="tm">목표 지향적 행동<i>goal-directed behavior</i></span></span></li>
+      <li><span class="p">p.166</span><span class="tms"><span class="tm">애정/친밀함<i>warmth/closeness</i></span><span class="tm">상대적 지위/권력<i>relative status/power</i></span><span class="tm">갈등<i>conflict</i></span><span class="tm">경쟁<i>rivalry</i></span></span></li>
+      <li><span class="p">p.168</span><span class="tms"><span class="tm">친사회적 행동<i>prosocial behavior</i></span><span class="tm">공격성<i>aggressiveness</i></span><span class="tm">수줍음<i>shyness</i></span></span></li>
+      <li><span class="p">p.170</span><span class="tms"><span class="tm">개인적 신화<i>personal fable</i></span><span class="tm">정체성 위기<i>identity crisis</i></span></span></li>
+      <li><span class="p">p.171</span><span class="tms"><span class="tm">직업<i>occupation</i></span><span class="tm">이념<i>ideology</i></span><span class="tm">성적 지향<i>sexual orientation</i></span><span class="tm">정체성 지위<i>identity status</i></span><span class="tm">위기<i>crisis</i></span><span class="tm">헌신<i>commitment</i></span><span class="tm">정체성 성취<i>identity achievement</i></span><span class="tm">유실<i>foreclosure</i></span><span class="tm">정체성 혼미<i>identity diffusion</i></span></span></li>
+      <li><span class="p">p.172</span><span class="tms"><span class="tm">유예<i>moratorium</i></span></span></li>
     </ul>
   </div>
 </section>
@@ -1576,6 +1692,42 @@ mark.hit{background:var(--key);color:var(--key-ink);border-radius:3px}
       <li>심리성적 발달: 구강→항문→남근→잠복→성기. 고착과 성격. 오이디푸스/엘렉트라.</li>
       <li>치료: 자유 연상·꿈 분석·전이·저항·해석·통찰·훈습. 한계 4가지(Popper 비과학 등).</li>
       <li>자아심리학 → 대상관계(Klein, 융합→2자→3자, 분열, 전이·역전이, Mahler) → 자기심리학(Kohut).</li>
+    </ul>
+  </div>
+<!-- terms ch6 -->
+  <div class="card">
+    <h3>6장 핵심 개념어 총정리 <span class="pg">교재 볼드체 · 쪽 순서 · 고유 82개</span></h3>
+    <p class="en">교재 본문에서 굵은 글씨로 표시된 개념어입니다. 영문은 교재 병기를 그대로 옮겼습니다. 같은 용어가 다시 굵게 나오면(자유 연상·꿈 분석·전이 등) 쪽마다 따로 적었습니다.</p>
+    <ul class="tl">
+      <li><span class="p">p.181</span><span class="tms"><span class="tm">담화 치료<i>talking cure</i></span><span class="tm">자유 연상<i>free association</i></span><span class="tm">꿈 분석<i>dream analysis</i></span></span></li>
+      <li><span class="p">p.182</span><span class="tms"><span class="tm">에너지 체계<i>energy system</i></span></span></li>
+      <li><span class="p">p.183</span><span class="tms"><span class="tm">항상성<i>homeostasis</i></span><span class="tm">추동<i>drive</i></span><span class="tm">리비도<i>libido</i></span><span class="tm">히스테리<i>hysteria</i></span></span></li>
+      <li><span class="p">p.184</span><span class="tms"><span class="tm">자유 연상<i>free association</i></span></span></li>
+      <li><span class="p">p.185</span><span class="tms"><span class="tm">지형학적 모형<i>topographical model</i></span><span class="tm">의식<i>conscious</i></span><span class="tm">전의식<i>preconscious</i></span><span class="tm">무의식<i>unconscious</i></span></span></li>
+      <li><span class="p">p.186</span><span class="tms"><span class="tm">구조 모형<i>structural model</i></span><span class="tm">원초아<i>id</i></span><span class="tm">쾌락 원리<i>pleasure principle</i></span><span class="tm">일차 과정<i>primary process</i></span></span></li>
+      <li><span class="p">p.187</span><span class="tms"><span class="tm">자아<i>ego</i></span><span class="tm">현실 원리<i>reality principle</i></span><span class="tm">이차 과정<i>secondary process</i></span><span class="tm">초자아<i>superego</i></span></span></li>
+      <li><span class="p">p.188</span><span class="tms"><span class="tm">양심<i>conscience</i></span><span class="tm">자아이상<i>ego-ideal</i></span><span class="tm">도덕 원리<i>moral principle</i></span></span></li>
+      <li><span class="p">p.189</span><span class="tms"><span class="tm">불안<i>anxiety</i></span><span class="tm">현실 불안<i>reality anxiety</i></span><span class="tm">신경증적 불안<i>neurotic anxiety</i></span><span class="tm">도덕적 불안<i>moral anxiety</i></span><span class="tm">자아 방어기제<i>ego defense mechanism</i></span><span class="tm">억압<i>repression</i></span><span class="tm">합리화<i>rationalization</i></span></span></li>
+      <li><span class="p">p.190</span><span class="tms"><span class="tm">반동 형성<i>reaction formation</i></span><span class="tm">투사<i>projection</i></span><span class="tm">퇴행<i>regression</i></span><span class="tm">전치<i>displacement</i></span><span class="tm">승화<i>sublimation</i></span><span class="tm">심리성적 발달 이론<i>theory of psychosexual development</i></span></span></li>
+      <li><span class="p">p.191</span><span class="tms"><span class="tm">유아 성욕<i>infantile sexuality</i></span><span class="tm">고착<i>fixation</i></span><span class="tm">구강기<i>oral stage</i></span><span class="tm">구강기 성격<i>oral character</i></span><span class="tm">구강기 수용 성격<i>oral receptive personality</i></span><span class="tm">구강기 공격 성격<i>oral aggressive personality</i></span><span class="tm">항문기<i>anal stage</i></span></span></li>
+      <li><span class="p">p.192</span><span class="tms"><span class="tm">항문기 보유 성격<i>anal retentive personality</i></span><span class="tm">항문기 배출 성격<i>anal expulsive personality</i></span><span class="tm">남근기<i>phallic stage</i></span><span class="tm">오이디푸스 갈등(콤플렉스)<i>Oedipus complex</i></span><span class="tm">엘렉트라 콤플렉스<i>Electra complex</i></span><span class="tm">잠복기<i>latency stage</i></span><span class="tm">성기기<i>genital stage</i></span></span></li>
+      <li><span class="p">p.194</span><span class="tms"><span class="tm">자유 연상<i>free association</i></span></span></li>
+      <li><span class="p">p.195</span><span class="tms"><span class="tm">꿈 분석<i>dream analysis</i></span><span class="tm">전이<i>transference</i></span></span></li>
+      <li><span class="p">p.196</span><span class="tms"><span class="tm">전이 분석<i>transference analysis</i></span><span class="tm">저항<i>resistance</i></span><span class="tm">저항 분석<i>resistance analysis</i></span></span></li>
+      <li><span class="p">p.197</span><span class="tms"><span class="tm">해석<i>interpretation</i></span><span class="tm">통찰<i>insight</i></span><span class="tm">훈습<i>working through</i></span></span></li>
+      <li><span class="p">p.203</span><span class="tms"><span class="tm">자아 기능<i>ego function</i></span></span></li>
+      <li><span class="p">p.205</span><span class="tms"><span class="tm">현실 검증<i>reality testing</i></span><span class="tm">자극 장벽<i>stimulus barrier</i></span></span></li>
+      <li><span class="p">p.206</span><span class="tms"><span class="tm">사고 과정<i>thought process</i></span><span class="tm">합성-통합 기능<i>synthetic-integrative function</i></span></span></li>
+      <li><span class="p">p.207</span><span class="tms"><span class="tm">인지치료<i>cognitive therapy</i></span></span></li>
+      <li><span class="p">p.208</span><span class="tms"><span class="tm">대상관계 이론<i>object-relations theory</i></span></span></li>
+      <li><span class="p">p.209</span><span class="tms"><span class="tm">대상관계<i>object-relations</i></span></span></li>
+      <li><span class="p">p.210</span><span class="tms"><span class="tm">융합<i>fusion</i></span><span class="tm">2자 관계<i>dyadic relationship</i></span></span></li>
+      <li><span class="p">p.211</span><span class="tms"><span class="tm">3자 관계<i>triadic relationship</i></span><span class="tm">분열<i>splitting</i></span><span class="tm">전이<i>transference</i></span></span></li>
+      <li><span class="p">p.212</span><span class="tms"><span class="tm">역전이<i>countertransference</i></span></span></li>
+      <li><span class="p">p.213</span><span class="tms"><span class="tm">분리-개별화<i>separation-individuation</i></span><span class="tm">정상적 자폐 단계<i>normal autism phase</i></span></span></li>
+      <li><span class="p">p.214</span><span class="tms"><span class="tm">정상적 공생 단계<i>normal symbiotic phase</i></span><span class="tm">분리-개별화 단계<i>separation-individuation phase</i></span><span class="tm">부화기<i>hatching</i></span><span class="tm">연습기<i>practicing</i></span><span class="tm">재접근기<i>reapproachment</i></span><span class="tm">대상 항상성<i>object constancy</i></span><span class="tm">대상 영속성<i>object permanence</i></span></span></li>
+      <li><span class="p">p.215</span><span class="tms"><span class="tm">자기심리학<i>self psychology</i></span><span class="tm">자기애적 성격<i>narcissistic personality</i></span></span></li>
+      <li><span class="p">p.216</span><span class="tms"><span class="tm">공허감<i>emptiness</i></span></span></li>
     </ul>
   </div>
 </section>
