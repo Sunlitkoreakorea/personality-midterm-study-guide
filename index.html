@@ -117,7 +117,12 @@ button{font:inherit;color:inherit;cursor:pointer}
 .nv-sub{display:none;margin:2px 0 6px 18px;border-left:2px solid var(--line);padding-left:8px}
 .nv-ch.on .nv-sub{display:block}
 .nv-sub a{display:block;padding:3px 8px;font-size:13px;color:var(--muted);border-radius:6px}
-.nv-sub a:hover{color:var(--accent);text-decoration:none;background:var(--surface2)}
+/* 필수만 보기 · 사이드바 현재 위치 */
+body.must-only section.sec[data-kind="ch"] .card:not(.has-must){display:none}
+body.must-only .nv-sub a.nm{display:none}
+.nv-sub a:hover,.nv-sub a.on{color:var(--accent);background:var(--accent-soft);text-decoration:none}
+.nv-sub a.on{font-weight:650}
+#mustBtn .n{font-size:11px;opacity:.85;margin-left:4px}
 .nv-sub a.done{text-decoration:line-through;opacity:.6}
 main{padding:22px clamp(14px,3vw,36px) 80px;min-width:0}
 
@@ -330,6 +335,7 @@ mark.hit{background:var(--key);color:var(--key-ink);border-radius:3px}
   <div class="brand">성격과 자기 이해<small>시험 직전 정리</small></div>
   <div class="search"><input id="q" type="search" placeholder="용어·인명 검색 (예: 기능적 자율성)" autocomplete="off"><span class="cnt" id="qcnt"></span></div>
   <div class="tools">
+    <button class="chip" id="mustBtn" aria-pressed="false" title="‘필수’·‘최중요’ 표시가 붙은 카드만 모아 봅니다(1~6장)">필수만<span class="n"></span></button>
     <button class="chip" id="clozeBtn" aria-pressed="false" title="형광 핵심어를 입력칸으로 바꿉니다. 타이핑 후 Enter로 채점, 빈 칸에서 Enter는 정답 보기">암기<span class="lbl-long"> 모드</span></button>
     <button class="chip lbl-long" id="openAll" title="모든 체크 해제/전체 보기">체크 초기화</button>
     <button class="chip" id="themeBtn" aria-pressed="false">다크</button>
@@ -343,7 +349,7 @@ mark.hit{background:var(--key);color:var(--key-ink);border-radius:3px}
 <div class="hero">
   <h1>성격과 자기 이해 · 시험 직전 정리</h1>
   <p>교재 『최신 성격심리학』 사진(p.20~25, 48~56, 79~219)과 수업 녹취 9개를 합쳐 시험에 나올 내용만 추렸습니다.</p>
-  <p>외우는 순서: <b>① 빈칸 노트</b>(타이핑으로 바로 채우기) → <b>② 본문</b>(형광 핵심어, <b>암기 모드</b>를 켜면 핵심어가 입력칸으로 바뀌어 직접 타이핑하고 Enter로 채점. 빈 칸에서 Enter는 정답 보기, 정답 칸을 누르면 다시 가려짐) → <b>③ 암기표·서술형</b>(직접 써 보는 칸에 쓰고 모범답안과 비교) → <b>④ 문제풀이</b>(단답형도 칸에 써서 확인). 각 장 끝에는 교재 볼드체 개념어를 쪽 순서로 모은 <b>핵심 개념어 총정리</b> 카드가 있고, 교재의 주요 그림은 해당 카드 안에 다시 그려 넣었습니다.</p>
+  <p>외우는 순서: <b>① 빈칸 노트</b>(타이핑으로 바로 채우기) → <b>② 본문</b>(형광 핵심어, <b>암기 모드</b>를 켜면 핵심어가 입력칸으로 바뀌어 직접 타이핑하고 Enter로 채점. 빈 칸에서 Enter는 정답 보기, 정답 칸을 누르면 다시 가려짐) → <b>③ 암기표·서술형</b>(직접 써 보는 칸에 쓰고 모범답안과 비교) → <b>④ 문제풀이</b>(단답형도 칸에 써서 확인). 상단의 <b>필수만</b> 버튼을 누르면 1~6장에서 ‘필수·최중요’ 표시가 붙은 카드만 모아 볼 수 있습니다. 각 장 끝에는 교재 볼드체 개념어를 쪽 순서로 모은 <b>핵심 개념어 총정리</b> 카드가 있고, 교재의 주요 그림은 해당 카드 안에 다시 그려 넣었습니다.</p>
   <div class="meta"><span>빈칸 노트 439칸</span><span>1장 연구 주제</span><span>2장 성격 평가</span><span>3장 초기 특질</span><span>4장 현대 특질</span><span>5장 생물사회적 관점</span><span>6장 정신분석</span><span>서술형 모범답안 40개</span><span>문제풀이 237문항</span></div>
 </div>
 
@@ -701,7 +707,7 @@ mark.hit{background:var(--key);color:var(--key-ink);border-radius:3px}
   <p class="lead">Allport → Cattell → Eysenck. 세 사람의 접근·단위·방법·생물학적 기반 비교가 핵심입니다.</p>
 
   <div class="card">
-    <h3>특질 이론의 배경과 특질의 개념 <span class="pg">p.79·82</span></h3>
+    <h3>특질 이론의 배경과 특질의 개념 <span class="pg">p.79·82</span> <span class="tag must">필수</span></h3>
     <ul>
       <li>과학으로서의 성격심리학은 <span class="k">특질<span class="en">(trait)</span> 이론</span>에서 시작했습니다. 이전 정신역동 이론은 개념이 추상적·모호해서 <span class="k">측정 가능성</span>이라는 과학의 기본 조건을 못 갖췄고, 특질이 <b>성격 측정의 기본 단위</b>로 적절하다고 봤습니다.</li>
       <li>특질 이론가들의 관심 4가지: ①특질을 포괄적으로 기술 ②성격 어휘를 통계분석해 차원<span class="en">(dimension)</span> 선별 ③생물학적 기반 추적 ④삶의 변인(수명·신체/심리 건강·직무 만족)과의 관계.</li>
@@ -725,7 +731,7 @@ mark.hit{background:var(--key);color:var(--key-ink);border-radius:3px}
   </div>
 
   <div class="card">
-    <h3>Allport ② 공통 특질 vs 개인 특질 → 개인 성향 <span class="pg">p.83~85</span></h3>
+    <h3>Allport ② 공통 특질 vs 개인 특질 → 개인 성향 <span class="pg">p.83~85</span> <span class="tag must">필수</span></h3>
     <div class="tw"><table>
       <tr><th></th><th>공통 특질 common trait</th><th>개인 특질 individual trait</th></tr>
       <tr><td>정의</td><td>여러 사람에게 공통으로 확인되는 특질. 진화·문화 경험을 공유해 형성</td><td>개인의 고유한 행동 방향을 결정·동기화하는 특질</td></tr>
@@ -744,7 +750,7 @@ mark.hit{background:var(--key);color:var(--key-ink);border-radius:3px}
   </div>
 
   <div class="card">
-    <h3>Allport ③ 발달과 동기: 기능적 자율성 <span class="pg">p.86~87</span></h3>
+    <h3>Allport ③ 발달과 동기: 기능적 자율성 <span class="pg">p.86~87</span> <span class="tag must">필수</span></h3>
     <ul>
       <li>발달에 대한 정교한 이론은 제시하지 않음. 과거 경험의 기억은 불완전·부정확해 과거 추적이 부적절하다고 봄. (수업: 대부분 성인 연구 + "현재가 중요"한 관점)</li>
       <li><span class="k">기능적 자율성 functional autonomy</span>: 과거 경험이 고유한 동기를 유발하지만, 시간이 지나면 동기는 <b>자체적 시스템</b>으로 작동하며 과거 경험과 동기는 <b>기능적으로 관련이 없어진다</b>.</li>
@@ -777,7 +783,7 @@ mark.hit{background:var(--key);color:var(--key-ink);border-radius:3px}
   </div>
 
   <div class="card">
-    <h3>Cattell ② 표면 특질 vs 근원 특질, 16PF <span class="pg">p.91~95</span></h3>
+    <h3>Cattell ② 표면 특질 vs 근원 특질, 16PF <span class="pg">p.91~95</span> <span class="tag must">필수</span></h3>
     <div class="tw"><table>
       <tr><th></th><th>표면 특질 surface trait</th><th>근원 특질 source trait</th></tr>
       <tr><td>정의</td><td>직접 관찰 가능한 행동 요소를 담은 특질 어휘들 중 <b>관계가 강한 것들의 군집</b>(외연적으로 한데 묶임)</td><td>표면 특질<span class="en">(surface traits)</span> <b>이면의 잠재 변수<span class="en">(latent variable)</span>(요인)</b>. 표면 특질의 결정 원인이 되는 근본적 특질</td></tr>
@@ -816,7 +822,7 @@ mark.hit{background:var(--key);color:var(--key-ink);border-radius:3px}
   </div>
 
   <div class="card">
-    <h3>Eysenck ② 성격의 4수준 위계 <span class="pg">p.98 (그림 3.4)</span></h3>
+    <h3>Eysenck ② 성격의 4수준 위계 <span class="pg">p.98 (그림 3.4)</span> <span class="tag must">필수</span></h3>
     <div class="chain"><span class="s">구체적 반응</span><span class="ar">→</span><span class="s">습관적 반응</span><span class="ar">→</span><span class="s">특질</span><span class="ar">→</span><span class="s">유형(상위 특질)</span></div>
     <div class="tw"><table>
       <tr><th>수준</th><th>정의</th><th>예</th></tr>
@@ -830,7 +836,7 @@ mark.hit{background:var(--key);color:var(--key-ink);border-radius:3px}
   </div>
 
   <div class="card">
-    <h3>박스: 유형과 특질 — 범주 모형 vs 차원 모형 <span class="pg">p.99~100</span></h3>
+    <h3>박스: 유형과 특질 — 범주 모형 vs 차원 모형 <span class="pg">p.99~100</span> <span class="tag must">필수</span></h3>
     <ul>
       <li>유형(type) = <b>범주 category</b>(질적 구분), 특질(trait) = <b>차원 dimension</b>(양적 차이, 연속) (Meehl, 1992).</li>
       <li>고대 그리스·로마 <b>Galen</b>: 히포크라테스 체액설 확장 → 4가지 성격 유형 (교재 표기 기준):</li>
@@ -857,7 +863,7 @@ mark.hit{background:var(--key);color:var(--key-ink);border-radius:3px}
   </div>
 
   <div class="card">
-    <h3>Eysenck ③ 성격의 세 차원 <span class="pg">p.100~101</span></h3>
+    <h3>Eysenck ③ 성격의 세 차원 <span class="pg">p.100~101</span> <span class="tag must">필수</span></h3>
     <p>외향성·신경증을 먼저 제안, <b>나중에 정신증</b> 추가. 외향성·신경증은 다른 연구에서도 일관되게 확인되지만, 정신증은 학계 인정이 상대적으로 약함.</p>
     <div class="tw"><table>
       <tr><th>차원</th><th>구성 특질</th><th>높은 사람 / 반대극</th></tr>
@@ -869,7 +875,7 @@ mark.hit{background:var(--key);color:var(--key-ink);border-radius:3px}
   </div>
 
   <div class="card">
-    <h3>Eysenck ④ 세 차원의 생물학적 기반 <span class="pg">p.101~104</span></h3>
+    <h3>Eysenck ④ 세 차원의 생물학적 기반 <span class="pg">p.101~104</span> <span class="tag must">필수</span></h3>
     <ul>
       <li>Allport도 특질<span class="en">(trait)</span>의 실재를 제안했지만 <b>구체적 신경학적 기반을 제안·검증한 것은 Eysenck가 최초</b>.</li>
       <li><b>외향–내향 = 뇌의 각성 체계</b>(Eysenck, 1967). <span class="k">각성 arousal</span> = 생리·심리적으로 깨어 있는 정도. 각성 수준을 조절하는 구조: <b>뇌간(brain stem)</b>의 <span class="k">망상체 reticular formation</span>(척수에서 오는 자극 정보를 받아 전반적 각성 수준 조절, 너무 낮지도 높지도 않게 <b>최적 각성 수준</b> 유지).</li>
@@ -890,7 +896,7 @@ mark.hit{background:var(--key);color:var(--key-ink);border-radius:3px}
   </div>
 
   <div class="card">
-    <h3>3장 한눈 비교: Allport · Cattell · Eysenck</h3>
+    <h3>3장 한눈 비교: Allport · Cattell · Eysenck <span class="tag must">필수</span></h3>
     <div class="tw"><table>
       <tr><th></th><th>Allport</th><th>Cattell</th><th>Eysenck</th></tr>
       <tr><td>핵심 접근</td><td>개별 사례(idiographic)</td><td>법칙정립 + 요인분석(자료 기반)</td><td>법칙정립 + 통계(이론 기반)</td></tr>
@@ -970,7 +976,7 @@ mark.hit{background:var(--key);color:var(--key-ink);border-radius:3px}
   </div>
 
   <div class="card">
-    <h3>신경과민성(N) 상세 <span class="pg">p.114~115</span></h3>
+    <h3>신경과민성(N) 상세 <span class="pg">p.114~115</span> <span class="tag must">필수</span></h3>
     <ul>
       <li>불안·우울·분노 등 <b>부정 정서</b>를 빈번하게/강하게 경험하는 경향. 본래 '신경증 환자'의 특성을 포착하는 개념.</li>
       <li><span class="k">신경증 neurosis</span> = 현실 검증력에 심각한 문제는 없는 심리장애. 현대 이상심리학에선 거의 안 쓰고 대신 <span class="k">부정 정서성 negative emotionality</span>(부정 정서를 빈번히 경험) / <span class="k">정서적 불안정성 emotional instability</span>(강렬한 부정 정서가 쉽게 유발)이라는 용어를 씀.</li>
@@ -981,7 +987,7 @@ mark.hit{background:var(--key);color:var(--key-ink);border-radius:3px}
   </div>
 
   <div class="card">
-    <h3>외향성(E) 상세 <span class="pg">p.115~117</span></h3>
+    <h3>외향성(E) 상세 <span class="pg">p.115~117</span> <span class="tag must">필수</span></h3>
     <ul>
       <li>대인관계 자극 선호, 즐거움·흥분 추구, 긍정 정서를 많이 경험 → <span class="k">긍정 정서성 positive emotionality</span>. 사교적이고 먼저 다가가 말을 걸며 긍정 정서를 잘 표현(다정). 새롭고 재미있고 흥분되는 일 선호.</li>
       <li><b>오해 ①</b>: 외향성<span class="en">(E · Extraversion)</span> ≠ 신경과민성<span class="en">(N · Neuroticism)</span>의 반대 삶. 외향성은 우울 증상과 <b>약한~중간 부적 상관</b>, 불안과는 대체로 무관(Jylhä &amp; Isometsä 2006; 신경과민성은 우울·불안과 강한 정적 상관). 하위요소 중 <b>흥분 추구</b>는 양극성장애와 정적 관계(Watson et al. 2015). 외향적이라고 심리장애가 예방되진 않음.</li>
@@ -991,7 +997,7 @@ mark.hit{background:var(--key);color:var(--key-ink);border-radius:3px}
   </div>
 
   <div class="card">
-    <h3>개방성(O) 상세 <span class="pg">p.117~119</span></h3>
+    <h3>개방성(O) 상세 <span class="pg">p.117~119</span> <span class="tag must">필수</span></h3>
     <ul>
       <li>호기심이 많고 다양한 경험·가치에 개방적. 초기 명칭: 지적 호기심 inquiring intellect · 지성 intellect · 교양 culture.</li>
       <li>높은 사람: 다양한 경험·창작물의 아름다움·독창성을 즐김, 기존 관습·인식 틀에 안 얽매임, 포용적이나 집단 지침을 맹목적으로 따르지 않음(주관에 따라 행동), 감정을 잘 자각하고 눈치 안 보고 표현.</li>
@@ -1003,7 +1009,7 @@ mark.hit{background:var(--key);color:var(--key-ink);border-radius:3px}
   </div>
 
   <div class="card">
-    <h3>우호성(A) 상세 <span class="pg">p.118~120</span></h3>
+    <h3>우호성(A) 상세 <span class="pg">p.118~120</span> <span class="tag must">필수</span></h3>
     <ul>
       <li>타인에게 우호적·협력적인 태도·행동 경향. 초기 명칭: <b>동조성 conformity</b>.</li>
       <li>높은 사람: 다른 사람의 말을 잘 믿고(악의·다른 의도를 가정하지 않음), 솔직 표현을 감추거나 낮춤, 자신과 타인의 유익이 충돌하면 타인 우선(이타적 행동), 동조·순응, 타인의 정서적 고통에 민감.</li>
@@ -1014,7 +1020,7 @@ mark.hit{background:var(--key);color:var(--key-ink);border-radius:3px}
   </div>
 
   <div class="card">
-    <h3>성실성(C) 상세 <span class="pg">p.119~122</span></h3>
+    <h3>성실성(C) 상세 <span class="pg">p.119~122</span> <span class="tag must">필수</span></h3>
     <ul>
       <li>책임감이 강하고 성취 지향적이며 자기 조절을 잘하는 경향. 초기 명칭: <b>신뢰성 dependability</b>(믿고 일을 맡길 수 있음 — 성취 지향·자기관리를 다 포괄하기엔 제한적이라 '성실성<span class="en">(C · Conscientiousness)</span>' 채택).</li>
       <li>높은 사람: 뚜렷한 목표·기준을 설정하고 달성, 계획적 실행, 욕구·감정을 통제해 흐트러지지 않고 지속, 철저한 분석·조직화, 꼼꼼 → 신뢰.</li>
@@ -1049,7 +1055,7 @@ mark.hit{background:var(--key);color:var(--key-ink);border-radius:3px}
   </div>
 
   <div class="card">
-    <h3>5요인의 임상적 적용 <span class="pg">p.126~130</span></h3>
+    <h3>5요인의 임상적 적용 <span class="pg">p.126~130</span> <span class="tag must">필수</span></h3>
     <ul>
       <li>5요인은 임상 활용을 염두에 두고 개발되지 않음(어휘 가설 기반, 사전 어휘 분석 → 경험적 도출 = 어떤 의미에서 <b>탈이론적</b>). 활용 영역엔 제한 없음.</li>
       <li><span class="k">성격장애 personality disorder</span> = 성격적 특성이 심각한 부적응이나 정서적 고통을 초래. 두 입장: ①정상 성격과 <b>질적으로 다른</b> 독특한 비정상 성격 → 5요인은 별 도움 안 됨 ②특정 성격 특성이 <b>양적으로 과도하거나 지나치게 약한</b> 경우(<b>차원적 관점</b>) → 5요인을 임상에 쓰는 연구자들의 입장.</li>
@@ -1070,7 +1076,7 @@ mark.hit{background:var(--key);color:var(--key-ink);border-radius:3px}
   </div>
 
   <div class="card">
-    <h3>HEXACO ① 배경: 왜 6요인인가 <span class="pg">p.132~133</span></h3>
+    <h3>HEXACO ① 배경: 왜 6요인인가 <span class="pg">p.132~133</span> <span class="tag must">필수</span></h3>
     <ul>
       <li>5요인은 포괄적이지만 일부 연구자는 "충분히 포괄적이지 않다" → <b>비영어권 연구에서 6요인 구조 반복 확인</b>(Ashton et al. 2004). 새 요인: 정직함 honesty · 겸손함 humility · 탐욕스러움 greedy · 교활함 sly 등.</li>
       <li>새 요인과 기존 <b>우호성<span class="en">(A · Agreeableness)</span></b>(NEO-PI-R 우호성 하위에 솔직함·겸손함 포함)을 구분하는 기준 = <span class="k">타인을 착취하거나 이용하는 것과 관련된 반응</span>(Ashton &amp; Lee 2007).</li>
@@ -1194,7 +1200,7 @@ mark.hit{background:var(--key);color:var(--key-ink);border-radius:3px}
   </div>
 
   <div class="card">
-    <h3>유전자 → 행동유전학의 연구 방법 <span class="pg">p.143~146</span></h3>
+    <h3>유전자 → 행동유전학의 연구 방법 <span class="pg">p.143~146</span> <span class="tag must">필수</span></h3>
 <figure class="fig" id="fig-5-1"><svg viewBox="0 0 880 262" role="img" aria-label="세포, 염색체, DNA, 유전자" style="min-width:721px;max-width:968px"><polygon class="fzoom" points="150,95 232,50 232,210 150,165"/><polygon class="fzoom" points="302,110 438,40 438,222 302,150"/><polygon class="fzoom" points="524,100 680,94 680,186 524,150"/><circle class="sb" cx="88" cy="130" r="66"/><circle class="so" cx="88" cy="130" r="28"/><circle class="sn" cx="80" cy="124" r="3"/><circle class="sn" cx="95" cy="135" r="3"/><circle class="sn" cx="86" cy="140" r="3"/><text class="ft fb"><tspan x="88" y="228.0">세포</tspan></text><path class="fchr" d="M252,58 L292,202 M292,58 L252,202"/><text class="ft fb"><tspan x="272" y="228.0">염색체</tspan></text><polyline class="fhx1" points="509.0,36 504.1,40 497.9,44 490.6,48 482.8,52 474.8,56 467.1,60 460.2,64 454.3,68 449.8,72 447.0,76 446.0,80 446.9,84 449.6,88 454.0,92 459.8,96 466.7,100 474.4,104 482.4,108 490.2,112 497.5,116 503.8,120 508.8,124 512.2,128 513.9,132 513.6,136 511.6,140 507.7,144 502.4,148 495.8,152 488.4,156 480.4,160 472.5,164 465.0,168 458.3,172 452.8,176 448.8,180 446.5,184 446.1,188 447.5,192 450.7,196 455.6,200 461.8,204 468.9,208 476.7,212 484.7,216 492.4,220 499.5,224"/><polyline class="fhx2" points="451.0,36 455.9,40 462.1,44 469.4,48 477.2,52 485.2,56 492.9,60 499.8,64 505.7,68 510.2,72 513.0,76 514.0,80 513.1,84 510.4,88 506.0,92 500.2,96 493.3,100 485.6,104 477.6,108 469.8,112 462.5,116 456.2,120 451.2,124 447.8,128 446.1,132 446.4,136 448.4,140 452.3,144 457.6,148 464.2,152 471.6,156 479.6,160 487.5,164 495.0,168 501.7,172 507.2,176 511.2,180 513.5,184 513.9,188 512.5,192 509.3,196 504.4,200 498.2,204 491.1,208 483.3,212 475.3,216 467.6,220 460.5,224"/><line class="frung" x1="504.1" y1="40" x2="455.9" y2="40"/><line class="frung" x1="482.8" y1="52" x2="477.2" y2="52"/><line class="frung" x1="460.2" y1="64" x2="499.8" y2="64"/><line class="frung" x1="447.0" y1="76" x2="513.0" y2="76"/><line class="frung" x1="449.6" y1="88" x2="510.4" y2="88"/><line class="frung" x1="466.7" y1="100" x2="493.3" y2="100"/><line class="frung" x1="490.2" y1="112" x2="469.8" y2="112"/><line class="frung" x1="508.8" y1="124" x2="451.2" y2="124"/><line class="frung" x1="513.6" y1="136" x2="446.4" y2="136"/><line class="frung" x1="502.4" y1="148" x2="457.6" y2="148"/><line class="frung" x1="480.4" y1="160" x2="479.6" y2="160"/><line class="frung" x1="458.3" y1="172" x2="501.7" y2="172"/><line class="frung" x1="446.5" y1="184" x2="513.5" y2="184"/><line class="frung" x1="450.7" y1="196" x2="509.3" y2="196"/><line class="frung" x1="468.9" y1="208" x2="491.1" y2="208"/><line class="frung" x1="492.4" y1="220" x2="467.6" y2="220"/><text class="ft fb"><tspan x="480" y="244.0">DNA</tspan></text><polyline class="fhx1" points="705.2,100 699.5,104 693.9,108 689.0,112 685.6,116 684.1,120 684.6,124 687.2,128 691.4,132 696.8,136 702.6,140 708.0,144 712.4,148 715.2,152 716.0,156 714.7,160 711.5,164 706.7,168 701.1,172 695.4,176 690.2,180 686.4,184 684.3,188"/><polyline class="fhx2" points="694.8,100 700.5,104 706.1,108 711.0,112 714.4,116 715.9,120 715.4,124 712.8,128 708.6,132 703.2,136 697.4,140 692.0,144 687.6,148 684.8,152 684.0,156 685.3,160 688.5,164 693.3,168 698.9,172 704.6,176 709.8,180 713.6,184 715.7,188"/><line class="frung" x1="699.5" y1="104" x2="700.5" y2="104"/><line class="frung" x1="685.6" y1="116" x2="714.4" y2="116"/><line class="frung" x1="687.2" y1="128" x2="712.8" y2="128"/><line class="frung" x1="702.6" y1="140" x2="697.4" y2="140"/><line class="frung" x1="715.2" y1="152" x2="684.8" y2="152"/><line class="frung" x1="711.5" y1="164" x2="688.5" y2="164"/><line class="frung" x1="695.4" y1="176" x2="704.6" y2="176"/><line class="frung" x1="684.3" y1="188" x2="715.7" y2="188"/><path class="fbr" d="M732,94 q10,0 10,10 v76 q0,10 -10,10"/><text class="ft fl fb"><tspan x="752" y="131.5">유전자</tspan><tspan x="752" y="148.5">(DNA의 일부분)</tspan></text></svg><figcaption><b>그림 5.1</b> 세포<span class="en">(cell)</span>, 염색체<span class="en">(chromosome)</span>, DNA, 유전자 (p.144) — 개략도. 세포 안의 염색체는 이중나선 구조의 DNA로 되어 있고, DNA 중 유전 정보를 담은 부분만 <b>유전자</b>입니다.</figcaption></figure>
     <ul>
       <li>세포 → 염색체 → DNA(Deoxyribo Nucleic Acid, 유전 정보를 담는 고분자 화합물, 이중나선). DNA의 모든 부분이 유전 정보를 담는 것은 아니고 유전 정보를 담은 부분만 <span class="k">유전자 gene</span>. 유전자는 <b>단백질을 특정 방향으로 합성하도록 지시</b>해 유기체 발달에 영향.</li>
@@ -1386,7 +1392,7 @@ mark.hit{background:var(--key);color:var(--key-ink);border-radius:3px}
   </div>
 
   <div class="card">
-    <h3>유아기(2~5세)와 아동기(6~11세) <span class="pg">p.165~168</span></h3>
+    <h3>유아기(2~5세)와 아동기(6~11세) <span class="pg">p.165~168</span> <span class="tag must">필수</span></h3>
     <h4>주요 발달적 변화</h4>
     <ul>
       <li>대략 2세에 짧은 문장(phrase)으로 욕구·감정을 표현 → 타인과 소통, 가족 외 사람(친구·교사)과의 교류 활발.</li>
@@ -1694,7 +1700,7 @@ mark.hit{background:var(--key);color:var(--key-ink);border-radius:3px}
   </div>
 
   <div class="card">
-    <h3>자아심리학 ③ 방어 이외의 자아 기능과 치료 <span class="pg">p.205~207</span></h3>
+    <h3>자아심리학 ③ 방어 이외의 자아 기능과 치료 <span class="pg">p.205~207</span> <span class="tag must">필수</span></h3>
     <ul>
       <li>방어 이외의 자아 기능<span class="en">(ego function)</span> 연구는 주로 <b>인지 기능</b> 중심(현실 과업 처리에 필요한 기능이 인지 기능이고, 자아심리학자들이 집중 연구한 장애가 <b>조현병</b>). 생애 초기 심각한 문제를 경험할수록 자아가 미성숙해 자아 기능이 저하된다고 보고, 조현병 같은 정신증은 생애 초기 심각한 문제로 인한 <span class="k">자아 결핍 ego deficit</span> 때문이라 가정(이후 신경학적 연구로 부적절한 가정으로 확인됐지만 인지 기능 결함을 정교히 파악하는 성과).</li>
       <li><b>Bellak &amp; Hurvich(1969)</b>가 조현병 연구로 정리한 자아의 핵심 기능 일부:</li>
@@ -1760,7 +1766,7 @@ mark.hit{background:var(--key);color:var(--key-ink);border-radius:3px}
   </div>
 
   <div class="card">
-    <h3>대상관계 이론 ③ 성격의 문제와 치료 · Mahler <span class="pg">p.212~214</span></h3>
+    <h3>대상관계 이론 ③ 성격의 문제와 치료 · Mahler <span class="pg">p.212~214</span> <span class="tag must">필수</span></h3>
     <ul>
       <li>대상관계 이론<span class="en">(object-relations theory)</span>은 성격의 <b>대인관계적 측면</b> 이해에 큰 도움(자아<span class="en">(ego)</span>·원초아·초자아<span class="en">(superego)</span>의 구조 이론만으로는 설명 어려움). 특히 <b>심각한 수준의 성격 문제</b> = 매우 혼란스러운 대인관계 갈등: 타인을 이상화했다가 평가절하하는 등 타인에 대한 정서 반응·행동이 매우 <b>불안정하고 비일관적</b>, 자기 자신에 대해서도 극단적 긍정·부정 인식이 번갈아, 심한 경우 여러 개의 분리된 인격이 시기를 달리해 의식<span class="en">(conscious)</span>을 장악. 통합된 자아가 없거나 매우 불안정.</li>
       <li><span class="k">병리적 대상관계<span class="en">(object-relations)</span></span>: 충분히 통합되지 못한 채 <b>분리되어 존재하는 대상관계가 불안정하게 번갈아</b> 작동. 발달 과정의 문제로 <b>대상관계의 통합에 실패</b>한 것. 대상관계 이론가들은 <b>생애 초기부터 남근기<span class="en">(phallic stage)</span> 이전, 즉 생후 2년까지</b>를 특히 중요하게 봄(양육자에 대한 의존·독립을 반복 연습하며 긍정적 대상관계를 중심으로 부정적 대상관계를 통합).</li>
@@ -2757,9 +2763,12 @@ setCloze(!!store.get("cloze",false));
 /* ---------- cards: ids, done checkbox ---------- */
 var doneMap=store.get("done",{});
 var secs=$$("section.sec");
+var CH_RE=/^ch[1-6]$/;
 secs.forEach(function(sec){
+  if(CH_RE.test(sec.id))sec.dataset.kind="ch";
   $$(".card",sec).forEach(function(card,i){
     var id=sec.id+"-"+(i+1);card.id=id;
+    var hh=$("h3",card);card.classList.toggle("has-must",!!(hh&&$(".tag.must",hh)&&/필수|최중요/.test($(".tag.must",hh).textContent)));
     var h=$("h3",card);if(!h)return;
     var lab=document.createElement("label");lab.className="done-box";
     var cb=document.createElement("input");cb.type="checkbox";cb.checked=!!doneMap[id];
@@ -2781,14 +2790,18 @@ secs.forEach(function(sec){
   var sub=document.createElement("div");sub.className="nv-sub";
   $$(".card",sec).forEach(function(card){
     var h=$("h3",card);if(!h)return;
-    var s=document.createElement("a");s.href="#"+card.id;s.dataset.card=card.id;s.textContent=txt(h,[".pg",".tag",".done-box"]);sub.appendChild(s);
+    var s=document.createElement("a");s.href="#"+card.id;s.dataset.card=card.id;s.textContent=txt(h,[".pg",".tag",".done-box"]);
+    if(sec.dataset.kind==="ch"&&!card.classList.contains("has-must"))s.className="nm";
+    sub.appendChild(s);
   });
   if(sub.children.length)wrap.appendChild(sub);
   nav.appendChild(wrap);
 });
+function mustOn(){return document.body.classList.contains("must-only")}
+function inScope(c){var sec=c.closest("section.sec");return !(mustOn()&&sec&&sec.dataset.kind==="ch"&&!c.classList.contains("has-must"))}
 function updateNav(){
   $$(".nv-ch").forEach(function(w){
-    var sec=document.getElementById(w.dataset.sec);var cards=$$(".card",sec);
+    var sec=document.getElementById(w.dataset.sec);var cards=$$(".card",sec).filter(inScope);
     var d=cards.filter(function(c){return doneMap[c.id]}).length;
     var pr=$(".pr",w);pr.textContent=cards.length?d+"/"+cards.length:"";
     $$(".nv-sub a",w).forEach(function(a){a.classList.toggle("done",!!doneMap[a.dataset.card])});
@@ -2801,9 +2814,40 @@ function spy(){
   secs.forEach(function(s){if(s.getBoundingClientRect().top<=140)cur=s.id});
   if(!cur&&secs.length)cur=secs[0].id;
   $$(".nv-ch").forEach(function(w){w.classList.toggle("on",w.dataset.sec===cur)});
+  var curCard=null;
+  if(cur){
+    var sec=document.getElementById(cur);
+    $$(".card",sec).forEach(function(c){
+      if(c.offsetParent===null)return;
+      if(c.getBoundingClientRect().top<=150)curCard=c.id;
+    });
+  }
+  var act=null;
+  $$(".nv-sub a").forEach(function(a){var on=!!curCard&&a.dataset.card===curCard;a.classList.toggle("on",on);if(on)act=a});
+  if(act)keepVisible(act);
 }
-window.addEventListener("scroll",function(){if(!ticking){ticking=true;requestAnimationFrame(spy)}},{passive:true});
+function keepVisible(a){
+  var side=$("#side");if(!side)return;
+  var sr=side.getBoundingClientRect();if(sr.width<10||sr.right<=0)return;
+  var ar=a.getBoundingClientRect();
+  if(ar.top<sr.top+36)side.scrollTop+=ar.top-sr.top-60;
+  else if(ar.bottom>sr.bottom-24)side.scrollTop+=ar.bottom-sr.bottom+70;
+}
+window.addEventListener("scroll",function(){if(ticking)return;ticking=true;setTimeout(spy,60)},{passive:true});
 spy();
+var mb=$("#mustBtn");
+(function(){var n=$$("section.sec[data-kind=ch] .card.has-must").length;var s=$(".n",mb);if(s)s.textContent=n;})();
+function setMust(on){
+  document.body.classList.toggle("must-only",on);mb.setAttribute("aria-pressed",on);
+  store.set("must",on);updateNav();
+  if(typeof runSearch==="function"&&$("#q").value.trim())runSearch();
+  spy();
+}
+mb.onclick=function(){
+  var y=window.scrollY;setMust(!mustOn());
+  if(mustOn()){var f=$("section.sec[data-kind=ch] .card.has-must");if(f&&y<80)window.scrollTo(0,0)}
+};
+setMust(!!store.get("must",false));
 $("#menuBtn").onclick=function(){document.body.classList.toggle("nav-open")};
 $("#side").addEventListener("click",function(e){if(e.target.closest("a"))document.body.classList.remove("nav-open")});
 $("#openAll").onclick=function(){
@@ -3003,7 +3047,7 @@ function runSearch(){
   }
   var hits=[];
   items.forEach(function(c){
-    var hit=re.test(c.textContent+(c.dataset.s||""));
+    var hit=inScope(c)&&re.test(c.textContent+(c.dataset.s||""));
     c.classList.toggle("hidden",!hit);
     if(c.classList.contains("eq"))setEq(c,hit);
     if(hit)hits.push(c);
